@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silvia Morris – Enfermera Registrada</title>
+    <meta name="description"
+        content="Página profesional de Silvia Morris, Enfermera Registrada con experiencia en cuidados críticos, atención al paciente y práctica médica basada en evidencia.">
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <a href="../index.html" style="position: fixed; top: 20px; left: 20px; z-index: 9999; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); color: white; padding: 10px 20px; border-radius: 30px; font-family: sans-serif; font-size: 12px; border: 1px solid rgba(255,255,255,0.2); text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onmouseover="this.style.background='rgba(0,255,0,0.2)'; this.style.borderColor='rgba(0,255,0,0.5)'" onmouseout="this.style.background='rgba(0,0,0,0.8)'; this.style.borderColor='rgba(255,255,255,0.2)'"><span>←</span> Back to Showcase</a>
+
+
+    <!-- Animated Background Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Floating Social FAB -->
+    <div class="fab-container" id="fab-container">
+        <button class="fab-main" id="fab-main" aria-label="Redes Sociales" aria-expanded="false">
+            <i class="fa-solid fa-share-nodes"></i>
+        </button>
+        <div class="fab-links" id="fab-links">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="fab-icon bg-lk"
+                aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="fab-icon bg-ig"
+                aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" class="fab-icon bg-wa"
+                aria-label="WhatsApp">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="fab-icon bg-fb"
+                aria-label="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Page Wrapper -->
+    <div class="page-wrapper">
+
+        <!-- TOP BAR: Logo / Name + Nav -->
+        <header class="top-bar">
+            <div class="top-bar-name">
+                <span class="top-bar-label">Enf.&nbsp;·&nbsp;</span>
+                <span class="top-bar-title">Silvia Morris</span>
+            </div>
+            <nav class="top-nav" aria-label="Navegación principal">
+                <a href="#" class="nav-item active-link" data-section="inicio">Inicio</a>
+                <a href="#" class="nav-item" data-section="sobre-mi">Sobre Mí</a>
+                <a href="#" class="nav-item" data-section="educacion">Educación</a>
+                <a href="#" class="nav-item" data-section="experiencia">Experiencia</a>
+            </nav>
+            <div class="top-bar-badge">
+                <i class="fa-solid fa-cross"></i>
+                <span>RN, BSN</span>
+            </div>
+        </header>
+
+        <!-- MAIN STAGE -->
+        <main class="stage">
+
+            <!-- LEFT CONTENT ZONE -->
+            <div class="content-zone">
+
+                <!-- Inicio -->
+                <div class="content-panel active" id="section-inicio">
+                    <div class="intro-block">
+                        <p class="saludo">Hola, soy</p>
+                        <h1 class="nombre-hero">Silvia<br><em>Morris</em></h1>
+                        <p class="rol-hero">Enfermera Registrada · RN, BSN</p>
+                        <div class="divider-pill"></div>
+                        <p class="tagline">Comprometida con el bienestar del paciente, la práctica basada en evidencia
+                            y marcar una diferencia genuina en el cuidado de la salud.</p>
+                        <div class="stats-row">
+                            <div class="stat-card">
+                                <span class="stat-num">8+</span>
+                                <span class="stat-lbl">Años de<br>Experiencia</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-num">3k+</span>
+                                <span class="stat-lbl">Pacientes<br>Atendidos</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-num">5</span>
+                                <span class="stat-lbl">Certificaciones<br>Activas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sobre Mí -->
+                <div class="content-panel" id="section-sobre-mi">
+                    <div class="panel-inner">
+                        <h2 class="section-title">Sobre <em>mí</em></h2>
+                        <div class="about-cards">
+                            <div class="about-card about-card--bio">
+                                <i class="fa-solid fa-user-nurse about-card__icon"></i>
+                                <p>Soy Silvia Morris, Enfermera Registrada con más de 8 años de experiencia en cuidados
+                                    críticos y medicina interna. Mi pasión radica en el cuidado integral del paciente,
+                                    tratando no solo la enfermedad, sino a la persona en su totalidad.</p>
+                            </div>
+                            <div class="about-card about-card--values">
+                                <i class="fa-solid fa-heart-pulse about-card__icon"></i>
+                                <p>Me desenvuelvo en entornos de alta presión y soy reconocida por mi serenidad,
+                                    precisión
+                                    clínica y trato cálido. Estoy comprometida con el aprendizaje continuo y la práctica
+                                    basada en la evidencia científica.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Educación -->
+                <div class="content-panel" id="section-educacion">
+                    <div class="panel-inner">
+                        <h2 class="section-title"><em>Educación</em></h2>
+                        <div class="edu-grid">
+                            <div class="edu-card">
+                                <span class="edu-year">2014 – 2018</span>
+                                <h3>Licenciatura en Enfermería (BSN)</h3>
+                                <p>Universidad Estatal de Ciencias de la Salud · Graduada con Honores</p>
+                            </div>
+                            <div class="edu-card">
+                                <span class="edu-year">2019</span>
+                                <h3>Licencia NCLEX-RN</h3>
+                                <p>Examen Nacional de Licencia para Enfermería Registrada</p>
+                            </div>
+                            <div class="edu-card">
+                                <span class="edu-year">2021</span>
+                                <h3>Certificación en Cuidados Críticos (CCRN)</h3>
+                                <p>Asociación Americana de Enfermeras de Cuidados Críticos (AACN)</p>
+                            </div>
+                            <div class="edu-card">
+                                <span class="edu-year">2023</span>
+                                <h3>Soporte Vital Cardíaco Avanzado (ACLS)</h3>
+                                <p>Asociación Americana del Corazón – Recertificación</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experiencia -->
+                <div class="content-panel" id="section-experiencia">
+                    <div class="panel-inner">
+                        <h2 class="section-title">Experiencia &amp; <em>Habilidades</em></h2>
+                        <div class="exp-wrap">
+                            <div class="exp-list">
+                                <div class="exp-item">
+                                    <span class="exp-year">2022 – Presente</span>
+                                    <h3>Enfermera Registrada Senior</h3>
+                                    <p>Hospital General de la Ciudad – UCI</p>
+                                </div>
+                                <div class="exp-item">
+                                    <span class="exp-year">2019 – 2022</span>
+                                    <h3>Enfermera Registrada</h3>
+                                    <p>Centro Médico San Lucas – Medicina Interna</p>
+                                </div>
+                                <div class="exp-item">
+                                    <span class="exp-year">2018 – 2019</span>
+                                    <h3>Enfermera Clínica Interna</h3>
+                                    <p>Hospital Universitario – Departamento de Emergencias</p>
+                                </div>
+                            </div>
+                            <div class="skills-wrap">
+                                <div class="skill-tags">
+                                    <span>Cuidados Críticos</span>
+                                    <span>Cuidado de Heridas</span>
+                                    <span>Terapia IV</span>
+                                    <span>Valoración del Paciente</span>
+                                    <span>ACLS / BLS</span>
+                                    <span>Sistemas EHR</span>
+                                    <span>Manejo del Dolor</span>
+                                    <span>Liderazgo de Equipo</span>
+                                    <span>Educación al Paciente</span>
+                                    <span>Triaje</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- end .content-zone -->
+
+            <!-- RIGHT PHOTO PANEL -->
+            <div class="photo-panel">
+                <div class="photo-diagonal-bg"></div>
+                <div class="photo-frame-wrap">
+                    <div class="photo-glow-ring"></div>
+                    <img src="nurse.png" alt="Silvia Morris – Enfermera Registrada" class="hero-photo" id="hero-photo">
+                    <div class="med-badge">
+                        <i class="fa-solid fa-stethoscope"></i>
+                    </div>
+                </div>
+                <!-- floating role chip -->
+                <div class="role-chip">
+                    <i class="fa-solid fa-circle-check"></i>
+                    Enfermera Certificada
+                </div>
+            </div>
+
+        </main>
+
+    </div><!-- end .page-wrapper -->
+
+    <script src="script.js"></script>
+</body>
+
+</html>

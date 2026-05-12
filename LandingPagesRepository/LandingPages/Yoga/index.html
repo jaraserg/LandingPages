@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Serenity Yoga - Find Your Inner Peace</title>
+<link href="styles.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+</head>
+<body>
+    <a href="../index.html" style="position: fixed; top: 20px; left: 20px; z-index: 9999; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); color: white; padding: 10px 20px; border-radius: 30px; font-family: sans-serif; font-size: 12px; border: 1px solid rgba(255,255,255,0.2); text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onmouseover="this.style.background='rgba(0,255,0,0.2)'; this.style.borderColor='rgba(0,255,0,0.5)'" onmouseout="this.style.background='rgba(0,0,0,0.8)'; this.style.borderColor='rgba(255,255,255,0.2)'"><span>←</span> Back to Showcase</a>
+
+<nav class="navbar">
+<div class="nav-container">
+<div class="nav-logo">
+<h2>Serenity Yoga</h2>
+</div>
+<ul class="nav-menu">
+<li class="nav-item">
+<a class="nav-link" href="#home">Home</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#classes">Classes</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#schedule">Schedule</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#instructors">Instructors</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#pricing">Pricing</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#contact">Contact</a>
+</li>
+<li class="nav-item">
+<a class="nav-cta" href="#contact">Get Started</a>
+</li>
+</ul>
+<div class="hamburger">
+<span class="bar"></span>
+<span class="bar"></span>
+<span class="bar"></span>
+</div>
+</div>
+</nav>
+<section class="hero" id="home">
+<div class="hero-container">
+<div class="hero-content">
+<div class="hero-badge">✨ Welcome to Serenity</div>
+<h1 class="hero-title">
+                    Find Your <span class="text-gradient">Inner Peace</span>
+</h1>
+<p class="hero-description">
+                    Transform your mind, body, and spirit with our expert yoga instruction. Join our community of passionate practitioners.
+                </p>
+<div class="hero-buttons">
+<button class="btn-primary" onclick="scrollToSection('classes')">
+<span>Start Your Journey</span>
+<svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20">
+<path d="M5 12h14M12 5l7 7-7 7"></path>
+</svg>
+</button>
+<button class="btn-secondary" onclick="scrollToSection('schedule')">
+<span>View Schedule</span>
+</button>
+</div>
+<div class="hero-stats">
+<div class="stat">
+<div class="stat-number">500+</div>
+<div class="stat-label">Happy Students</div>
+</div>
+<div class="stat">
+<div class="stat-number">50+</div>
+<div class="stat-label">Weekly Classes</div>
+</div>
+<div class="stat">
+<div class="stat-number">15</div>
+<div class="stat-label">Expert Instructors</div>
+</div>
+</div>
+</div>
+<div class="hero-image">
+<div class="hero-overlay"></div>
+<div class="hero-image-container">
+<img alt="Yoga Practice" loading="lazy" src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80"/>
+</div>
+</div>
+</div>
+<div class="hero-scroll-indicator">
+<div class="scroll-dot"></div>
+<span>Scroll</span>
+</div>
+</section>
+<section class="classes-section" id="classes">
+<div class="container">
+<div class="section-header">
+<h2>Our Yoga Classes</h2>
+<p>Choose from a variety of styles suitable for all levels</p>
+</div>
+<div class="classes-grid">
+<div class="class-card">
+<div class="class-badge">Popular</div>
+<div class="class-icon">
+<i class="fas fa-spa"></i>
+</div>
+<h3>Beginner Yoga</h3>
+<p>Perfect for those new to yoga. Learn basic poses and breathing techniques in a supportive environment.</p>
+<ul class="class-details">
+<li><i class="fas fa-clock"></i> 60 minutes</li>
+<li><i class="fas fa-signal"></i> Beginner</li>
+<li><i class="fas fa-users"></i> Max 15 students</li>
+</ul>
+</div>
+<div class="class-card">
+<div class="class-icon">
+<i class="fas fa-fire"></i>
+</div>
+<h3>Vinyasa Flow</h3>
+<p>Dynamic, flowing sequences synchronized with breath for an energizing and transformative practice.</p>
+<ul class="class-details">
+<li><i class="fas fa-clock"></i> 75 minutes</li>
+<li><i class="fas fa-signal"></i> Intermediate</li>
+<li><i class="fas fa-users"></i> Max 20 students</li>
+</ul>
+</div>
+<div class="class-card">
+<div class="class-icon">
+<i class="fas fa-heart"></i>
+</div>
+<h3>Restorative Yoga</h3>
+<p>Gentle, supportive poses held for extended periods to promote deep relaxation and healing.</p>
+<ul class="class-details">
+<li><i class="fas fa-clock"></i> 90 minutes</li>
+<li><i class="fas fa-signal"></i> All levels</li>
+<li><i class="fas fa-users"></i> Max 12 students</li>
+</ul>
+</div>
+<div class="class-card">
+<div class="class-badge">New</div>
+<div class="class-icon">
+<i class="fas fa-om"></i>
+</div>
+<h3>Meditation</h3>
+<p>Guided meditation sessions to calm the mind, reduce stress, and cultivate inner peace.</p>
+<ul class="class-details">
+<li><i class="fas fa-clock"></i> 45 minutes</li>
+<li><i class="fas fa-signal"></i> All levels</li>
+<li><i class="fas fa-users"></i> Unlimited</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section class="schedule-section" id="schedule">
+<div class="container">
+<div class="section-header">
+<h2>Class Schedule</h2>
+<p>Join us at times that work for you</p>
+</div>
+<div class="schedule-container">
+<div class="schedule-tabs">
+<button class="tab-btn active" onclick="showSchedule('monday')">Monday</button>
+<button class="tab-btn" onclick="showSchedule('tuesday')">Tuesday</button>
+<button class="tab-btn" onclick="showSchedule('wednesday')">Wednesday</button>
+<button class="tab-btn" onclick="showSchedule('thursday')">Thursday</button>
+<button class="tab-btn" onclick="showSchedule('friday')">Friday</button>
+<button class="tab-btn" onclick="showSchedule('weekend')">Weekend</button>
+</div>
+<div class="schedule-content">
+<div class="schedule-day active" id="monday-schedule">
+<div class="schedule-item">
+<div class="time">7:00 AM</div>
+<div class="class-info">
+<h4>Beginner Yoga</h4>
+<p>Sarah Johnson</p>
+</div>
+<button class="book-btn" onclick="bookClass('Beginner Yoga', 'Monday 7:00 AM')">Book</button>
+</div>
+<div class="schedule-item">
+<div class="time">12:00 PM</div>
+<div class="class-info">
+<h4>Meditation</h4>
+<p>Michael Chen</p>
+</div>
+<button class="book-btn" onclick="bookClass('Meditation', 'Monday 12:00 PM')">Book</button>
+</div>
+<div class="schedule-item">
+<div class="time">6:00 PM</div>
+<div class="class-info">
+<h4>Vinyasa Flow</h4>
+<p>Emma Davis</p>
+</div>
+<button class="book-btn" onclick="bookClass('Vinyasa Flow', 'Monday 6:00 PM')">Book</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="instructors-section" id="instructors">
+<div class="container">
+<div class="section-header">
+<h2>Our Instructors</h2>
+<p>Learn from experienced and passionate yoga teachers</p>
+</div>
+<div class="instructors-grid">
+<div class="instructor-card">
+<div class="instructor-image">
+<i class="fas fa-user-circle"></i>
+</div>
+<div class="instructor-specialty">Hatha &amp; Vinyasa</div>
+<h3>Sarah Johnson</h3>
+<p class="instructor-title">Founder &amp; Lead Instructor</p>
+<p class="instructor-bio">15+ years of teaching experience, specializing in Hatha and Vinyasa yoga. Passionate about creating transformative experiences.</p>
+<div class="instructor-social">
+<i class="fab fa-instagram"></i>
+<i class="fab fa-facebook"></i>
+</div>
+</div>
+<div class="instructor-card">
+<div class="instructor-image">
+<i class="fas fa-user-circle"></i>
+</div>
+<div class="instructor-specialty">Mindfulness</div>
+<h3>Michael Chen</h3>
+<p class="instructor-title">Meditation Specialist</p>
+<p class="instructor-bio">Expert in mindfulness and meditation techniques for stress reduction and mental clarity.</p>
+<div class="instructor-social">
+<i class="fab fa-instagram"></i>
+<i class="fab fa-facebook"></i>
+</div>
+</div>
+<div class="instructor-card">
+<div class="instructor-image">
+<i class="fas fa-user-circle"></i>
+</div>
+<div class="instructor-specialty">Dynamic Flow</div>
+<h3>Emma Davis</h3>
+<p class="instructor-title">Vinyasa Flow Expert</p>
+<p class="instructor-bio">Dynamic instructor focused on building strength, flexibility, and mind-body connection.</p>
+<div class="instructor-social">
+<i class="fab fa-instagram"></i>
+<i class="fab fa-facebook"></i>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="pricing-section" id="pricing">
+<div class="container">
+<div class="section-header">
+<h2>Pricing Plans</h2>
+<p>Choose the plan that works best for your practice</p>
+</div>
+<div class="pricing-grid">
+<div class="pricing-card">
+<h3>Single Class</h3>
+<div class="price">$20</div>
+<div class="price-period">per class</div>
+<ul class="features">
+<li><i class="fas fa-check"></i> One yoga class</li>
+<li><i class="fas fa-check"></i> All class types</li>
+<li><i class="fas fa-check"></i> No commitment</li>
+<li><i class="fas fa-check"></i> Instant access</li>
+</ul>
+<div class="pricing-cta">
+<button class="btn-primary">Book Class</button>
+</div>
+</div>
+<div class="pricing-card featured">
+<div class="popular-badge">Most Popular</div>
+<h3>Monthly Unlimited</h3>
+<div class="price">$120</div>
+<div class="price-period">per month</div>
+<ul class="features">
+<li><i class="fas fa-check"></i> Unlimited classes</li>
+<li><i class="fas fa-check"></i> All class types</li>
+<li><i class="fas fa-check"></i> Free workshop access</li>
+<li><i class="fas fa-check"></i> Priority booking</li>
+<li><i class="fas fa-check"></i> Exclusive events</li>
+</ul>
+<div class="pricing-cta">
+<button class="btn-secondary">Start Free Trial</button>
+</div>
+</div>
+<div class="pricing-card">
+<h3>10-Class Pass</h3>
+<div class="price">$150</div>
+<div class="price-period">one time</div>
+<ul class="features">
+<li><i class="fas fa-check"></i> 10 yoga classes</li>
+<li><i class="fas fa-check"></i> Valid for 3 months</li>
+<li><i class="fas fa-check"></i> Flexible scheduling</li>
+<li><i class="fas fa-check"></i> Shareable with friends</li>
+</ul>
+<div class="pricing-cta">
+<button class="btn-primary">Purchase Pass</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="contact-section" id="contact">
+<div class="container">
+<div class="section-header">
+<h2>Get In Touch</h2>
+<p>Start your yoga journey today</p>
+</div>
+<div class="contact-content">
+<div class="contact-info">
+<div class="contact-item">
+<i class="fas fa-map-marker-alt"></i>
+<div>
+<h4>Visit Our Studio</h4>
+<p>123 Serenity Lane<br/>Peaceful City, PC 12345</p>
+</div>
+</div>
+<div class="contact-item">
+<i class="fas fa-phone"></i>
+<div>
+<h4>Call Us</h4>
+<p>(555) 123-4567</p>
+</div>
+</div>
+<div class="contact-item">
+<i class="fas fa-envelope"></i>
+<div>
+<h4>Email Us</h4>
+<p>info@serenityyoga.com</p>
+</div>
+</div>
+<div class="contact-item">
+<i class="fas fa-clock"></i>
+<div>
+<h4>Studio Hours</h4>
+<p>Mon-Fri: 6AM-9PM<br/>Sat-Sun: 7AM-8PM</p>
+</div>
+</div>
+</div>
+<div class="contact-form">
+<h3>Get in Touch</h3>
+<form onsubmit="handleSubmit(event)">
+<div class="form-group">
+<label for="name">Your Name</label>
+<input id="name" placeholder="Enter your name" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="email">Email Address</label>
+<input id="email" placeholder="your@email.com" required="" type="email"/>
+</div>
+<div class="form-group">
+<label for="phone">Phone Number</label>
+<input id="phone" placeholder="(555) 123-4567" type="tel"/>
+</div>
+<div class="form-group">
+<label for="message">Message</label>
+<textarea id="message" placeholder="Tell us how we can help you..." required="" rows="5"></textarea>
+</div>
+<button class="btn-primary" type="submit">
+<span>Send Message</span>
+<svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20">
+<path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"></path>
+</svg>
+</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<footer style="text-align: center; padding: 20px; font-size: 14px;">
+<a href="#" style="text-decoration: none; color: inherit;">© 2026 Trademark</a>
+</footer>
+<div class="booking-modal" id="bookingModal">
+<div class="modal-content">
+<span class="close" onclick="closeModal()">×</span>
+<h3>Book Your Class</h3>
+<div class="booking-details">
+<p><strong>Class:</strong> <span id="bookingClass"></span></p>
+<p><strong>Time:</strong> <span id="bookingTime"></span></p>
+</div>
+<form onsubmit="confirmBooking(event)">
+<div class="form-group">
+<input id="bookingName" placeholder="Your Name" required="" type="text"/>
+</div>
+<div class="form-group">
+<input id="bookingEmail" placeholder="Your Email" required="" type="email"/>
+</div>
+<div class="form-group">
+<input id="bookingPhone" placeholder="Your Phone" required="" type="tel"/>
+</div>
+<button class="btn-primary" type="submit">Confirm Booking</button>
+</form>
+</div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

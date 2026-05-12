@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Edwin - Asistente Profesional</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Navegación */
+        nav {
+            background: #fff;
+            padding: 20px 50px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            gap: 40px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #c9a66b;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 100px 50px 50px;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8f4f8 100%);
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 10px;
+            box-shadow: 20px 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-weight: 300;
+            letter-spacing: 3px;
+        }
+
+        .hero-content h1 span {
+            font-weight: 600;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #25d366;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        /* Acerca de Section */
+        .about {
+            padding: 100px 50px;
+            background: #fff;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 60px;
+            font-weight: 300;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-content {
+            background: #e8f4f8;
+            padding: 50px;
+            border-radius: 20px;
+        }
+
+        .about-content h3 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .skill-tag {
+            background: #2c3e50;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        /* Proyectos Section */
+        .projects {
+            padding: 100px 50px;
+            background: #f8f9fa;
+        }
+
+        .projects-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-image {
+            height: 250px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+
+        .project-card:nth-child(2) .project-image {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .project-card:nth-child(3) .project-image {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .project-card:nth-child(4) .project-image {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+
+        .project-content {
+            padding: 30px;
+        }
+
+        .project-content h3 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .project-content p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .project-link {
+            color: #25d366;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Contacto Section */
+        .contact {
+            padding: 100px 50px;
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+        }
+
+        .contact-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .contact > p {
+            font-size: 1.2rem;
+            margin-bottom: 50px;
+            opacity: 0.9;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .contact-card {
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.15);
+        }
+
+        .contact-card i {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .contact-card a {
+            color: #25d366;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 20px;
+                font-size: 0.9rem;
+            }
+
+            .hero-container,
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-image img {
+                max-width: 100%;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html" style="position: fixed; top: 20px; left: 20px; z-index: 9999; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); color: white; padding: 10px 20px; border-radius: 30px; font-family: sans-serif; font-size: 12px; border: 1px solid rgba(255,255,255,0.2); text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onmouseover="this.style.background='rgba(0,255,0,0.2)'; this.style.borderColor='rgba(0,255,0,0.5)'" onmouseout="this.style.background='rgba(0,0,0,0.8)'; this.style.borderColor='rgba(255,255,255,0.2)'"><span>←</span> Back to Showcase</a>
+
+<!-- Navegación -->
+<nav>
+<ul>
+<li><a href="#inicio">Inicio</a></li>
+<li><a href="#acerca">Acerca de</a></li>
+<li><a href="#proyectos">Proyectos</a></li>
+<li><a href="#contacto">Contacto</a></li>
+</ul>
+</nav>
+<!-- Hero Section -->
+<section class="hero" id="inicio">
+<div class="hero-container">
+<div class="hero-image">
+<img alt="Perrito" loading="lazy" src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600"/>
+</div>
+<div class="hero-content">
+<h1>EDWIN</h1>
+<p>Asistente Ejecutiva Profesional con más de 10 años de experiencia ayudando a empresarios y ejecutivos a optimizar su tiempo y maximizar su productividad. Especializada en gestión administrativa, coordinación de agendas y atención al cliente de excelencia.</p>
+<a class="cta-button" href="https://wa.me/1234567890?text=Hola%20Edwin,%20me%20interesa%20tus%20servicios" target="_blank">
+<i class="fab fa-whatsapp"></i>
+                    Contáctame por WhatsApp
+                </a>
+</div>
+</div>
+</section>
+<!-- Acerca de Section -->
+<section class="about" id="acerca">
+<h2 class="section-title">Acerca de Mí</h2>
+<div class="about-container">
+<div class="about-content">
+<h3>Experiencia y Profesionalismo</h3>
+<p>Soy una asistente ejecutiva apasionada por ayudar a profesionales a alcanzar sus metas. Mi enfoque está en brindar un servicio personalizado, proactivo y discreto que se adapte a las necesidades específicas de cada cliente.</p>
+<p>A lo largo de mi carrera, he trabajado con ejecutivos de alto nivel, empresarios y equipos diversos, desarrollando habilidades excepcionales en organización, comunicación y resolución de problemas.</p>
+<div class="skills">
+<span class="skill-tag">Gestión de Agenda</span>
+<span class="skill-tag">Atención al Cliente</span>
+<span class="skill-tag">Organización de Eventos</span>
+<span class="skill-tag">Correspondencia</span>
+<span class="skill-tag">Gestión Documental</span>
+<span class="skill-tag">Inglés Avanzado</span>
+</div>
+</div>
+<div class="about-image">
+<img alt="Perrito trabajando" loading="lazy" src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?w=600"/>
+</div>
+</div>
+</section>
+<!-- Proyectos Section -->
+<section class="projects" id="proyectos">
+<h2 class="section-title">Proyectos Realizados</h2>
+<div class="projects-grid">
+<div class="project-card">
+<div class="project-image">
+<i class="fas fa-calendar-check"></i>
+</div>
+<div class="project-content">
+<h3>Coordinación Ejecutiva</h3>
+<p>Gestión integral de agenda y viajes para equipo directivo de empresa multinacional, optimizando tiempos y reduciendo costos operativos.</p>
+<a class="project-link" href="https://wa.me/1234567890?text=Hola%20Edwin,%20me%20interesa%20saber%20más%20sobre%20Coordinación%20Ejecutiva" target="_blank">
+<i class="fab fa-whatsapp"></i> Consultar
+                    </a>
+</div>
+</div>
+<div class="project-card">
+<div class="project-image">
+<i class="fas fa-users"></i>
+</div>
+<div class="project-content">
+<h3>Eventos Corporativos</h3>
+<p>Organización de conferencias, reuniones de directorio y eventos de networking para más de 500 participantes.</p>
+<a class="project-link" href="https://wa.me/1234567890?text=Hola%20Edwin,%20me%20interesa%20saber%20más%20sobre%20Eventos%20Corporativos" target="_blank">
+<i class="fab fa-whatsapp"></i> Consultar
+                    </a>
+</div>
+</div>
+<div class="project-card">
+<div class="project-image">
+<i class="fas fa-file-alt"></i>
+</div>
+<div class="project-content">
+<h3>Gestión Documental</h3>
+<p>Implementación de sistema de archivo digital y optimización de procesos administrativos, mejorando eficiencia en un 40%.</p>
+<a class="project-link" href="https://wa.me/1234567890?text=Hola%20Edwin,%20me%20interesa%20saber%20más%20sobre%20Gestión%20Documental" target="_blank">
+<i class="fab fa-whatsapp"></i> Consultar
+                    </a>
+</div>
+</div>
+<div class="project-card">
+<div class="project-image">
+<i class="fas fa-headset"></i>
+</div>
+<div class="project-content">
+<h3>Atención al Cliente VIP</h3>
+<p>Gestión de relaciones con clientes de alto perfil, asegurando experiencias excepcionales y fidelización.</p>
+<a class="project-link" href="https://wa.me/1234567890?text=Hola%20Edwin,%20me%20interesa%20saber%20más%20sobre%20Atención%20VIP" target="_blank">
+<i class="fab fa-whatsapp"></i> Consultar
+                    </a>
+</div>
+</div>
+</div>
+</section>
+<!-- Contacto Section -->
+<section class="contact" id="contacto">
+<div class="contact-container">
+<h2>¿Listo para trabajar juntos?</h2>
+<p>Contáctame y descubre cómo puedo ayudarte a optimizar tu tiempo y alcanzar tus objetivos profesionales.</p>
+<div class="contact-grid">
+<div class="contact-card">
+<i class="fab fa-whatsapp"></i>
+<h3>WhatsApp</h3>
+<p>Respuesta inmediata</p>
+<a href="https://wa.me/1234567890?text=Hola%20Edwin,%20me%20gustaría%20contratar%20tus%20servicios" target="_blank">
+<i class="fab fa-whatsapp"></i> Enviar mensaje
+                    </a>
+</div>
+<div class="contact-card">
+<i class="fas fa-envelope"></i>
+<h3>Email</h3>
+<p>debra.wilson@email.com</p>
+<a href="mailto:debra.wilson@email.com">
+<i class="fas fa-paper-plane"></i> Enviar email
+                    </a>
+</div>
+<div class="contact-card">
+<i class="fas fa-phone"></i>
+<h3>Teléfono</h3>
+<p>+1 (234) 567-890</p>
+<a href="tel:+1234567890">
+<i class="fas fa-phone"></i> Llamar ahora
+                    </a>
+</div>
+<div class="contact-card">
+<i class="fas fa-map-marker-alt"></i>
+<h3>Ubicación</h3>
+<p>Ciudad de México</p>
+<span style="color: #25d366; font-weight: 600;">Disponible remoto</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer style="text-align: center; padding: 20px; font-size: 14px;">
+<a href="#" style="text-decoration: none; color: inherit;">© 2026 Trademark</a>
+</footer>
+<!-- WhatsApp Float Button -->
+<a class="whatsapp-float" href="https://wa.me/1234567890?text=Hola%20Edwin,%20me%20interesan%20tus%20servicios" target="_blank" title="Contáctame por WhatsApp">
+<i class="fab fa-whatsapp"></i>
+</a>
+</body>
+</html>

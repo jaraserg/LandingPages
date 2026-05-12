@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>HELIO — Landing Page Selector</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&amp;family=Outfit:wght@300;500;800&amp;family=Space+Grotesk:wght@400;700&amp;display=swap" rel="stylesheet"/>
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #0A0A0A;
+            --surface: #141414;
+            --surface-elevated: #1A1A1A;
+            --border: #2A2A2A;
+            --text-primary: #FAFAFA;
+            --text-secondary: #888888;
+            --accent: #FFFFFF;
+            --font-heading: 'Outfit', sans-serif;
+            --font-display: 'Space Grotesk', sans-serif;
+            --font-body: 'DM Sans', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 72px;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 28px;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+        }
+
+        .logo span {
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        nav {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        nav a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--text-primary);
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 24px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.01) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .modern-title {
+            font-family: var(--font-display);
+            font-size: clamp(48px, 8vw, 96px);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.04em;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #fff 0%, #aaa 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .highlight {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-style: normal;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(0, 255, 100, 0.8);
+            background: none;
+            position: relative;
+            display: inline-block;
+            text-transform: lowercase;
+            padding: 0 10px;
+        }
+
+        .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 15px;
+            background: rgba(0, 255, 100, 0.2);
+            z-index: -1;
+            transform: skew(-15deg);
+        }
+
+        .hero-paragraphs {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 30px;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .hero-paragraphs p:first-child {
+            font-family: var(--font-heading);
+            font-size: 24px;
+            font-weight: 400;
+            color: var(--text-primary);
+            max-width: 700px;
+            line-height: 1.5;
+        }
+
+        .hero-paragraphs p:last-child {
+            font-family: var(--font-body);
+            font-size: 18px;
+            font-weight: 300;
+            color: var(--text-secondary);
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        .highlight-text {
+            color: #00ff00;
+            font-weight: 600;
+        }
+
+        .marquee-banner {
+            width: 100vw;
+            max-width: 100%;
+            overflow: hidden;
+            background: rgba(0, 255, 100, 0.03);
+            border-top: 1px solid rgba(0, 255, 100, 0.1);
+            border-bottom: 1px solid rgba(0, 255, 100, 0.1);
+            padding: 14px 0;
+            margin-bottom: 60px;
+            position: relative;
+            transform: rotate(-1deg) scale(1.02);
+            backdrop-filter: blur(2px);
+            z-index: 10;
+        }
+
+        .marquee-content {
+            display: flex;
+            width: max-content;
+            animation: marquee 60s linear infinite;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .marquee-content span {
+            font-family: var(--font-display);
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            white-space: nowrap;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-secondary);
+            font-size: 12px;
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-8px); }
+            60% { transform: translateX(-50%) translateY(-4px); }
+        }
+
+        /* Main Layout */
+        .main-layout-wrapper {
+            display: flex;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 24px 120px;
+            gap: 40px;
+            position: relative;
+            z-index: 50;
+        }
+
+        /* Filter Sidebar */
+        .filter-sidebar {
+            width: 280px;
+            flex-shrink: 0;
+            position: sticky;
+            top: 100px;
+            max-height: calc(100vh - 120px);
+            overflow-y: auto;
+            padding-right: 20px;
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            z-index: 10;
+        }
+
+        .filter-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .filter-header h2 {
+            font-family: var(--font-heading);
+            font-size: 28px;
+            font-weight: 500;
+        }
+
+        .clear-filters {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .clear-filters:hover { color: #ff6a00; }
+
+        .filter-groups {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .filter-label {
+            font-family: var(--font-body);
+            font-size: 14px;
+            color: var(--text-primary);
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+
+        .filter-options {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .filter-pill {
+            text-align: left;
+            padding: 10px 16px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            color: var(--text-secondary);
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .filter-pill:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+            transform: translateX(4px);
+        }
+
+        .filter-pill.active {
+            background: rgba(0, 255, 0, 0.1);
+            color: #00ff00;
+            border-color: #00ff00;
+        }
+
+        /* Gallery Content */
+        .gallery-content {
+            flex-grow: 1;
+            min-width: 0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 32px;
+        }
+
+        .template-card {
+            background-color: transparent;
+            border-radius: 12px;
+            perspective: 1000px;
+            cursor: pointer;
+            height: 420px;
+            animation: fadeInUp 0.5s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+        }
+
+        .template-card:hover .card-inner {
+            transform: rotateY(180deg);
+            border-color: #3A3A3A;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-front { background-color: var(--surface); color: var(--text-primary); }
+        .card-back {
+            background-color: var(--surface-elevated);
+            color: var(--text-primary);
+            transform: rotateY(180deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 32px;
+            text-align: center;
+        }
+
+        .card-back h4 { font-family: var(--font-heading); font-size: 24px; margin-bottom: 12px; color: #ff6a00; }
+        .card-back p { color: var(--text-secondary); font-size: 14px; margin-bottom: 24px; }
+        .card-back .cost { font-family: var(--font-heading); font-size: 28px; color: #00ff00; margin-bottom: 20px; }
+        .card-back .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            background: var(--text-primary);
+            color: var(--bg);
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .template-preview {
+            height: 240px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .template-preview::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 60%, var(--surface) 100%);
+        }
+
+        .template-info {
+            padding: 20px;
+            text-align: left;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .template-name { font-family: var(--font-heading); font-size: 20px; margin-bottom: 12px; }
+        .template-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+        .template-tag {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 4px;
+            background: var(--surface-elevated);
+            color: var(--text-secondary);
+        }
+
+        /* Neon Typewriter */
+        .neon-container { font-family: var(--font-heading); font-size: 38px; font-style: italic; display: flex; gap: 10px; }
+        .neon-word { color: transparent; position: relative; }
+        .neon-word::after {
+            content: '|';
+            position: absolute;
+            right: -12px;
+            color: #fff;
+            animation: blink 0.7s infinite;
+        }
+        .neon-constant {
+            color: transparent;
+            -webkit-text-stroke: 1.5px #ff6a00;
+            text-shadow: 0 0 5px #ff6a00, 0 0 10px #ff6a00;
+            animation: pulse-neon 2s infinite alternate;
+        }
+
+        @keyframes pulse-neon {
+            0% { opacity: 0.8; }
+            100% { opacity: 1; text-shadow: 0 0 10px #ff6a00, 0 0 20px #ff6a00; }
+        }
+
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+        #bg-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
+
+        .search-container { display: flex; align-items: center; position: relative; border-radius: 20px; transition: all 0.3s ease; }
+        .search-container.active { background: var(--surface); border: 1px solid #00ff00; }
+        .search-input {
+            width: 0; opacity: 0; border: none; background: transparent; color: #00ff00;
+            font-size: 14px; transition: all 0.3s ease; outline: none;
+        }
+        .search-container.active .search-input { width: 150px; opacity: 1; padding: 8px 12px; }
+        .search-icon { color: #00ff00; padding: 8px; cursor: pointer; }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(8px);
+            z-index: 200; display: flex; align-items: center; justify-content: center;
+            opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+        }
+        .modal-overlay.active { opacity: 1; pointer-events: auto; }
+        .contact-modal {
+            background: var(--surface-elevated); border: 1px solid var(--border);
+            padding: 40px; border-radius: 16px; text-align: center; max-width: 400px;
+        }
+        .social-links { display: flex; flex-direction: column; gap: 12px; }
+        .social-link {
+            padding: 12px; background: var(--surface); border-radius: 8px;
+            font-size: 14px; text-transform: uppercase; transition: all 0.3s ease;
+        }
+        .social-link:hover { background: #fff; color: #000; }
+
+        .no-results { grid-column: 1 / -1; text-align: center; padding: 80px; display: none; }
+        .no-results.visible { display: block; }
+
+        .hidden { display: none !important; }
+
+        @media (max-width: 900px) {
+            .main-layout-wrapper { flex-direction: column; }
+            .filter-sidebar { width: 100%; position: static; border-right: none; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .modern-title { font-size: 48px; }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <header>
+        <div class="container">
+            <a class="logo" href="#">HELIO<span>.</span></a>
+            <div class="neon-container">
+                <span class="neon-word" id="typewriter-text"></span>
+                <span class="neon-constant">Yourself</span>
+            </div>
+            <nav>
+                <div class="search-container" id="searchContainer">
+                    <input class="search-input" id="searchInput" placeholder="Search..." type="text"/>
+                    <div class="search-icon" id="searchBtn">
+                        <svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20">
+                            <path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </div>
+                </div>
+                <a href="#" id="openContact" style="display: flex; align-items: center; color: var(--text-secondary);">
+                    <svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20">
+                        <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1 class="modern-title">Your Next <br/>Chapter <span class="highlight">Starts Here</span></h1>
+        <div class="hero-paragraphs">
+            <p>Curated Landing Pages <span class="highlight-text">Adapted to your Identity</span>.</p>
+            <p>Find the <span class="highlight-text">Perfect Fit</span> for your next big move.</p>
+        </div>
+        <div class="marquee-banner">
+            <div class="marquee-content">
+                <span>🚀 Modern Aesthetics</span> <span>•</span>
+                <span>📈 SEO Integrated</span> <span>•</span>
+                <span>⚡ High Performance</span> <span>•</span>
+                <span>💼 Professional Grade</span> <span>•</span>
+                <span>🎯 Conversion Focused</span> <span>•</span>
+                <span>🚀 Modern Aesthetics</span> <span>•</span>
+                <span>📈 SEO Integrated</span>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Explore</span>
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M19 14l-7 7m0 0l-7-7m7 7V3" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </div>
+    </section>
+
+    <div class="main-layout-wrapper">
+        <aside class="filter-sidebar">
+            <div class="filter-header">
+                <h2>Collections</h2>
+                <button class="clear-filters hidden" id="clearFilters">Clear</button>
+            </div>
+            <div class="filter-groups">
+                <div class="filter-group">
+                    <span class="filter-label">Profile</span>
+                    <div class="filter-options" data-category="profile">
+                        <button class="filter-pill" data-value="cv">Personal CV</button>
+                        <button class="filter-pill" data-value="business">Business / Portfolio</button>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <span class="filter-label">Role</span>
+                    <div class="filter-options" data-category="role">
+                        <button class="filter-pill" data-value="developer">Developer</button>
+                        <button class="filter-pill" data-value="designer">Designer</button>
+                        <button class="filter-pill" data-value="artist">Artist</button>
+                        <button class="filter-pill" data-value="creator">Creator</button>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <section class="gallery-content">
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Cards Injected via JS -->
+            </div>
+            <div class="no-results" id="noResults">
+                <h3>No templates match your search</h3>
+                <p>Try adjusting your filters or clear them to see all options.</p>
+            </div>
+        </section>
+    </div>
+
+    <div class="modal-overlay" id="contactModal">
+        <div class="contact-modal">
+            <h3>Connect with us</h3>
+            <div class="social-links">
+                <a class="social-link" href="#">WhatsApp</a>
+                <a class="social-link" href="#">LinkedIn</a>
+                <a class="social-link" href="#">Twitter</a>
+            </div>
+            <button class="modal-close" id="closeContact" style="margin-top: 20px; text-decoration: underline; background: none; border: none; color: #888; cursor: pointer;">Close</button>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 60px 20px; border-top: 1px solid var(--border);">
+        <p style="color: var(--text-secondary); font-size: 13px;">© 2026 HELIO Showcase. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const templates = [
+            { id: 'activelife', name: 'Active Life', desc: 'Wellness and natural health landing page for content creators.', profile: 'cv', role: 'creator', img: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600', cost: '$25' },
+            { id: 'Architect', name: 'Architect Studio', desc: 'Sleek architectural portfolio for firms and solo architects.', profile: 'business', role: 'designer', img: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600', cost: '$25' },
+            { id: 'Art', name: 'Digital Artist', desc: 'Immersive gallery for digital artists and visual creators.', profile: 'cv', role: 'artist', img: 'https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=600', cost: '$25' },
+            { id: 'Barber', name: 'Blade & Co.', desc: 'Premium barber shop and grooming services template.', profile: 'business', role: 'freelancer', img: 'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=600', cost: '$25' },
+            { id: 'Cooking', name: 'Chef Kitchen', desc: 'Personalized culinary portfolio for professional chefs.', profile: 'business', role: 'creator', img: 'https://images.unsplash.com/photo-1556910103-1c02745a872f?w=600', cost: '$25' },
+            { id: 'elsolarbello', name: 'Creative Technologist', desc: 'Futuristic portfolio for tech enthusiasts and developers.', profile: 'cv', role: 'developer', img: 'https://images.unsplash.com/photo-1592861956120-e524fc739696?w=600', cost: '$25' },
+            { id: 'ExecutiveAssistant', name: 'Executive Assistant', desc: 'High-level CV for senior executive support professionals.', profile: 'cv', role: 'freelancer', img: 'https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=600', cost: '$25' },
+            { id: 'FashionDesigner', name: 'Fashion Designer', desc: 'Vibrant portfolio for fashion designers and stylists.', profile: 'cv', role: 'designer', img: 'https://images.unsplash.com/photo-1539109132382-361bd575567e?w=600', cost: '$25' },
+            { id: 'GraphicDesigner', name: 'Graphic Designer', desc: 'Visual-focused portfolio for branding and design experts.', profile: 'cv', role: 'designer', img: 'https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?w=600', cost: '$25' },
+            { id: 'industrial', name: 'Industrial Engineer', desc: '3D transformer-style portfolio for industrial systems.', profile: 'cv', role: 'engineer', img: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600', cost: '$25' },
+            { id: 'LifeStyle', name: 'Vibrant Life', desc: 'Lifestyle community template for influencers.', profile: 'cv', role: 'creator', img: 'https://images.unsplash.com/photo-1511988617509-a5708af4e15c?w=600', cost: '$25' },
+            { id: 'Magazine', name: 'MDE Live', desc: 'Dynamic news and magazine layout for digital publishing.', profile: 'business', role: 'creator', img: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=600', cost: '$25' },
+            { id: 'Manager', name: 'Manager Leadership', desc: 'Innovative business leadership profile.', profile: 'cv', role: 'ceo', img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600', cost: '$25' },
+            { id: 'Medical', name: 'Medical Professional', desc: 'Clean and trustworthy site for healthcare providers.', profile: 'cv', role: 'doctor', img: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=600', cost: '$25' },
+            { id: 'Nurse', name: 'Registered Nurse', desc: 'Professional CV for nursing specialists.', profile: 'cv', role: 'nurse', img: 'https://images.unsplash.com/photo-1584515933487-779824d29309?w=600', cost: '$25' },
+            { id: 'OpticalConsultant', name: 'Vision Pro', desc: 'Modern landing for optical clinics.', profile: 'business', role: 'freelancer', img: 'https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=600', cost: '$25' },
+            { id: 'photograph', name: 'Studio Noir', desc: 'Massive visual portfolio for photographers.', profile: 'cv', role: 'artist', img: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=600', cost: '$25' },
+            { id: 'Portafolio', name: 'Minimal Portfolio', desc: 'Clean creative professional portfolio.', profile: 'cv', role: 'designer', img: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=600', cost: '$25' },
+            { id: 'psicq', name: 'Senior UI/UX', desc: 'Deep-dark themed portfolio for UI designers.', profile: 'business', role: 'designer', img: 'https://images.unsplash.com/photo-155066931-4365d14bab8c?w=600', cost: '$25' },
+            { id: 'RPG', name: 'City Explorer', desc: 'Gamified RPG-style social map profile.', profile: 'cv', role: 'developer', img: 'https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=600', cost: '$25' },
+            { id: 'Secretary', name: 'Professional Assistant', desc: 'Organized layout for admin roles.', profile: 'cv', role: 'freelancer', img: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=600', cost: '$25' },
+            { id: 'SeniorArchitect', name: 'Senior Architect', desc: 'High-level architectural web profile.', profile: 'business', role: 'designer', img: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=600', cost: '$25' },
+            { id: 'SergioJaramillo', name: 'Interactive Art & IA', desc: 'Merging AI and interactive art.', profile: 'business', role: 'artist', img: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600', cost: '$25' },
+            { id: 'SolarPanel', name: 'Energy Engineer', desc: 'Renewable energy services landing.', profile: 'business', role: 'engineer', img: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600', cost: '$25' },
+            { id: 'Store', name: 'Digital Storefront', desc: 'Optimized product catalog.', profile: 'business', role: 'ceo', img: 'https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=600', cost: '$25' },
+            { id: 'SystemEng', name: 'Systems Engineer', desc: 'Robust tech CV for software experts.', profile: 'cv', role: 'developer', img: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600', cost: '$25' },
+            { id: 'Teach', name: 'English Teacher', desc: 'Educational landing for tutors.', profile: 'cv', role: 'freelancer', img: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600', cost: '$25' },
+            { id: 'Yoga', name: 'Serenity Yoga', desc: 'Calm design for yoga instructors.', profile: 'business', role: 'freelancer', img: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600', cost: '$25' },
+            { id: 'Presenta', name: 'Presenta Corp', desc: 'Clean corporate landing.', profile: 'business', role: 'ceo', img: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600', cost: '$25' }
+        ];
+
+        const galleryGrid = document.getElementById('galleryGrid');
+        const filterPills = document.querySelectorAll('.filter-pill');
+        const noResults = document.getElementById('noResults');
+        const clearBtn = document.getElementById('clearFilters');
+        
+        let activeFilters = { profile: [], role: [] };
+
+        function renderTemplates() {
+            galleryGrid.innerHTML = '';
+            const filtered = templates.filter(t => {
+                const matchesProfile = activeFilters.profile.length === 0 || activeFilters.profile.includes(t.profile);
+                const matchesRole = activeFilters.role.length === 0 || activeFilters.role.includes(t.role);
+                return matchesProfile && matchesRole;
+            });
+
+            filtered.forEach(t => {
+                const card = document.createElement('div');
+                card.className = 'template-card';
+                card.dataset.profile = t.profile;
+                card.dataset.role = t.role;
+                card.innerHTML = `
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="template-preview" style="background-image: url('${t.img}')"></div>
+                            <div class="template-info">
+                                <h3 class="template-name">${t.name}</h3>
+                                <div class="template-tags">
+                                    <span class="template-tag">${t.profile === 'cv' ? 'Personal' : 'Business'}</span>
+                                    <span class="template-tag">${t.role}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h4>${t.name}</h4>
+                            <p>${t.desc}</p>
+                            <div class="cost">${t.cost} <span style="font-size: 14px; color: #888;">(100k)</span></div>
+                            <a href="./${t.id}/index.html" class="btn" target="_blank">View Live Demo</a>
+                        </div>
+                    </div>
+                `;
+                galleryGrid.appendChild(card);
+            });
+            noResults.classList.toggle('visible', filtered.length === 0);
+        }
+
+        filterPills.forEach(pill => {
+            pill.addEventListener('click', () => {
+                const category = pill.parentElement.dataset.category;
+                const value = pill.dataset.value;
+                if (activeFilters[category].includes(value)) {
+                    activeFilters[category] = activeFilters[category].filter(v => v !== value);
+                    pill.classList.remove('active');
+                } else {
+                    activeFilters[category].push(value);
+                    pill.classList.add('active');
+                }
+                clearBtn.classList.toggle('hidden', activeFilters.profile.length === 0 && activeFilters.role.length === 0);
+                renderTemplates();
+            });
+        });
+
+        clearBtn.addEventListener('click', () => {
+            activeFilters = { profile: [], role: [] };
+            filterPills.forEach(p => p.classList.remove('active'));
+            clearBtn.classList.add('hidden');
+            renderTemplates();
+        });
+
+        // Search Logic
+        const searchInput = document.getElementById('searchInput');
+        const searchContainer = document.getElementById('searchContainer');
+        const searchBtn = document.getElementById('searchBtn');
+
+        searchBtn.addEventListener('click', () => {
+            searchContainer.classList.toggle('active');
+            if (searchContainer.classList.contains('active')) searchInput.focus();
+        });
+
+        searchInput.addEventListener('input', (e) => {
+            const val = e.target.value.toLowerCase();
+            document.querySelectorAll('.template-card').forEach(card => {
+                const title = card.querySelector('.template-name').textContent.toLowerCase();
+                card.classList.toggle('hidden', !title.includes(val));
+            });
+        });
+
+        // Contact Modal
+        const contactModal = document.getElementById('contactModal');
+        document.getElementById('openContact').addEventListener('click', (e) => { e.preventDefault(); contactModal.classList.add('active'); });
+        document.getElementById('closeContact').addEventListener('click', () => contactModal.classList.remove('active'));
+
+        // Background Animation (Chemical Mixes)
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let width, height, particles = [];
+
+        function resize() { width = canvas.width = window.innerWidth; height = canvas.height = window.innerHeight; }
+        window.addEventListener('resize', resize);
+        resize();
+
+        for (let i = 0; i < 60; i++) {
+            particles.push({
+                x: Math.random() * width, y: Math.random() * height,
+                vx: (Math.random() - 0.5) * 0.4, vy: (Math.random() - 0.5) * 0.4,
+                size: Math.random() * 2 + 1,
+                color: Math.random() > 0.5 ? '#00ff00' : '#ff6a00'
+            });
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            ctx.lineWidth = 0.5;
+            particles.forEach((p, i) => {
+                p.x += p.vx; p.y += p.vy;
+                if (p.x < 0 || p.x > width) p.vx *= -1;
+                if (p.y < 0 || p.y > height) p.vy *= -1;
+                ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2); ctx.fillStyle = p.color; ctx.fill();
+                for (let j = i + 1; j < particles.length; j++) {
+                    const p2 = particles[j];
+                    const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+                    if (dist < 150) {
+                        ctx.beginPath(); ctx.strokeStyle = `rgba(0, 255, 0, ${1 - dist / 150})`;
+                        ctx.moveTo(p.x, p.y); ctx.lineTo(p2.x, p2.y); ctx.stroke();
+                    }
+                }
+            });
+            requestAnimationFrame(animate);
+        }
+        animate();
+
+        // Typewriter Effect
+        const words = ['Create', 'Design', 'Impact', 'Brand'];
+        let wordIdx = 0, charIdx = 0, isDeleting = false;
+        const typewriter = document.getElementById('typewriter-text');
+
+        function type() {
+            const current = words[wordIdx];
+            if (isDeleting) {
+                typewriter.textContent = current.substring(0, charIdx - 1);
+                charIdx--;
+            } else {
+                typewriter.textContent = current.substring(0, charIdx + 1);
+                charIdx++;
+            }
+
+            let speed = isDeleting ? 100 : 200;
+            if (!isDeleting && charIdx === current.length) { speed = 2000; isDeleting = true; }
+            else if (isDeleting && charIdx === 0) { isDeleting = false; wordIdx = (wordIdx + 1) % words.length; speed = 500; }
+            setTimeout(type, speed);
+        }
+        type();
+        renderTemplates();
+    </script>
+</body>
+</html>

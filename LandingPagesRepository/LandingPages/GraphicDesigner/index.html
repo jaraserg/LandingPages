@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniela Strauss - Graphic Designer</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <a href="../index.html" style="position: fixed; top: 20px; left: 20px; z-index: 9999; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); color: white; padding: 10px 20px; border-radius: 30px; font-family: sans-serif; font-size: 12px; border: 1px solid rgba(255,255,255,0.2); text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onmouseover="this.style.background='rgba(0,255,0,0.2)'; this.style.borderColor='rgba(0,255,0,0.5)'" onmouseout="this.style.background='rgba(0,0,0,0.8)'; this.style.borderColor='rgba(255,255,255,0.2)'"><span>←</span> Back to Showcase</a>
+
+
+    <div class="page-wrapper">
+        <!-- Floating Contact Area -->
+        <div class="fab-container">
+            <button class="fab-main" id="fab-main" aria-label="Contact Links">
+                <i class="fa-solid fa-comment-dots"></i>
+            </button>
+            <div class="fab-links" id="fab-links">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="fab-icon bg-fb"><i
+                        class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="fab-icon bg-ig"><i
+                        class="fa-brands fa-instagram"></i></a>
+                <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" class="fab-icon bg-wa"><i
+                        class="fa-brands fa-whatsapp"></i></a>
+                <a href="mailto:email@example.com" target="_blank" rel="noopener noreferrer"
+                    class="fab-icon bg-email"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+
+        <!-- Main Layout Container -->
+        <main class="main-layout">
+
+            <!-- Left Side Area (Pink block, Square, Name) -->
+            <section class="left-section">
+                <!-- Decorative pink top-left block with dot pattern overlay -->
+                <div class="decoration-box">
+                    <div class="dot-grid"></div>
+                </div>
+
+                <!-- Big Square container for Hero Image and specific contents -->
+                <div class="big-square" id="big-square">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Daniela Strauss - Graphic Designer" class="hero-image active" id="hero-img">
+
+                    <!-- Content sections that replace the image -->
+                    <div class="content-panel" id="about-me">
+                        <h2>About Me</h2>
+                        <p>Hello! I am a passionate Graphic Designer with an eye for vibrant aesthetics and functional
+                            design. I strive to create visually stunning layouts that communicate messages effectively
+                            and beautifully.</p>
+                    </div>
+
+                    <div class="content-panel" id="education">
+                        <h2>Education</h2>
+                        <ul>
+                            <li><strong>BA in Graphic Design</strong><br>University of Design Arts (2018 - 2022)</li>
+                            <li><strong>Certification in UI/UX</strong><br>Design Academy (2023)</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-panel" id="expertise">
+                        <h2>Expertise</h2>
+                        <p>My expertise lies in branding, editorial design, and web UI. I love transforming abstract
+                            ideas into concrete visual identities that resonate with modern audiences.</p>
+                    </div>
+
+                    <div class="content-panel" id="skills">
+                        <h2>Skills</h2>
+                        <div class="skills-list">
+                            <span>Adobe Illustrator</span>
+                            <span>Photoshop</span>
+                            <span>Figma</span>
+                            <span>InDesign</span>
+                            <span>Typography</span>
+                            <span>Color Theory</span>
+                        </div>
+                    </div>
+
+                    <div class="content-panel" id="job-history">
+                        <h2>Job History</h2>
+                        <ul>
+                            <li><strong>Senior Graphic Designer</strong><br>Creative Studio X (2022 - Present)</li>
+                            <li><strong>Freelance Designer</strong><br>Self-Employed (2020 - 2022)</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Name and Title -->
+                <div class="title-container">
+                    <h1 class="profile-name">Daniela Strauss</h1>
+                    <h2 class="profile-role">Graphic Designer</h2>
+                </div>
+            </section>
+
+            <!-- Right Side Area (Blob & Navigation) -->
+            <section class="right-section">
+                <div class="blob-menu">
+                    <nav class="nav-links">
+                        <ul>
+                            <li><a href="#" class="nav-item focus-link" data-target="hero-img">Home</a></li>
+                            <li><a href="#" class="nav-item" data-target="about-me">About me</a></li>
+                            <li><a href="#" class="nav-item" data-target="education">Education</a></li>
+                            <li><a href="#" class="nav-item" data-target="expertise">Expertise</a></li>
+                            <li><a href="#" class="nav-item" data-target="skills">Skills</a></li>
+                            <li><a href="#" class="nav-item" data-target="job-history">Job history</a></li>
+
+                        </ul>
+                    </nav>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

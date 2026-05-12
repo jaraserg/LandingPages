@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Blade &amp; Co. | Barbería Premium</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="styles.css" rel="stylesheet"/>
+</head>
+<body>
+    <a href="../index.html" style="position: fixed; top: 20px; left: 20px; z-index: 9999; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); color: white; padding: 10px 20px; border-radius: 30px; font-family: sans-serif; font-size: 12px; border: 1px solid rgba(255,255,255,0.2); text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onmouseover="this.style.background='rgba(0,255,0,0.2)'; this.style.borderColor='rgba(0,255,0,0.5)'" onmouseout="this.style.background='rgba(0,0,0,0.8)'; this.style.borderColor='rgba(255,255,255,0.2)'"><span>←</span> Back to Showcase</a>
+
+<!-- Animated Background -->
+<div class="bg-animation">
+<div class="bg-gradient"></div>
+<div class="bg-particles"></div>
+</div>
+<!-- Navigation -->
+<nav class="navbar">
+<div class="nav-brand">
+<span class="brand-main">BLADE</span>
+<span class="brand-amp">&amp;</span>
+<span class="brand-main">CO.</span>
+</div>
+<div class="nav-links">
+<a class="nav-link active" href="#section-hero">Nuestra Historia</a>
+<a class="nav-link" href="#section-services">Servicios</a>
+<a class="nav-link" href="#section-anatomy">Guía de Estilo</a>
+<a class="nav-link" href="#section-gallery">Galería</a>
+<a class="nav-link" href="#section-barbers">Barberos</a>
+</div>
+<a class="nav-cta" href="#section-contact">Reservar</a>
+<button class="mobile-menu-btn">
+<span></span>
+<span></span>
+<span></span>
+</button>
+</nav>
+<!-- Mobile Menu -->
+<div class="mobile-menu">
+<a class="mobile-link" href="#section-hero">Nuestra Historia</a>
+<a class="mobile-link" href="#section-services">Servicios</a>
+<a class="mobile-link" href="#section-anatomy">Guía de Estilo</a>
+<a class="mobile-link" href="#section-gallery">Galería</a>
+<a class="mobile-link" href="#section-barbers">Barberos</a>
+<a class="mobile-cta" href="#section-contact">Reservar</a>
+</div>
+<!-- Horizontal Scroll Container -->
+<main class="horizontal-scroll-container">
+<!-- Section 1: Hero -->
+<section class="section hero-section" id="section-hero">
+<div class="section-content">
+<div class="hero-text">
+<div class="tagline">
+<span class="line"></span>
+<span>Desde 2018 — Barbería Premium</span>
+</div>
+<h1 class="hero-title">
+<span class="title-line">Donde el Arte</span>
+<span class="title-line">Cruza con la <span class="accent">&amp;</span> Tradición</span>
+</h1>
+<p class="hero-description">
+                        Entra en un mundo donde cada corte cuenta una historia. Nuestros maestros barberos combinan técnicas ancestrales con arte contemporáneo para crear tu look único.
+                    </p>
+<div class="hero-buttons">
+<button class="btn btn-primary">
+<span>Reserva tu Silla</span>
+<svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20">
+<path d="M5 12h14M12 5l7 7-7 7"></path>
+</svg>
+</button>
+<button class="btn btn-secondary">
+<span>Explorar Servicios</span>
+<svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16">
+<path d="M5 12h14M12 5l7 7-7 7"></path>
+</svg>
+</button>
+</div>
+</div>
+<div class="hero-image">
+<div class="image-frame">
+<img alt="Herramientas de Barbería Premium" loading="eager" src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=800&amp;q=80"/>
+<div class="image-overlay"></div>
+</div>
+</div>
+</div>
+<div class="scroll-indicator">
+<span>Desliza para explorar</span>
+<div class="scroll-arrow">
+<svg fill="none" height="24" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="24">
+<path d="M5 12h14M12 5l7 7-7 7"></path>
+</svg>
+</div>
+</div>
+</section>
+<!-- Section 2: Services -->
+<section class="section services-section" id="section-services">
+<div class="section-content">
+<div class="section-header">
+<span class="section-number">01</span>
+<h2 class="section-title">Nuestros Servicios</h2>
+<p class="section-subtitle">Arreglo de precisión para el caballero moderno</p>
+</div>
+<div class="services-grid">
+<div class="service-card">
+<div class="service-icon">
+<svg fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 48 48">
+<circle cx="24" cy="16" r="10"></circle>
+<path d="M8 44c0-8.837 7.163-16 16-16s16 7.163 16 16"></path>
+</svg>
+</div>
+<h3>Corte Clásico</h3>
+<p>Corte de precisión atemporal adaptado a tu estilo y forma del rostro</p>
+<span class="service-price">$35</span>
+</div>
+<div class="service-card featured">
+<div class="service-badge">Popular</div>
+<div class="service-icon">
+<svg fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 48 48">
+<path d="M8 40V20c0-8.837 7.163-16 16-16s16 7.163 16 16v20"></path>
+<path d="M8 20h32M12 28h24"></path>
+</svg>
+</div>
+<h3>Afeitado Real</h3>
+<p>Afeitado tradicional con toalla caliente y productos premium</p>
+<span class="service-price">$45</span>
+</div>
+<div class="service-card">
+<div class="service-icon">
+<svg fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 48 48">
+<path d="M24 8v32M8 24h32"></path>
+<circle cx="24" cy="24" r="6"></circle>
+</svg>
+</div>
+<h3>Esculpido de Barba</h3>
+<p>Barba recortada y moldeada por expertos para un look pulido</p>
+<span class="service-price">$30</span>
+</div>
+<div class="service-card">
+<div class="service-icon">
+<svg fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 48 48">
+<path d="M12 12l24 24M36 12L12 36"></path>
+<circle cx="24" cy="24" r="8"></circle>
+</svg>
+</div>
+<h3>El Caballero</h3>
+<p>Paquete completo: corte, afeitado y tratamiento facial</p>
+<span class="service-price">$75</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Face Shape Guide -->
+<section class="section anatomy-section" id="section-anatomy">
+<div class="section-content">
+<div class="anatomy-header">
+<span class="section-number">02</span>
+<h2 class="section-title">Encuentra tu Estilo</h2>
+<p class="section-subtitle">Descubre el corte perfecto según tu anatomía facial</p>
+</div>
+<div class="anatomy-guide">
+<div class="face-shapes-nav">
+<button class="shape-btn active" data-shape="oval">
+<span class="shape-icon">⬭</span>
+<span class="shape-name">Ovalado</span>
+</button>
+<button class="shape-btn" data-shape="round">
+<span class="shape-icon">⬭</span>
+<span class="shape-name">Redondo</span>
+</button>
+<button class="shape-btn" data-shape="square">
+<span class="shape-icon">⬭</span>
+<span class="shape-name">Cuadrado</span>
+</button>
+<button class="shape-btn" data-shape="heart">
+<span class="shape-icon">▽</span>
+<span class="shape-name">Corazón</span>
+</button>
+<button class="shape-btn" data-shape="diamond">
+<span class="shape-icon">◊</span>
+<span class="shape-name">Diamante</span>
+</button>
+<button class="shape-btn" data-shape="oblong">
+<span class="shape-icon">▭</span>
+<span class="shape-name">Alargado</span>
+</button>
+</div>
+<div class="face-shape-display">
+<div class="shape-content active" data-shape="oval">
+<div class="shape-image">
+<img alt="Pompadour Clásico - Estilo para rostro ovalado" loading="lazy" src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=600&amp;q=80"/>
+</div>
+<div class="shape-info">
+<h3>Rostro Ovalado</h3>
+<p class="shape-desc">La forma de rostro más versátil. Tu frente es ligeramente más ancha que tu barbilla, con proporciones equilibradas. Esta forma permite casi cualquier estilo de corte.</p>
+<div class="recommendations">
+<h4>Estilos Recomendados:</h4>
+<ul>
+<li>Pompadour Clásico</li>
+<li>Undercut Hacia Atrás</li>
+<li>Raya a un Lado</li>
+<li>Crop Texturizado</li>
+</ul>
+</div>
+<div class="avoid">
+<h4>Evitar:</h4>
+<p>Flequillos pesados que cubran la frente. Cortes muy largos que alarguen visualmente el rostro.</p>
+</div>
+</div>
+</div>
+<div class="shape-content" data-shape="round">
+<div class="shape-image">
+<img alt="High Fade con volumen - Estilo para rostro redondo" loading="lazy" src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=600&amp;q=80"/>
+</div>
+<div class="shape-info">
+<h3>Rostro Redondo</h3>
+<p class="shape-desc">Tu rostro tiene curvas suaves con anchura y longitud similares. Los pómulos son el punto más ancho. El objetivo es alargar visualmente el rostro y crear ángulos.</p>
+<div class="recommendations">
+<h4>Estilos Recomendados:</h4>
+<ul>
+<li>High Fade con Volumen Arriba</li>
+<li>Quiff Alto</li>
+<li>Flequillo Angular</li>
+<li>Undercut Hacia un Lado</li>
+</ul>
+</div>
+<div class="avoid">
+<h4>Evitar:</h4>
+<p>Estilos redondeados completos que añaden anchura. Cortes simétricos que acentúan la redondez. Evita el cabello a la altura de las mejillas.</p>
+</div>
+</div>
+</div>
+<div class="shape-content" data-shape="square">
+<div class="shape-image">
+<img alt="Crew Cut Texturizado - Estilo para rostro cuadrado" loading="lazy" src="https://images.unsplash.com/photo-1634302086887-13b5281d03f7?w=600&amp;q=80"/>
+</div>
+<div class="shape-info">
+<h3>Rostro Cuadrado</h3>
+<p class="shape-desc">Mandíbula fuerte con frente y mandíbula de similar anchura. Tienes rasgos angulares y masculinos. El objetivo es suavizar los ángulos fuertes.</p>
+<div class="recommendations">
+<h4>Estilos Recomendados:</h4>
+<ul>
+<li>Crew Cut Clásico</li>
+<li>Raya Clásica a un Lado</li>
+<li>Buzz Cut</li>
+<li>French Crop Texturizado</li>
+</ul>
+</div>
+<div class="avoid">
+<h4>Evitar:</h4>
+<p>Líneas muy duras que exageren la mandíbula. Cortes con mucho volumen en los lados. Flequillos rectos que acentúen la forma cuadrada.</p>
+</div>
+</div>
+</div>
+<div class="shape-content" data-shape="heart">
+<div class="shape-image">
+<img alt="Flequillo texturizado - Estilo para rostro corazón" loading="lazy" src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=600&amp;q=80"/>
+</div>
+<div class="shape-info">
+<h3>Rostro Corazón</h3>
+<p class="shape-desc">Frente ancha que se estrecha hacia la barbilla. A menudo con una entradas pronunciadas en el cabello. El objetivo es equilibrar la frente ancha con la barbilla estrecha.</p>
+<div class="recommendations">
+<h4>Estilos Recomendados:</h4>
+<ul>
+<li>Flequillo Largo Texturizado</li>
+<li>Medio Largo con Capas</li>
+<li>Quiff Texturizado</li>
+<li>Flequillo Lateral Despeinado</li>
+</ul>
+</div>
+<div class="avoid">
+<h4>Evitar:</h4>
+<p>Cortes muy cortos que expongan demasiado la frente. Estilos con mucho volumen en la coronilla. Flequillos muy cortos o rectos.</p>
+</div>
+</div>
+</div>
+<div class="shape-content" data-shape="diamond">
+<div class="shape-image">
+<img alt="Corte texturizado - Estilo para rostro diamante" loading="lazy" src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=600&amp;q=80"/>
+</div>
+<div class="shape-info">
+<h3>Rostro Diamante</h3>
+<p class="shape-desc">Frente y barbilla estrechas con pómulos anchos. Estructura ósea fuerte y angular. El objetivo es suavizar los pómulos prominentes.</p>
+<div class="recommendations">
+<h4>Estilos Recomendados:</h4>
+<ul>
+<li>Crop Texturizado</li>
+<li>Faux Hawk Moderno</li>
+<li>Raya con Volumen</li>
+<li>Corte César</li>
+</ul>
+</div>
+<div class="avoid">
+<h4>Evitar:</h4>
+<p>Estilos que añaden altura en la coronilla. Cortes muy cortos en los lados que expongan los pómulos. Cabello muy largo y liso.</p>
+</div>
+</div>
+</div>
+<div class="shape-content" data-shape="oblong">
+<div class="shape-image">
+<img alt="Classic Taper - Estilo para rostro alargado" loading="lazy" src="https://images.unsplash.com/photo-1599351431613-18ef1fdd27e1?w=600&amp;q=80"/>
+</div>
+<div class="shape-info">
+<h3>Rostro Alargado</h3>
+<p class="shape-desc">Longitud del rostro mayor que la anchura. Similar al ovalado pero más alargado. El objetivo es crear la ilusión de más anchura y reducir la longitud visual.</p>
+<div class="recommendations">
+<h4>Estilos Recomendados:</h4>
+<ul>
+<li>Clásico Taper</li>
+<li>Peinado Lateral</li>
+<li>Crew Cut</li>
+<li>Medio Largo Texturizado</li>
+</ul>
+</div>
+<div class="avoid">
+<h4>Evitar:</h4>
+<p>Estilos muy largos que alarguen más el rostro. Pompadours muy altos. Cortes con mucho volumen arriba y cortos a los lados.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Gallery -->
+<section class="section gallery-section" id="section-gallery">
+<div class="section-content">
+<div class="section-header">
+<span class="section-number">03</span>
+<h2 class="section-title">La Galería</h2>
+<p class="section-subtitle">Una muestra de nuestra mejor artesanía</p>
+</div>
+<div class="gallery-grid">
+<div class="gallery-item large">
+<img alt="Corte Clásico" loading="lazy" src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=800&amp;q=80"/>
+<div class="gallery-overlay">
+<span class="gallery-tag">Corte Clásico</span>
+</div>
+</div>
+<div class="gallery-item">
+<img alt="Recorte de Barba" loading="lazy" src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=600&amp;q=80"/>
+<div class="gallery-overlay">
+<span class="gallery-tag">Barba</span>
+</div>
+</div>
+<div class="gallery-item">
+<img alt="Afeitado Toalla Caliente" loading="lazy" src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=600&amp;q=80"/>
+<div class="gallery-overlay">
+<span class="gallery-tag">Afeitado</span>
+</div>
+</div>
+<div class="gallery-item">
+<img alt="Estilo Moderno" loading="lazy" src="https://images.unsplash.com/photo-1599351431613-18ef1fdd27e1?w=600&amp;q=80"/>
+<div class="gallery-overlay">
+<span class="gallery-tag">Moderno</span>
+</div>
+</div>
+<div class="gallery-item">
+<img alt="Herramientas de Barbero" loading="lazy" src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=600&amp;q=80"/>
+<div class="gallery-overlay">
+<span class="gallery-tag">Herramientas</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: Barbers -->
+<section class="section barbers-section" id="section-barbers">
+<div class="section-content">
+<div class="section-header">
+<span class="section-number">04</span>
+<h2 class="section-title">Maestros Barberos</h2>
+<p class="section-subtitle">Conoce a los artesanos detrás de la silla</p>
+</div>
+<div class="barbers-grid">
+<div class="barber-card">
+<div class="barber-image">
+<img alt="Marcos Piedra" loading="lazy" src="https://images.unsplash.com/photo-1618077360395-f3068be8e001?w=500&amp;q=80"/>
+</div>
+<div class="barber-info">
+<h3>Marcos Piedra</h3>
+<span class="barber-role">Fundador &amp; Maestro Barbero</span>
+<p>15 años de experiencia en cortes clásicos y modernos</p>
+<div class="barber-social">
+<a aria-label="Instagram" href="#">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<rect height="20" rx="5" width="20" x="2" y="2"></rect>
+<circle cx="12" cy="12" r="4"></circle>
+<circle cx="18" cy="6" r="1"></circle>
+</svg>
+</a>
+</div>
+</div>
+</div>
+<div class="barber-card">
+<div class="barber-image">
+<img alt="Jaime Rivera" loading="lazy" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&amp;q=80"/>
+</div>
+<div class="barber-info">
+<h3>Jaime Rivera</h3>
+<span class="barber-role">Barbero Senior</span>
+<p>Especialista en esculpido de barba y afeitados con toalla caliente</p>
+<div class="barber-social">
+<a aria-label="Instagram" href="#">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<rect height="20" rx="5" width="20" x="2" y="2"></rect>
+<circle cx="12" cy="12" r="4"></circle>
+<circle cx="18" cy="6" r="1"></circle>
+</svg>
+</a>
+</div>
+</div>
+</div>
+<div class="barber-card">
+<div class="barber-image">
+<img alt="David Chen" loading="lazy" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&amp;q=80"/>
+</div>
+<div class="barber-info">
+<h3>David Chen</h3>
+<span class="barber-role">Especialista en Estilo</span>
+<p>Experto en fades contemporáneos y estilos texturizados</p>
+<div class="barber-social">
+<a aria-label="Instagram" href="#">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<rect height="20" rx="5" width="20" x="2" y="2"></rect>
+<circle cx="12" cy="12" r="4"></circle>
+<circle cx="18" cy="6" r="1"></circle>
+</svg>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 6: Contact/Booking -->
+<section class="section contact-section" id="section-contact">
+<div class="section-content">
+<div class="contact-grid">
+<div class="contact-info">
+<span class="section-number">05</span>
+<h2 class="section-title">Reserva tu Experiencia</h2>
+<p class="contact-desc">¿Listo para transformar tu look? Reserva tu silla y experimenta el arte del aseo tradicional.</p>
+<div class="contact-details">
+<div class="contact-item">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path>
+<circle cx="12" cy="10" r="3"></circle>
+</svg>
+<div>
+<span class="label">Ubicación</span>
+<span class="value">Calle Barbería 123, Centro</span>
+</div>
+</div>
+<div class="contact-item">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<path d="M12 6v6l4 2"></path>
+</svg>
+<div>
+<span class="label">Horario</span>
+<span class="value">Lun-Sáb: 9AM - 8PM</span>
+</div>
+</div>
+<div class="contact-item">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path>
+</svg>
+<div>
+<span class="label">Teléfono</span>
+<span class="value">(555) 123-4567</span>
+</div>
+</div>
+</div>
+</div>
+<div class="booking-form">
+<form id="bookingForm">
+<div class="form-group">
+<input id="name" placeholder=" " required="" type="text"/>
+<label for="name">Tu Nombre</label>
+</div>
+<div class="form-group">
+<input id="phone" placeholder=" " required="" type="tel"/>
+<label for="phone">Número de Teléfono</label>
+</div>
+<div class="form-group">
+<select id="service" required="">
+<option value="">Selecciona Servicio</option>
+<option value="Corte Clásico">Corte Clásico - $35</option>
+<option value="Afeitado Real">Afeitado Real - $45</option>
+<option value="Esculpido de Barba">Esculpido de Barba - $30</option>
+<option value="El Caballero">El Caballero - $75</option>
+</select>
+</div>
+<div class="form-group">
+<input id="date" required="" type="date"/>
+<label class="always-float" for="date">Fecha Preferida</label>
+</div>
+<a class="btn btn-primary btn-full" href="#" id="whatsappBtn" target="_blank">
+<span>Confirmar por WhatsApp</span>
+<svg fill="currentColor" height="20" viewbox="0 0 24 24" width="20">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+</svg>
+</a>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Progress Indicator -->
+<div class="progress-bar">
+<div class="progress-fill"></div>
+</div>
+<!-- Section Indicators -->
+<div class="section-indicators">
+<button aria-label="Inicio" class="indicator active" data-section="0"></button>
+<button aria-label="Servicios" class="indicator" data-section="1"></button>
+<button aria-label="Guía de Estilo" class="indicator" data-section="2"></button>
+<button aria-label="Galería" class="indicator" data-section="3"></button>
+<button aria-label="Barberos" class="indicator" data-section="4"></button>
+<button aria-label="Contacto" class="indicator" data-section="5"></button>
+</div>
+<script src="script.js"></script>
+<footer style="text-align: center; padding: 20px; font-size: 14px;">
+<a href="#" style="text-decoration: none; color: inherit;">© 2026 Trademark</a>
+</footer></body>
+</html>

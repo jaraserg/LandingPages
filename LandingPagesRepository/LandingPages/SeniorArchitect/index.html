@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julio Jaramillo - Senior Architect</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Preconnect for performance optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&family=Open+Sans:wght@300;400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <a href="../index.html" style="position: fixed; top: 20px; left: 20px; z-index: 9999; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); color: white; padding: 10px 20px; border-radius: 30px; font-family: sans-serif; font-size: 12px; border: 1px solid rgba(255,255,255,0.2); text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onmouseover="this.style.background='rgba(0,255,0,0.2)'; this.style.borderColor='rgba(0,255,0,0.5)'" onmouseout="this.style.background='rgba(0,0,0,0.8)'; this.style.borderColor='rgba(255,255,255,0.2)'"><span>←</span> Back to Showcase</a>
+
+
+    <div class="blueprint-animation">
+        <svg viewBox="0 0 1000 600" preserveAspectRatio="none" id="blueprint-svg">
+            <g class="blueprint-lines">
+                <!-- Detailed Architectural Blueprint lines -->
+                <!-- Base Structure -->
+                <path d="M100,500 L900,500 L900,480 L100,480 Z" />
+                <path d="M150,480 L150,200 L300,200 L300,100 L700,100 L700,250 L850,250 L850,480" />
+
+                <!-- Floor divisions -->
+                <path d="M150,400 L850,400" />
+                <path d="M150,320 L850,320" />
+                <path d="M300,200 L700,200" />
+
+                <!-- Vertical structural columns -->
+                <path d="M250,480 L250,320 M350,480 L350,100 M650,480 L650,100 M750,480 L750,250" />
+
+                <!-- Windows/Grid facade -->
+                <path d="M180,420 L220,420 L220,460 L180,460 Z" />
+                <path d="M270,420 L310,420 L310,460 L270,460 Z" />
+                <path d="M370,420 L410,420 L410,460 L370,460 Z" />
+                <path d="M430,420 L470,420 L470,460 L430,460 Z" />
+                <path d="M530,420 L570,420 L570,460 L530,460 Z" />
+                <path d="M670,420 L710,420 L710,460 L670,460 Z" />
+                <path d="M780,420 L810,420 L810,460 L780,460 Z" />
+
+                <path d="M180,340 L220,340 L220,380 L180,380 Z" />
+                <path d="M270,340 L310,340 L310,380 L270,380 Z" />
+                <path d="M370,340 L410,340 L410,380 L370,380 Z" />
+                <path d="M430,340 L470,340 L470,380 L430,380 Z" />
+                <path d="M530,340 L570,340 L570,380 L530,380 Z" />
+                <path d="M670,340 L710,340 L710,380 L670,380 Z" />
+                <path d="M780,340 L810,340 L810,380 L780,380 Z" />
+
+                <!-- Upper levels windows -->
+                <path d="M370,260 L410,260 L410,300 L370,300 Z" />
+                <path d="M430,260 L470,260 L470,300 L430,300 Z" />
+                <path d="M530,260 L570,260 L570,300 L530,300 Z" />
+
+                <path d="M370,140 L410,140 L410,180 L370,180 Z" />
+                <path d="M430,140 L470,140 L470,180 L430,180 Z" />
+                <path d="M530,140 L570,140 L570,180 L530,180 Z" />
+
+                <!-- Architectural annotations & measurements -->
+                <path d="M50,480 L80,480 M65,480 L65,200 M50,200 L80,200" stroke-width="1" stroke-dasharray="2,2" />
+                <text x="50" y="350" fill="rgba(255,255,255,0.7)" font-size="12" transform="rotate(-90 50,350)"
+                    style="animation:none; stroke:none">14.5m</text>
+
+                <path d="M150,540 L150,520 M150,530 L850,530 M850,540 L850,520" stroke-width="1"
+                    stroke-dasharray="2,2" />
+                <text x="480" y="555" fill="rgba(255,255,255,0.7)" font-size="12"
+                    style="animation:none; stroke:none">42.0m</text>
+
+                <!-- Construction Crane -->
+                <path d="M920,500 L950,500 L935,100 Z" stroke-width="1" />
+                <path d="M935,100 L750,150 M750,150 L750,220" stroke-dasharray="4,4" />
+            </g>
+        </svg>
+    </div>
+
+    <div class="page-wrapper">
+
+        <!-- Floating Contact Area -->
+        <div class="fab-container">
+            <button class="fab-main" id="fab-main" aria-label="Contact Links">
+                <i class="fa-solid fa-address-book"></i>
+            </button>
+            <div class="fab-links" id="fab-links">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="fab-icon bg-fb"><i
+                        class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="fab-icon bg-ig"><i
+                        class="fa-brands fa-instagram"></i></a>
+                <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" class="fab-icon bg-wa"><i
+                        class="fa-brands fa-whatsapp"></i></a>
+                <a href="mailto:email@example.com" target="_blank" rel="noopener noreferrer"
+                    class="fab-icon bg-email"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+
+        <main class="main-layout">
+
+            <!-- Center Top Layout: Photo, Name, Role -->
+            <header class="header-section">
+                <!-- Color Blocks behind Image -->
+                <div class="color-block blue-block"></div>
+                <div class="color-block orange-block"></div>
+                <!-- Circle element -->
+                <div class="circle-decoration"></div>
+
+                <div class="profile-image-container">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Julio Jaramillo - Senior Architect" class="profile-img" fetchpriority="high">
+                </div>
+                <div class="title-container">
+                    <h1 class="profile-name">JULIO JARAMILLO</h1>
+                    <h2 class="profile-role">SENIOR ARCHITECT</h2>
+                </div>
+            </header>
+
+            <!-- Dynamic Content Area -->
+            <section class="content-section">
+
+                <div class="content-panel active" id="about-me">
+                    <div class="panel-header" style="border-left-color: #f77f6b;">
+                        <h2>ABOUT ME</h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>With over a decade of experience in urban planning and sustainable architecture, I design
+                            structures that harmonize with their environments. Every blueprint tells a story of form,
+                            function, and future readiness.</p>
+                        <p>My philosophy centers on creating spaces that aren't just lived in, but experienced.
+                            Transforming abstract concepts into solid, beautiful realities is the core of my practice.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="content-panel" id="education">
+                    <div class="panel-header" style="border-left-color: #fab564;">
+                        <h2>EDUCATION</h2>
+                    </div>
+                    <div class="panel-body timeline">
+                        <div class="timeline-item">
+                            <span class="year">2012 - 2014</span>
+                            <h3>Masters in Modern Architecture</h3>
+                            <p>Global Institute of Design</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="year">2008 - 2012</span>
+                            <h3>BA in Structural Engineering</h3>
+                            <p>National Tech University</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-panel" id="projects">
+                    <div class="panel-header" style="border-left-color: #4ac7e0;">
+                        <h2>PROJECTS</h2>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="project-list">
+                            <li>
+                                <!-- Architectural Building -->
+                                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+                                    alt="The Skyline Towers" class="project-img" loading="lazy">
+                                <div class="project-info">
+                                    <strong>The Skyline Towers</strong>
+                                    <p>Mixed-use residential complex focusing on green energy.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <!-- Modern Parametric Structure -->
+                                <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+                                    alt="Oceanic Cultural Center" class="project-img" loading="lazy">
+                                <div class="project-info">
+                                    <strong>Oceanic Cultural Center</strong>
+                                    <p>Award-winning public space featuring parametric shapes.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <!-- Blueprints / Drafting table -->
+                                <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+                                    alt="Vertex Corporate HQ" class="project-img" loading="lazy">
+                                <div class="project-info">
+                                    <strong>Vertex Corporate HQ</strong>
+                                    <p>Smart-building integrating automated climate and lighting.</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <!-- Modal for Enlarged Project Images -->
+                        <div class="project-modal" id="project-modal">
+                            <span class="close-modal" id="close-modal">&times;</span>
+                            <img class="modal-content" id="modal-img" src="" alt="Enlarged Project">
+                            <div class="modal-caption" id="modal-caption"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-panel" id="expertise">
+                    <div class="panel-header" style="border-left-color: #f9c2d1;">
+                        <h2>EXPERTISE</h2>
+                    </div>
+                    <div class="panel-body">
+                        <div class="skills-grid">
+                            <div class="skill-item">Sustainable Design</div>
+                            <div class="skill-item">BIM Coordination</div>
+                            <div class="skill-item">Urban Planning</div>
+                            <div class="skill-item">Parametric Modeling</div>
+                            <div class="skill-item">Project Management</div>
+                            <div class="skill-item">AutoCAD / Revit</div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <button class="nav-btn active-btn" data-target="about-me">
+                ABOUT ME
+                <div class="nav-indicator" style="background-color: #f77f6b;"></div>
+            </button>
+            <button class="nav-btn" data-target="education">
+                EDUCATION
+                <div class="nav-indicator" style="background-color: #fab564;"></div>
+            </button>
+            <button class="nav-btn" data-target="projects">
+                PROJECTS
+                <div class="nav-indicator" style="background-color: #4ac7e0;"></div>
+            </button>
+            <button class="nav-btn" data-target="expertise">
+                EXPERTISE
+                <div class="nav-indicator" style="background-color: #f9c2d1;"></div>
+            </button>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Active Life | Bienestar Natural</title>
+    <meta
+        content="Descubre un estilo de vida activo y equilibrado, arraigado en la naturaleza. Consejos basados en evidencia para la longevidad y vitalidad."
+        name="description" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Outfit:wght@400;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Leaflet Map Styles -->
+    <link crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet" />
+    </link>
+</head>
+
+<body>
+    <a href="../index.html" style="position: fixed; top: 20px; left: 20px; z-index: 9999; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); color: white; padding: 10px 20px; border-radius: 30px; font-family: sans-serif; font-size: 12px; border: 1px solid rgba(255,255,255,0.2); text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onmouseover="this.style.background='rgba(0,255,0,0.2)'; this.style.borderColor='rgba(0,255,0,0.5)'" onmouseout="this.style.background='rgba(0,0,0,0.8)'; this.style.borderColor='rgba(255,255,255,0.2)'"><span>←</span> Back to Showcase</a>
+
+    <!-- Elemental Background Canvas -->
+    <canvas aria-hidden="true" id="elemental-bg"></canvas>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-text">ActiveLife</span>
+                </div>
+                <nav class="nav">
+                    <a class="nav-link" href="#hero">Inicio</a>
+                    <a class="nav-link" href="#about">Filosofía</a>
+                    <a class="nav-link" href="#services">Bienestar</a>
+                </nav>
+                <button aria-label="Cambiar tema" class="theme-toggle">
+                    <span class="theme-icon sun">☀️</span>
+                    <span class="theme-icon moon">🌙</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <!-- Hero Section -->
+    <section class="hero text-center" id="hero">
+        <div class="hero-background"
+            style="background-image: url('https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?auto=format,compress&amp;fit=crop&amp;q=60&amp;w=1920');">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="hero-title-line">Encuentra Tu</span>
+                    <span class="hero-title-line hero-title-highlight">Centro Interior</span>
+                </h1>
+                <p class="hero-subtitle glass-text-bg">Reconecta tu cuerpo y la naturaleza. Energía y Materia en armonía
+                    con tu ser.</p>
+                <div class="hero-cta-wrap">
+                    <a class="cta-button" href="#services">Ver Consejos</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span class="scroll-text">Descubre</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+    <!-- About Section -->
+    <section class="about section-reveal text-center" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image-wrapper">
+                    <div class="about-image glass-card textured-card">
+                        <img alt="Persona practicando yoga" class="about-img" decoding="async" loading="lazy"
+                            src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format,compress&amp;fit=crop&amp;q=60&amp;w=600" />
+                    </div>
+                </div>
+                <div class="about-content">
+                    <h2 class="section-title">Fluye con la Vida</h2>
+                    <div class="about-text glass-card textured-card">
+                        <p>El verdadero bienestar no se trata de llegar al límite, sino de encontrar armonía. Creemos en
+                            el movimiento que sana, la meditación que aquieta la mente y el descanso profundo que
+                            restaura.</p>
+                        <p>Nuestra filosofía se aleja de la exigencia desmedida hacia una relación
+                            sostenible con tu cuerpo. Se trata de escuchar lo que necesitas, ya sea una vinyasa
+                            fluida o un momento de quietud restaurativa.</p>
+                        <p>Al alinear nuestras prácticas con una mente presente, desbloqueamos una paz
+                            interior que se siente auténtica y duradera.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services / Benefits Section -->
+    <section class="services section-reveal text-center" id="services">
+        <div class="container">
+            <h2 class="section-title centered">Pilares de Bienestar</h2>
+            <p class="section-subtitle glass-text-bg">Haz clic en cada tarjeta para revelar un consejo práctico para tu
+                práctica y vida diaria.</p>
+            <div class="services-grid">
+                <!-- Card 1 -->
+                <div class="flip-card-container">
+                    <div class="flip-card">
+                        <div class="flip-card-front glass-card textured-card">
+                            <div class="image-wrapper">
+                                <img alt="Respiración profunda" class="service-image" decoding="async" loading="lazy"
+                                    src="https://images.unsplash.com/photo-1552288092-76e7d732366c?auto=format,compress&amp;fit=crop&amp;q=60&amp;w=400" />
+                            </div>
+                            <h3 class="service-title">Prana</h3>
+                            <p class="service-description">La energía vital a través de la respiración consciente.</p>
+                            <span class="tap-indicator">Ver Consejo</span>
+                        </div>
+                        <div class="flip-card-back glass-card textured-card">
+                            <h3 class="service-title">Consejo Pránico</h3>
+                            <p class="tip-content">Dedica 5 minutos al despertar para practicar Nadi Shodhana
+                                (respiración alterna) y equilibrar tus hemisferios cerebrales.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="flip-card-container">
+                    <div class="flip-card">
+                        <div class="flip-card-front glass-card textured-card">
+                            <div class="image-wrapper">
+                                <img alt="Meditación" class="service-image" decoding="async" loading="lazy"
+                                    src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format,compress&amp;fit=crop&amp;q=60&amp;w=400" />
+                            </div>
+                            <h3 class="service-title">Dhyana</h3>
+                            <p class="service-description">Una mente tranquila capaz de enfoque profundo y paz interior.
+                            </p>
+                            <span class="tap-indicator">Ver Consejo</span>
+                        </div>
+                        <div class="flip-card-back glass-card textured-card">
+                            <h3 class="service-title">Consejo de Meditación</h3>
+                            <p class="tip-content">No juzgues tus pensamientos. Solo obsérvalos pasar como nubes en el
+                                cielo de tu mente durante 10 minutos al día.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="flip-card-container">
+                    <div class="flip-card">
+                        <div class="flip-card-front glass-card textured-card">
+                            <div class="image-wrapper">
+                                <img alt="Pose de yoga fuerza" class="service-image" decoding="async" loading="lazy"
+                                    src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format,compress&amp;fit=crop&amp;q=60&amp;w=400" />
+                            </div>
+                            <h3 class="service-title">Asana</h3>
+                            <p class="service-description">Construyendo fuerza y flexibilidad de forma consciente.</p>
+                            <span class="tap-indicator">Ver Consejo</span>
+                        </div>
+                        <div class="flip-card-back glass-card textured-card">
+                            <h3 class="service-title">Consejo Físico</h3>
+                            <p class="tip-content">Encuentra la comodidad dentro de la incomodidad de la postura. No
+                                fuerces; respira hacia las zonas de tensión para liberarlas.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="flip-card-container">
+                    <div class="flip-card">
+                        <div class="flip-card-front glass-card textured-card">
+                            <div class="image-wrapper">
+                                <img alt="Paz mental, meditación" class="service-image" decoding="async" loading="lazy"
+                                    src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?fit=crop&amp;q=70&amp;w=400" />
+                            </div>
+                            <h3 class="service-title">Sattva</h3>
+                            <p class="service-description">Cultivando pureza, calma y luz en tus hábitos diarios.</p>
+                            <span class="tap-indicator">Ver Consejo</span>
+                        </div>
+                        <div class="flip-card-back glass-card textured-card">
+                            <h3 class="service-title">Consejo Sátvico</h3>
+                            <p class="tip-content">Aliméntate con comidas frescas y ligeras. Lo que pones en tu cuerpo
+                                impacta directamente la ligereza de tu mente.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 5 -->
+                <div class="flip-card-container">
+                    <div class="flip-card">
+                        <div class="flip-card-front glass-card textured-card">
+                            <div class="image-wrapper">
+                                <img alt="Savasana, descanso profundo" class="service-image" decoding="async"
+                                    loading="lazy"
+                                    src="https://images.unsplash.com/photo-1545389336-cf090694435e?fit=crop&amp;q=70&amp;w=400" />
+                            </div>
+                            <h3 class="service-title">Savasana</h3>
+                            <p class="service-description">El arte de soltar por completo y permitir la integración.</p>
+                            <span class="tap-indicator">Ver Consejo</span>
+                        </div>
+                        <div class="flip-card-back glass-card textured-card">
+                            <h3 class="service-title">Consejo de Integración</h3>
+                            <p class="tip-content">Nunca saltes Savasana al final de tu práctica. Es en la inacción
+                                donde el cuerpo absorbe todos los beneficios del movimiento.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 6 -->
+                <div class="flip-card-container">
+                    <div class="flip-card">
+                        <div class="flip-card-front glass-card textured-card">
+                            <div class="image-wrapper">
+                                <img alt="Desarrollo espiritual" class="service-image" decoding="async" loading="lazy"
+                                    src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format,compress&amp;fit=crop&amp;q=60&amp;w=400" />
+                            </div>
+                            <h3 class="service-title">Evolución</h3>
+                            <p class="service-description">El viaje constante de reconexión contigo mismo.</p>
+                            <span class="tap-indicator">Ver Consejo</span>
+                        </div>
+                        <div class="flip-card-back glass-card textured-card">
+                            <h3 class="service-title">Consejo de Evolución</h3>
+                            <p class="tip-content">Acepta dónde estás hoy en el tapete de yoga. Tu flexibilidad física y
+                                mental cambian a diario. Practica con compasión.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Calendar Section -->
+    <section class="calendar-section section-reveal text-center" id="calendar">
+        <div class="container">
+            <h2 class="section-title centered">Agenda Semanal</h2>
+            <p class="section-subtitle glass-text-bg mx-auto">Sesiones en vivo y virtuales. Reserva tu lugar por
+                WhatsApp.</p>
+            <div class="mock-calendar glass-card mx-auto">
+                <!-- Calendar Header -->
+                <div class="cal-header">
+                    <div class="cal-day-col">
+                        <span class="cal-day-label">Hora</span>
+                    </div>
+                    <div class="cal-day-col"><span class="cal-day-label">Lun<br /><small>Mar 24</small></span></div>
+                    <div class="cal-day-col"><span class="cal-day-label">Mar<br /><small>Mar 25</small></span></div>
+                    <div class="cal-day-col"><span class="cal-day-label">Mié<br /><small>Mar 26</small></span></div>
+                    <div class="cal-day-col"><span class="cal-day-label">Jue<br /><small>Mar 27</small></span></div>
+                    <div class="cal-day-col"><span class="cal-day-label">Vie<br /><small>Mar 28</small></span></div>
+                    <div class="cal-day-col"><span class="cal-day-label">Sáb<br /><small>Mar 29</small></span></div>
+                </div>
+                <!-- Calendar Rows -->
+                <div class="cal-body">
+                    <!-- 7:00 -->
+                    <div class="cal-row">
+                        <div class="cal-time">7:00</div>
+                        <div class="cal-cell">
+                            <div class="cal-event ev-yoga">Yoga Hatha<br /><small>7:00–8:00</small></div>
+                        </div>
+                        <div class="cal-cell"></div>
+                        <div class="cal-cell">
+                            <div class="cal-event ev-yoga">Yoga Hatha<br /><small>7:00–8:00</small></div>
+                        </div>
+                        <div class="cal-cell"></div>
+                        <div class="cal-cell">
+                            <div class="cal-event ev-yoga">Yoga Hatha<br /><small>7:00–8:00</small></div>
+                        </div>
+                        <div class="cal-cell"></div>
+                    </div>
+                    <!-- 8:30 -->
+                    <div class="cal-row">
+                        <div class="cal-time">8:30</div>
+                        <div class="cal-cell"></div>
+                        <div class="cal-cell">
+                            <div class="cal-event ev-breath">Pranayama<br /><small>8:30–9:15</small></div>
+                        </div>
+                        <div class="cal-cell"></div>
+                        <div class="cal-cell">
+                            <div class="cal-event ev-breath">Pranayama<br /><small>8:30–9:15</small></div>
+                        </div>
+                        <div class="cal-cell"></div>
+                        <div class="cal-cell">
+                            <div class="cal-event ev-flow">Vinyasa Flow<br /><small>8:30–10:00</small></div>
+                        </div>
+                    </div>
+                    <!-- 10:00 -->
+                    <div class="cal-row">
+                        <div class="cal-time">10:00</div>
+                        <div class="cal-cell">
+                            <div class="cal-event ev-med">Meditación<br /><small>10:00–10:45</small></div>
+                        </div>
+                        <div class="cal-cell"></div>
+                        <div class="cal-cell">
+                            <div class="cal-event ev-med">Meditación<br /><small>10:00–10:45</small></div>
+                        </div>
+                        <div class="cal-cell"></div>
+                        <div class="cal-cell">
+                            <div class="cal-event ev-med">Meditación<br /><small>10:00–10:45</small></div>
+                        </div>
+                        <div class="cal-cell">
+                            <div class="cal-event ev-restore">Restaurativo<br /><small>10:30–12:00</small></div>
+                        </div>
+                    </div>
+                    <!-- 18:00 -->
+                    <div class="cal-row">
+                        <div class="cal-time">18:00</div>
+                        <div class="cal-cell">
+                            <div class="cal-event ev-flow">Vinyasa Flow<br /><small>18:00–19:15</small></div>
+                        </div>
+                        <div class="cal-cell">
+                            <div class="cal-event ev-yoga">Yin Yoga<br /><small>18:00–19:30</small></div>
+                        </div>
+                        <div class="cal-cell">
+                            <div class="cal-event ev-flow">Vinyasa Flow<br /><small>18:00–19:15</small></div>
+                        </div>
+                        <div class="cal-cell">
+                            <div class="cal-event ev-yoga">Yin Yoga<br /><small>18:00–19:30</small></div>
+                        </div>
+                        <div class="cal-cell">
+                            <div class="cal-event ev-flow">Power Yoga<br /><small>18:00–19:30</small></div>
+                        </div>
+                        <div class="cal-cell"></div>
+                    </div>
+                    <!-- 19:30 -->
+                    <div class="cal-row">
+                        <div class="cal-time">19:30</div>
+                        <div class="cal-cell"></div>
+                        <div class="cal-cell">
+                            <div class="cal-event ev-med">Nidra Yoga<br /><small>19:30–20:30</small></div>
+                        </div>
+                        <div class="cal-cell"></div>
+                        <div class="cal-cell">
+                            <div class="cal-event ev-med">Nidra Yoga<br /><small>19:30–20:30</small></div>
+                        </div>
+                        <div class="cal-cell"></div>
+                        <div class="cal-cell"></div>
+                    </div>
+                </div>
+                <!-- Legend -->
+                <div class="cal-legend">
+                    <span class="legend-item ev-yoga">Yoga / Yin</span>
+                    <span class="legend-item ev-flow">Vinyasa / Power</span>
+                    <span class="legend-item ev-breath">Pranayama</span>
+                    <span class="legend-item ev-med">Meditación / Nidra</span>
+                    <span class="legend-item ev-restore">Restaurativo</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Minimal Footer -->
+    <footer style="text-align: center; padding: 20px; font-size: 14px;">
+        <a href="#" style="text-decoration: none; color: inherit;">© 2026 Trademark</a>
+    </footer>
+    <!-- Floating Contact Button (FAB) -->
+    <div class="fab-container" id="fabContainer">
+        <div class="fab-items">
+            <a class="fab-item fab-wa" href="https://wa.me/" target="_blank" title="WhatsApp">
+                <svg fill="currentColor" height="22" viewbox="0 0 24 24" width="22">
+                    <path
+                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z">
+                    </path>
+                </svg>
+            </a>
+            <a class="fab-item fab-tk" href="https://www.tiktok.com" target="_blank" title="TikTok">
+                <svg fill="currentColor" height="22" viewbox="0 0 24 24" width="22">
+                    <path
+                        d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.06a8.16 8.16 0 004.77 1.53V7.14a4.85 4.85 0 01-1-.45z">
+                    </path>
+                </svg>
+            </a>
+            <a class="fab-item fab-ig" href="https://instagram.com" target="_blank" title="Instagram">
+                <svg fill="currentColor" height="22" viewbox="0 0 24 24" width="22">
+                    <path
+                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z">
+                    </path>
+                </svg>
+            </a>
+            <button class="fab-item fab-map" id="fabMap" title="Ubicación">
+                <svg fill="currentColor" height="22" viewbox="0 0 24 24" width="22">
+                    <path
+                        d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z">
+                    </path>
+                </svg>
+            </button>
+        </div>
+        <button aria-label="Contactar" class="fab-main" id="fabMain">
+            <svg class="fab-icon-open" fill="currentColor" height="24" viewbox="0 0 24 24" width="24">
+                <path
+                    d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z">
+                </path>
+            </svg>
+            <svg class="fab-icon-close" fill="currentColor" height="24" viewbox="0 0 24 24" width="24">
+                <path
+                    d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+                </path>
+            </svg>
+        </button>
+    </div>
+    <!-- Map Modal -->
+    <div class="map-modal" id="mapModal">
+        <div class="map-modal-content">
+            <button aria-label="Cerrar" class="map-modal-close" id="mapModalClose">
+                <svg fill="currentColor" height="24" viewbox="0 0 24 24" width="24">
+                    <path
+                        d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+                    </path>
+                </svg>
+            </button>
+            <div class="map-modal-header">
+                <h3>Ubicación</h3>
+                <p>Medellín, Colombia</p>
+            </div>
+            <div class="map-container">
+                <div id="map"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Leaflet Map Library -->
+    <script crossorigin="" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

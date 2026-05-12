@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isabelle Laurent – Fashion Designer</title>
+    <meta name="description"
+        content="Portfolio of Isabelle Laurent, fashion designer specializing in contemporary couture, sustainable collections, and textile innovation.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&family=Bebas+Neue&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <a href="../index.html" style="position: fixed; top: 20px; left: 20px; z-index: 9999; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); color: white; padding: 10px 20px; border-radius: 30px; font-family: sans-serif; font-size: 12px; border: 1px solid rgba(255,255,255,0.2); text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onmouseover="this.style.background='rgba(0,255,0,0.2)'; this.style.borderColor='rgba(0,255,0,0.5)'" onmouseout="this.style.background='rgba(0,0,0,0.8)'; this.style.borderColor='rgba(255,255,255,0.2)'"><span>←</span> Back to Showcase</a>
+
+
+    <!-- Floating Social FAB -->
+    <div class="fab-wrap" id="fab-wrap">
+        <button class="fab-btn" id="fab-btn" aria-label="Social Links" aria-expanded="false">
+            <i class="fa-solid fa-hashtag"></i>
+        </button>
+        <div class="fab-menu" id="fab-menu">
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="fab-link fab-lk" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="fab-link fab-ig"
+                aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/1234567890" target="_blank" rel="noopener" class="fab-link fab-wa"
+                aria-label="WhatsApp">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- PAGE -->
+    <div class="page">
+
+        <!-- ═══ HEADER / TITLE ZONE ═══ -->
+        <header class="page-header">
+            <div class="header-editorial">
+                <div class="header-sub-row">
+                    <span class="sub-label">Portfolio</span>
+                    <span class="sub-line"></span>
+                    <span class="sub-label">2024</span>
+                </div>
+                <h1 class="display-name">
+                    <span class="display-name__first">ISABELLE</span>
+                    <span class="display-name__last">Laurent</span>
+                </h1>
+                <p class="header-tagline">Fashion Designer &nbsp;·&nbsp; Couture &amp; Ready‑to‑Wear</p>
+            </div>
+
+            <!-- PILL NAVIGATION -->
+            <nav class="pill-nav" aria-label="Main Navigation">
+                <a href="#" class="pill active-pill" data-section="home">Home</a>
+                <a href="#" class="pill" data-section="about">About</a>
+                <a href="#" class="pill" data-section="projects">Projects</a>
+                <a href="#" class="pill" data-section="education">Education</a>
+            </nav>
+        </header>
+
+        <!-- ═══ MAIN STAGE ═══ -->
+        <main class="stage">
+
+            <!-- CONTENT FRAME -->
+            <div class="green-frame">
+
+                <!-- ── HOME ── -->
+                <section class="frame-panel active" id="section-home">
+                    <div class="home-inner">
+                        <div class="home-text">
+                            <p class="eyebrow">Welcome to my world</p>
+                            <h2 class="frame-title">Crafting stories<br><em>through cloth</em></h2>
+                            <p class="frame-body">Every stitch is intentional. Every silhouette tells a story. I create
+                                garments that move with people — bold, sustainable, and unmistakably human.</p>
+                            <div class="tag-row">
+                                <span class="tag">Couture</span>
+                                <span class="tag">Sustainable</span>
+                                <span class="tag">RTW</span>
+                                <span class="tag">Textiles</span>
+                            </div>
+                        </div>
+                        <div class="home-visual">
+                            <!-- Sewing machine animation canvas -->
+                            <canvas id="sewing-canvas" aria-label="Animated sewing machine"></canvas>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ── ABOUT ── -->
+                <section class="frame-panel" id="section-about">
+                    <div class="about-inner">
+                        <div class="about-img-col">
+                            <div class="about-img-frame">
+                                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=80&auto=format&fit=crop"
+                                    alt="Fashion designer at work" class="about-img" loading="lazy">
+                                <div class="img-accent"></div>
+                            </div>
+                        </div>
+                        <div class="about-text-col">
+                            <h2 class="frame-title">About <em>me</em></h2>
+                            <p class="frame-body">I'm Isabelle Laurent, a Paris-trained fashion designer with over 12
+                                years of experience shaping collections for luxury ateliers, editorial campaigns, and
+                                independent brands.</p>
+                            <p class="frame-body">My work bridges heritage craftsmanship with modern minimalism — always
+                                grounded in ethical sourcing and extraordinary attention to detail.</p>
+                            <div class="about-stats">
+                                <div class="astat"><span class="astat__n">12+</span><span class="astat__l">Years</span>
+                                </div>
+                                <div class="astat"><span class="astat__n">4</span><span
+                                        class="astat__l">Collections</span></div>
+                                <div class="astat"><span class="astat__n">3</span><span class="astat__l">Awards</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ── PROJECTS ── -->
+                <section class="frame-panel" id="section-projects">
+                    <div class="projects-inner">
+                        <h2 class="frame-title frame-title--top">Selected <em>Projects</em></h2>
+                        <div class="projects-grid">
+                            <div class="proj-card">
+                                <div class="proj-img-wrap">
+                                    <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=400&q=80&auto=format&fit=crop"
+                                        alt="Lumière Collection" loading="lazy">
+                                    <div class="proj-overlay">
+                                        <span>2023 · Couture</span>
+                                    </div>
+                                </div>
+                                <h3>Lumière Collection</h3>
+                                <p>32-piece luxury spring-summer collection exploring light through organza and silk.
+                                </p>
+                            </div>
+                            <div class="proj-card">
+                                <div class="proj-img-wrap">
+                                    <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=400&q=80&auto=format&fit=crop"
+                                        alt="Terra RTW Line" loading="lazy">
+                                    <div class="proj-overlay">
+                                        <span>2022 · RTW</span>
+                                    </div>
+                                </div>
+                                <h3>Terra RTW Line</h3>
+                                <p>Earth-toned ready-to-wear line using 100% organic and upcycled fabrics.</p>
+                            </div>
+                            <div class="proj-card">
+                                <div class="proj-img-wrap">
+                                    <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=400&q=80&auto=format&fit=crop"
+                                        alt="Noir Editorial" loading="lazy">
+                                    <div class="proj-overlay">
+                                        <span>2021 · Editorial</span>
+                                    </div>
+                                </div>
+                                <h3>Noir Editorial</h3>
+                                <p>Fashion editorial for Vogue Italia — exploring form, shadow, and deconstruction.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ── EDUCATION ── -->
+                <section class="frame-panel" id="section-education">
+                    <div class="edu-inner">
+                        <h2 class="frame-title frame-title--top"><em>Education</em> &amp; Formation</h2>
+                        <div class="edu-list">
+                            <div class="edu-item">
+                                <div class="edu-year-badge">2009–2013</div>
+                                <div class="edu-info">
+                                    <h3>Bachelor of Arts in Fashion Design</h3>
+                                    <p>École de la Chambre Syndicale de la Couture Parisienne &nbsp;·&nbsp; Paris,
+                                        France</p>
+                                </div>
+                                <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                            </div>
+                            <div class="edu-item">
+                                <div class="edu-year-badge">2013–2014</div>
+                                <div class="edu-info">
+                                    <h3>Advanced Pattern Making &amp; Draping</h3>
+                                    <p>Central Saint Martins &nbsp;·&nbsp; London, UK</p>
+                                </div>
+                                <div class="edu-icon"><i class="fa-solid fa-scissors"></i></div>
+                            </div>
+                            <div class="edu-item">
+                                <div class="edu-year-badge">2015</div>
+                                <div class="edu-info">
+                                    <h3>Sustainable Fashion Certification</h3>
+                                    <p>Copenhagen Business School &nbsp;·&nbsp; Online Program</p>
+                                </div>
+                                <div class="edu-icon"><i class="fa-solid fa-leaf"></i></div>
+                            </div>
+                            <div class="edu-item">
+                                <div class="edu-year-badge">2018</div>
+                                <div class="edu-info">
+                                    <h3>Digital Fashion &amp; 3D Design</h3>
+                                    <p>MIT OpenCourseWare &nbsp;·&nbsp; Independent Study</p>
+                                </div>
+                                <div class="edu-icon"><i class="fa-solid fa-cube"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div><!-- end .green-frame -->
+
+            <!-- ═══ BOTTOM PHOTO STRIP ═══ -->
+            <div class="photo-strip" aria-hidden="true">
+                <div class="strip-photo">
+                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=300&q=80&auto=format&fit=crop&crop=top"
+                        alt="" loading="lazy">
+                </div>
+                <div class="strip-photo strip-photo--wide">
+                    <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=400&q=80&auto=format&fit=crop&crop=top"
+                        alt="" loading="lazy">
+                </div>
+                <div class="strip-photo">
+                    <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=300&q=80&auto=format&fit=crop&crop=top"
+                        alt="" loading="lazy">
+                </div>
+                <div class="strip-label">
+                    <span class="strip-label__main">FASHION</span>
+                    <span class="strip-label__sub">DESIGN</span>
+                </div>
+                <div class="strip-photo">
+                    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=300&q=80&auto=format&fit=crop&crop=top"
+                        alt="" loading="lazy">
+                </div>
+            </div>
+
+        </main>
+
+    </div><!-- end .page -->
+
+    <script src="script.js"></script>
+</body>
+
+</html>

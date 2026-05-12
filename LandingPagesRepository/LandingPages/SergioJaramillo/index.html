@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sergio Jaramillo | Interactive Digital Art & Technology</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Sergio Jaramillo - Professional Art Producer and Digital Technology Specialist. Discover interactive art installations and AI-generated creative projects.">
+    <!-- Google Fonts Inter & Outfit -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@300;500;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Spline 3D Viewer Script -->
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.5/build/spline-viewer.js"></script>
+</head>
+<body>
+    <a href="../index.html" style="position: fixed; top: 20px; left: 20px; z-index: 9999; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); color: white; padding: 10px 20px; border-radius: 30px; font-family: sans-serif; font-size: 12px; border: 1px solid rgba(255,255,255,0.2); text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onmouseover="this.style.background='rgba(0,255,0,0.2)'; this.style.borderColor='rgba(0,255,0,0.5)'" onmouseout="this.style.background='rgba(0,0,0,0.8)'; this.style.borderColor='rgba(255,255,255,0.2)'"><span>←</span> Back to Showcase</a>
+
+
+    <!-- Interactive 3D Spline Background -->
+    <spline-viewer id="bg-canvas" url="https://prod.spline.design/kHXCoCjQc2YyP4Q1/scene.splinecode"></spline-viewer>
+
+    <!-- Minimal Branding -->
+    <div class="logo" id="logo">HERZSTUDIO</div>
+
+    <!-- Transparent Fixed Navigation -->
+    <nav>
+        <span class="nav-link active" data-target="0">HOME</span>
+        <span class="nav-link" data-target="1">ABOUT</span>
+        <span class="nav-link" data-target="2">WORK</span>
+        <span class="nav-link" data-target="3">CONTACT</span>
+    </nav>
+
+    <!-- Navigation Arrows -->
+    <button class="arrow left" id="prevBtn" aria-label="Previous Section"><i class="fas fa-arrow-left"></i></button>
+    <button class="arrow right" id="nextBtn" aria-label="Next Section"><i class="fas fa-arrow-right"></i></button>
+
+    <!-- Audio Toggle -->
+    <div id="audio-prompt" class="audio-prompt-box">
+        <i id="audio-icon" class="fas fa-volume-mute"></i> <span id="audio-text">Enable Sound</span>
+    </div>
+
+    <!-- Main Horizontal Carousel -->
+    <main class="main-wrapper" id="carousel">
+        
+        <!-- SECTION 0: HERO -->
+        <section id="hero">
+            <div class="hero-text">
+                <h1 id="title">Sergio<br>Jaramillo</h1>
+                <p class="subtitle">Interactive Content Producer</p>
+                <div style="font-size: 0.8rem; letter-spacing: 5px; opacity: 0.3; color: white; margin-top: 40px;">
+                    DESIGNED // AUTOMATED // EXPERIENCED
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 1: ABOUT / RESUME -->
+        <section id="about">
+            <div class="content-card" style="width: 800px; padding: 40px; border-radius: 12px; background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.05);">
+                <h2 style="font-family: 'Outfit'; font-size: 2.5rem; margin-bottom: 30px; border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 5px;">Professional Profile</h2>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+                    <!-- Left Column: Details -->
+                    <div>
+                        <h3 style="color: var(--accent); margin-bottom: 15px; font-family: 'Outfit';"><i class="fas fa-briefcase"></i> Experience</h3>
+                        <div style="margin-bottom: 25px;">
+                            <h4 style="color: #fff; font-size: 1.1rem;">Interactive Content Producer</h4>
+                            <span style="color: rgba(255,255,255,0.5); font-size: 0.9rem; margin-bottom: 5px; display: block;">HerzStudio | Present</span>
+                            <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">Automating digital workflows, managing immersive art productions, and designing tech-driven interactive solutions.</p>
+                        </div>
+                        <div>
+                            <h4 style="color: #fff; font-size: 1.1rem;">Tech Solutions Manager</h4>
+                            <span style="color: rgba(255,255,255,0.5); font-size: 0.9rem; margin-bottom: 5px; display: block;">Business Operations</span>
+                            <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">Bridging the gap between technological stability and high-level creative design efficiency.</p>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Skills & Edu -->
+                    <div>
+                        <h3 style="color: var(--accent); margin-bottom: 15px; font-family: 'Outfit';"><i class="fas fa-magic"></i> Core Skills</h3>
+                        <ul style="color: rgba(255,255,255,0.7); font-size: 0.9rem; line-height: 1.8; margin-bottom: 30px; list-style-type: none; padding-left: 0;">
+                            <li><i class="fas fa-check" style="color: var(--accent); margin-right: 8px;"></i> Interactive Event Media</li>
+                            <li><i class="fas fa-check" style="color: var(--accent); margin-right: 8px;"></i> Generative AI & Automation</li>
+                            <li><i class="fas fa-check" style="color: var(--accent); margin-right: 8px;"></i> System Architecture & Ops</li>
+                            <li><i class="fas fa-check" style="color: var(--accent); margin-right: 8px;"></i> Technical Support Level II/III</li>
+                        </ul>
+
+                        <h3 style="color: var(--accent); margin-bottom: 15px; font-family: 'Outfit';"><i class="fas fa-graduation-cap"></i> Education</h3>
+                        <div>
+                            <h4 style="color: #fff; font-size: 1.0rem;">Degree in Digital Technology</h4>
+                            <p style="color: rgba(255,255,255,0.6); font-size: 0.85rem;">Specialization in AI Automation and Interactive Systems Development.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: PROJECTS -->
+        <section id="projects">
+            <div class="content-card">
+                <h2 style="font-family: 'Outfit'; font-size: 2.5rem; margin-bottom: 40px; text-align: center;">Curated Works</h2>
+                <div class="projects-h-grid">
+                    <div class="project-card">
+                        <div class="card-inner">
+                            <div class="card-front" style="background-image: url('images/pj1.png')">
+                                <div class="project-overlay">
+                                    <h4>Neural Symphony</h4>
+                                    <p>AI-driven soundscapes.</p>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <div class="back-content">
+                                    <span class="step-num">01</span>
+                                    <h3>Neural Symphony</h3>
+                                    <p>A multi-stage generative audio-visual project using GPT-4 and Stable Diffusion to transform real-time sonic inputs into fluid neural architecture.</p>
+                                    <a href="#" class="view-btn">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="card-inner">
+                            <div class="card-front" style="background-image: url('images/pj2.png')">
+                                <div class="project-overlay">
+                                    <h4>Luminance Facade</h4>
+                                    <p>Architectural Mapping.</p>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <div class="back-content">
+                                    <span class="step-num">02</span>
+                                    <h3>Luminance Facade</h3>
+                                    <p>Interactive projection mapping that adapts to city light pollution, creating a recursive visual loop on historical landmarks.</p>
+                                    <a href="#" class="view-btn">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="card-inner">
+                            <div class="card-front" style="background-image: url('images/pj3.png')">
+                                <div class="project-overlay">
+                                    <h4>Virtual Ether</h4>
+                                    <p>Spatial Art for VR.</p>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <div class="back-content">
+                                    <span class="step-num">03</span>
+                                    <h3>Virtual Ether</h3>
+                                    <p>A VR social experience focused on non-verbal communication through light and volumetric shadows. Built in Unreal Engine 5.</p>
+                                    <a href="#" class="view-btn">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: CONTACT -->
+        <section id="contact">
+            <div class="content-card" style="text-align: center;">
+                <h2 style="font-family: 'Outfit'; font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 10px;">Connect</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 60px;">Ready to innovate? Initiation sync required.</p>
+                
+                <div class="glow-icons-wrap">
+                    <a href="mailto:jaramillosergioa@gmail.com" class="neo-glow-icon" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://t.me/SergioJaramillo" target="_blank" class="neo-glow-icon tg" aria-label="Telegram">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                </div>
+
+                <div style="margin-top: 40px;">
+                    <a href="cv2026.pdf" download="Sergio_Jaramillo_CV_2026.pdf" class="download-cv" style="font-size: 0.7rem; padding: 12px 25px;">
+                        <i class="fas fa-file-download" style="margin-right: 10px;"></i>DOWNLOAD FULL CV
+                    </a>
+                </div>
+
+                <div style="margin-top: 80px; font-size: 0.7rem; letter-spacing: 5px; color: var(--text-secondary); opacity: 0.5;">
+                    HERZSTUDIO &copy; 2026 // ALL RIGHTS RESERVED
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Scroll Progression Hint -->
+    <div class="scroll-indicator" id="indicator">01 / 04</div>
+
+    <!-- Custom Interaction Script -->
+    <script src="script.js"></script>
+</body>
+</html>

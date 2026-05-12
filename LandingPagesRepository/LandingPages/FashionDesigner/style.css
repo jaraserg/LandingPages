@@ -1,0 +1,910 @@
+/* =====================================================
+   FASHION DESIGNER LANDING PAGE — style.css
+   Layout: Editorial magazine aesthetic
+   Palette: Warm beige, black, yellow gold, green accent
+   ===================================================== */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --beige: #E8DFD0;
+    --beige-light: #F3EDE4;
+    --beige-mid: #D9CCBA;
+    --black: #1A1A1A;
+    --charcoal: #333333;
+    --yellow: #F5C518;
+    --yellow-dark: #D4A800;
+    --green: #22C55E;
+    --white: #FFFFFF;
+    --text-dark: #1A1A1A;
+    --text-mid: #555555;
+    --text-light: #888888;
+    --font-display: 'Bebas Neue', 'Playfair Display', serif;
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Inter', system-ui, sans-serif;
+    --transition: 0.42s cubic-bezier(0.4, 0, 0.2, 1);
+    --green-border: 3px solid var(--green);
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    background-color: var(--beige);
+    font-family: var(--font-sans);
+    color: var(--text-dark);
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+/* ── Background canvas ── */
+#bg-canvas {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.45;
+}
+
+/* ── Page shell ── */
+.page {
+    position: relative;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* =====================================================
+   HEADER / EDITORIAL TITLE ZONE
+   ===================================================== */
+.page-header {
+    position: relative;
+    flex-shrink: 0;
+    padding: 0.9rem 2.5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    background: var(--beige);
+    overflow: hidden;
+}
+
+/* Dot grids decorative */
+.dot-grid {
+    position: absolute;
+    top: 8px;
+    width: 70px;
+    height: 60px;
+    background-image: radial-gradient(circle, var(--beige-mid) 1.5px, transparent 1.5px);
+    background-size: 10px 10px;
+    pointer-events: none;
+}
+
+.dot-grid--left {
+    left: 1.2rem;
+}
+
+.dot-grid--right {
+    right: 1.2rem;
+}
+
+/* Sub-row above title */
+.header-sub-row {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.sub-label {
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-light);
+}
+
+.sub-line {
+    width: 60px;
+    height: 1px;
+    background: var(--beige-mid);
+}
+
+/* Editorial big name */
+.header-editorial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15rem;
+}
+
+.display-name {
+    display: flex;
+    gap: 0.5rem;
+    align-items: baseline;
+    line-height: 0.9;
+}
+
+.display-name__first {
+    font-family: var(--font-display);
+    font-size: clamp(2.6rem, 5vw, 4.8rem);
+    font-weight: 400;
+    letter-spacing: 6px;
+    color: var(--black);
+}
+
+.display-name__last {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3.8vw, 3.6rem);
+    font-weight: 900;
+    font-style: italic;
+    color: var(--black);
+    letter-spacing: 1px;
+}
+
+.header-tagline {
+    font-size: 0.68rem;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-light);
+}
+
+/* =====================================================
+   YELLOW PILL NAVIGATION
+   ===================================================== */
+.pill-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.45rem 0 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.38rem 1.4rem;
+    background: var(--yellow);
+    color: var(--black);
+    border-radius: 999px;
+    font-size: 0.73rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background var(--transition), transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+
+.pill::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: rgba(255, 255, 255, 0.15);
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.pill:hover {
+    background: var(--yellow-dark);
+    transform: translateY(-2px);
+    box-shadow: 4px 5px 0 rgba(0, 0, 0, 0.18);
+}
+
+.pill.active-pill {
+    background: var(--black);
+    color: var(--yellow);
+    box-shadow: 3px 3px 0 rgba(34, 197, 94, 0.5);
+}
+
+/* =====================================================
+   MAIN STAGE
+   ===================================================== */
+.stage {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    padding: 0.6rem 2.5rem 0;
+    gap: 0.5rem;
+    overflow: hidden;
+}
+
+/* =====================================================
+   GREEN FRAME — Content Area
+   ===================================================== */
+.green-frame {
+    flex: 1;
+    border: var(--green-border);
+    border-radius: 6px;
+    background: var(--beige-light);
+    position: relative;
+    overflow: hidden;
+    /* Corner accent marks */
+    box-shadow:
+        -6px -6px 0 0 var(--yellow),
+        6px 6px 0 0 rgba(34, 197, 94, 0.3);
+    min-height: 0;
+}
+
+/* ── Frame corner decorations ── */
+.green-frame::before,
+.green-frame::after {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.green-frame::before {
+    top: 12px;
+    left: 12px;
+    width: 28px;
+    height: 28px;
+    border-top: 2px solid var(--yellow);
+    border-left: 2px solid var(--yellow);
+}
+
+.green-frame::after {
+    bottom: 12px;
+    right: 12px;
+    width: 28px;
+    height: 28px;
+    border-bottom: 2px solid var(--yellow);
+    border-right: 2px solid var(--yellow);
+}
+
+/* =====================================================
+   CONTENT PANELS
+   ===================================================== */
+.frame-panel {
+    position: absolute;
+    inset: 0;
+    padding: 1.8rem 2.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(18px);
+    pointer-events: none;
+    transition: opacity var(--transition), transform var(--transition);
+    overflow: hidden;
+}
+
+.frame-panel.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+}
+
+/* Shared typography */
+.eyebrow {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--yellow-dark);
+    margin-bottom: 0.4rem;
+}
+
+.frame-title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.7rem, 2.8vw, 2.8rem);
+    font-weight: 700;
+    color: var(--black);
+    line-height: 1.1;
+    margin-bottom: 0.9rem;
+}
+
+.frame-title em {
+    font-style: italic;
+    color: var(--green);
+}
+
+.frame-title--top {
+    margin-bottom: 1.2rem;
+}
+
+.frame-body {
+    font-size: 0.88rem;
+    line-height: 1.75;
+    color: var(--text-mid);
+    max-width: 520px;
+    margin-bottom: 0.7rem;
+}
+
+/* Tags */
+.tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 0.6rem;
+}
+
+.tag {
+    padding: 4px 14px;
+    border: 1.5px solid var(--beige-mid);
+    border-radius: 999px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-mid);
+    background: transparent;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.tag:hover {
+    background: var(--yellow);
+    border-color: var(--yellow);
+    color: var(--black);
+}
+
+/* =====================================================
+   HOME PANEL — Two column: text + sewing machine
+   ===================================================== */
+.home-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    height: 100%;
+}
+
+.home-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#sewing-canvas {
+    width: clamp(180px, 28vw, 340px);
+    height: clamp(140px, 22vw, 260px);
+    display: block;
+}
+
+/* =====================================================
+   ABOUT PANEL
+   ===================================================== */
+.about-inner {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2.5rem;
+    align-items: center;
+    height: 100%;
+}
+
+.about-img-frame {
+    position: relative;
+    width: clamp(130px, 16vw, 200px);
+    flex-shrink: 0;
+}
+
+.about-img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+.img-accent {
+    position: absolute;
+    bottom: -8px;
+    left: -8px;
+    width: 100%;
+    height: 100%;
+    border: 2.5px solid var(--yellow);
+    border-radius: 4px;
+    z-index: 0;
+}
+
+.about-stats {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.astat {
+    display: flex;
+    flex-direction: column;
+}
+
+.astat__n {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--black);
+    line-height: 1;
+}
+
+.astat__l {
+    font-size: 0.65rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-top: 0.2rem;
+}
+
+/* =====================================================
+   PROJECTS PANEL
+   ===================================================== */
+.projects-inner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    flex: 1;
+    min-height: 0;
+}
+
+.proj-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.proj-img-wrap {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    flex: 1;
+    min-height: 0;
+}
+
+.proj-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.proj-card:hover .proj-img-wrap img {
+    transform: scale(1.06);
+}
+
+.proj-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(26, 26, 26, 0.7) 0%, transparent 60%);
+    display: flex;
+    align-items: flex-end;
+    padding: 0.6rem;
+}
+
+.proj-overlay span {
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--yellow);
+}
+
+.proj-card h3 {
+    font-family: var(--font-serif);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--black);
+}
+
+.proj-card p {
+    font-size: 0.73rem;
+    line-height: 1.5;
+    color: var(--text-mid);
+}
+
+/* =====================================================
+   EDUCATION PANEL
+   ===================================================== */
+.edu-inner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.edu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    flex: 1;
+    justify-content: center;
+}
+
+.edu-item {
+    display: grid;
+    grid-template-columns: 90px 1fr 36px;
+    gap: 1rem;
+    align-items: center;
+    padding: 0.7rem 1rem;
+    background: var(--white);
+    border-radius: 6px;
+    border-left: 3px solid var(--yellow);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.edu-item:hover {
+    transform: translateX(4px);
+    box-shadow: 4px 4px 0 rgba(245, 197, 24, 0.25);
+}
+
+.edu-year-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--yellow-dark);
+    background: rgba(245, 197, 24, 0.1);
+    border-radius: 4px;
+    padding: 0.35rem 0.5rem;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.edu-info h3 {
+    font-family: var(--font-serif);
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 0.15rem;
+}
+
+.edu-info p {
+    font-size: 0.73rem;
+    color: var(--text-light);
+    line-height: 1.4;
+}
+
+.edu-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--beige);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    color: var(--text-mid);
+}
+
+/* =====================================================
+   BOTTOM PHOTO STRIP
+   ===================================================== */
+.photo-strip {
+    flex-shrink: 0;
+    height: clamp(70px, 12vh, 110px);
+    display: flex;
+    align-items: stretch;
+    gap: 4px;
+    overflow: hidden;
+    border-top: 1.5px solid var(--beige-mid);
+}
+
+.strip-photo {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.strip-photo--wide {
+    flex: 1.5;
+}
+
+.strip-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    filter: sepia(0.15) contrast(0.95);
+    transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.strip-photo:hover img {
+    filter: sepia(0) contrast(1);
+    transform: scale(1.04);
+}
+
+.strip-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1.5rem;
+    flex-shrink: 0;
+    background: var(--black);
+}
+
+.strip-label__main {
+    font-family: var(--font-display);
+    font-size: clamp(1rem, 2vw, 1.8rem);
+    font-weight: 400;
+    letter-spacing: 6px;
+    color: var(--yellow);
+    line-height: 1;
+}
+
+.strip-label__sub {
+    font-family: var(--font-display);
+    font-size: clamp(0.7rem, 1.1vw, 1rem);
+    letter-spacing: 8px;
+    color: var(--white);
+    line-height: 1;
+    margin-top: 2px;
+}
+
+/* =====================================================
+   FLOATING FAB
+   ===================================================== */
+.fab-wrap {
+    position: fixed;
+    bottom: 26px;
+    left: 26px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 10px;
+}
+
+.fab-btn {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--black);
+    color: var(--yellow);
+    border: 2px solid var(--yellow);
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 3px 3px 0 rgba(245, 197, 24, 0.4);
+    transition: transform 0.3s ease, background 0.3s;
+}
+
+.fab-btn:hover,
+.fab-btn.open {
+    background: var(--yellow);
+    color: var(--black);
+}
+
+.fab-btn.open {
+    transform: rotate(45deg);
+}
+
+.fab-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(16px) scale(0.85);
+    transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.fab-menu.open {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0) scale(1);
+}
+
+.fab-link {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 15px;
+    text-decoration: none;
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+    transition: transform 0.25s ease;
+}
+
+.fab-link:hover {
+    transform: scale(1.15) translateX(3px);
+}
+
+.fab-lk {
+    background: #0A66C2;
+}
+
+.fab-ig {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+.fab-wa {
+    background: #25D366;
+}
+
+/* =====================================================
+   RESPONSIVE — Tablet (1024px)
+   ===================================================== */
+@media (max-width: 1024px) {
+    .stage {
+        padding: 0.5rem 1.5rem 0;
+    }
+
+    .page-header {
+        padding: 0.7rem 1.5rem 0;
+    }
+
+    .home-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .home-visual {
+        display: none;
+    }
+
+    .about-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .about-img-col {
+        display: none;
+    }
+
+    .frame-panel {
+        padding: 1.4rem 1.6rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .display-name__first {
+        font-size: 2.8rem;
+    }
+
+    .display-name__last {
+        font-size: 2.2rem;
+    }
+}
+
+/* =====================================================
+   RESPONSIVE — Mobile (768px)
+   ===================================================== */
+@media (max-width: 768px) {
+    body {
+        overflow-y: auto;
+    }
+
+    .page {
+        height: auto;
+        min-height: 100vh;
+        overflow-y: auto;
+    }
+
+    .stage {
+        padding: 0.4rem 0.8rem 0;
+        flex: none;
+    }
+
+    .page-header {
+        padding: 0.7rem 0.8rem 0;
+    }
+
+    .display-name {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .display-name__first {
+        font-size: 2.2rem;
+    }
+
+    .display-name__last {
+        font-size: 1.8rem;
+    }
+
+    .pill-nav {
+        gap: 0.4rem;
+    }
+
+    .pill {
+        padding: 0.3rem 0.9rem;
+        font-size: 0.62rem;
+    }
+
+    .green-frame {
+        min-height: 340px;
+        height: 55vw;
+    }
+
+    .frame-panel {
+        padding: 1.1rem 1.2rem;
+    }
+
+    .frame-title {
+        font-size: 1.4rem;
+    }
+
+    .frame-body {
+        font-size: 0.8rem;
+    }
+
+    .home-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .home-visual {
+        display: none;
+    }
+
+    .about-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .about-img-col {
+        display: none;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+    }
+
+    .proj-card {
+        font-size: 0.75rem;
+    }
+
+    .edu-item {
+        grid-template-columns: 70px 1fr;
+    }
+
+    .edu-icon {
+        display: none;
+    }
+
+    .edu-year-badge {
+        font-size: 0.58rem;
+    }
+
+    .photo-strip {
+        height: 60px;
+    }
+
+    .strip-label {
+        padding: 0.4rem 0.8rem;
+    }
+
+    .strip-label__main {
+        font-size: 0.9rem;
+        letter-spacing: 3px;
+    }
+
+    .strip-label__sub {
+        font-size: 0.6rem;
+        letter-spacing: 4px;
+    }
+}

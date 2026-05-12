@@ -1,0 +1,72 @@
+<!-- index.html -->
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Senior Renewable Energy Engineer - Interactive Profile</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="styles.css" rel="stylesheet"/>
+</head>
+<body>
+    <a href="../index.html" style="position: fixed; top: 20px; left: 20px; z-index: 9999; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); color: white; padding: 10px 20px; border-radius: 30px; font-family: sans-serif; font-size: 12px; border: 1px solid rgba(255,255,255,0.2); text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onmouseover="this.style.background='rgba(0,255,0,0.2)'; this.style.borderColor='rgba(0,255,0,0.5)'" onmouseout="this.style.background='rgba(0,0,0,0.8)'; this.style.borderColor='rgba(255,255,255,0.2)'"><span>←</span> Back to Showcase</a>
+
+<div class="custom-cursor"></div>
+<button id="theme-toggle">☀️</button>
+<header class="bg-image" style="background-image: url('https://www.nestozenenergy.com/images/hero-wind-solar.jpg');">
+<h1>John Doe</h1>
+<h2>Senior Renewable Energy Engineer - Solar Power Niche</h2>
+<p>Expert in sustainable energy solutions with 15+ years driving solar innovations for a greener future.</p>
+</header>
+<section id="summary">
+<div class="glass-panel bg-image" style="background-image: url('https://www.nestozenenergy.com/images/hero-wind-solar.jpg');">
+<h2>Professional Summary</h2>
+<p>Seasoned engineer specializing in solar photovoltaic systems, grid integration, and energy efficiency.
+                Led projects reducing carbon emissions by 40% across multiple continents.</p>
+</div>
+</section>
+<section id="experience">
+<h2>Experience</h2>
+<div class="card bg-image" style="background-image: url('https://images.unsplash.com/photo-1559027615-b27bdd4f2bb3?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80');">
+<h3>Senior Engineer, SolarTech Inc. (2018-Present)</h3>
+<p>Designed and implemented large-scale solar farms, optimizing energy output with AI-driven analytics.</p>
+</div>
+<div class="card bg-image" style="background-image: url('https://images.unsplash.com/photo-1473341304170-971cc80c0697?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80');">
+<h3>Project Manager, GreenEnergy Corp. (2012-2018)</h3>
+<p>Managed teams in deploying off-grid solar solutions in remote areas, achieving 95% uptime.</p>
+</div>
+</section>
+<section id="skills">
+<div class="glass-panel bg-image" style="background-image: url('https://images.unsplash.com/photo-1473341304170-971cc80c0697?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80');">
+<h2>Key Skills</h2>
+<ul>
+<li>Solar System Design</li>
+<li>Energy Modeling</li>
+<li>Project Management</li>
+<li>Sustainable Innovation</li>
+</ul>
+</div>
+</section>
+<section id="mini-game">
+<h2>Decision Simulator Mini-Game</h2>
+<p>Select a top skill to see its impact in a real-world scenario:</p>
+<select id="skill-select">
+<option value="">Choose a skill...</option>
+<option value="solar-design">Solar System Design</option>
+<option value="energy-modeling">Energy Modeling</option>
+<option value="project-management">Project Management</option>
+<option value="sustainable-innovation">Sustainable Innovation</option>
+</select>
+<p id="impact-display"></p>
+</section>
+<section id="contact">
+<h2>Contact</h2>
+<p>Email: <a href="mailto:john.doe@example.com">john.doe@example.com</a></p>
+<p>LinkedIn: <a href="https://linkedin.com/in/johndoe">/in/johndoe</a></p>
+</section>
+<script src="script.js"></script>
+<footer style="text-align: center; padding: 20px; font-size: 14px;">
+<a href="#" style="text-decoration: none; color: inherit;">© 2026 Trademark</a>
+</footer></body>
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Portafolio profesional de [Tu Nombre] — Desarrollador, Diseñador y Creador." name="description"/>
+<title>Tu Nombre | Portafolio</title>
+<!-- Preconnect for speed -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+<link href="styles.css" rel="stylesheet">
+</link></head>
+<body>
+    <a href="../index.html" style="position: fixed; top: 20px; left: 20px; z-index: 9999; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); color: white; padding: 10px 20px; border-radius: 30px; font-family: sans-serif; font-size: 12px; border: 1px solid rgba(255,255,255,0.2); text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onmouseover="this.style.background='rgba(0,255,0,0.2)'; this.style.borderColor='rgba(0,255,0,0.5)'" onmouseout="this.style.background='rgba(0,0,0,0.8)'; this.style.borderColor='rgba(255,255,255,0.2)'"><span>←</span> Back to Showcase</a>
+
+<!-- ═══════════════════════════════════ CANVAS BG ═══ -->
+<canvas id="bg-canvas"></canvas>
+<!-- ═══════════════════════════════════ NAV ═══════════ -->
+<nav id="navbar">
+<div class="nav-logo">
+<span class="logo-bracket">&lt;</span>TN<span class="logo-bracket">/&gt;</span>
+</div>
+<button aria-label="Abrir menú" class="hamburger" id="hamburger">
+<span></span><span></span><span></span>
+</button>
+<ul class="nav-links" id="nav-links">
+<li><a class="nav-link" href="#about">Sobre Mí</a></li>
+<li><a class="nav-link" href="#skills">Habilidades</a></li>
+<li><a class="nav-link" href="#academic">Académico</a></li>
+<li><a class="nav-link" href="#projects">Proyectos</a></li>
+<li><a class="nav-link nav-cta" href="#contact">Contacto</a></li>
+</ul>
+</nav>
+<!-- ═══════════════════════════════════ HERO ═════════ -->
+<section id="hero">
+<div class="hero-inner">
+<div class="hero-photo-wrap">
+<div class="hero-photo hero-icon-wrap">
+<i class="bx bx-user-circle hero-icon"></i>
+<div class="photo-ring"></div>
+<div class="photo-corner tl"></div>
+<div class="photo-corner tr"></div>
+<div class="photo-corner bl"></div>
+<div class="photo-corner br"></div>
+</div>
+</div>
+<div class="hero-text">
+<p class="hero-greeting">Hola, soy</p>
+<h1 class="hero-name">Tu Nombre</h1>
+<div class="hero-role-wrap">
+<span class="role-prefix">Soy </span>
+<span class="hero-role" id="typed-role">Desarrollador</span>
+<span class="cursor-blink">|</span>
+</div>
+<p class="hero-bio">Apasionado por crear experiencias digitales rápidas, hermosas y significativas.</p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="#projects">Ver Mis Trabajos</a>
+<a class="btn btn-outline" href="#contact">Hablemos</a>
+</div>
+</div>
+</div>
+<div class="scroll-indicator">
+<span></span>
+</div>
+</section>
+<!-- ═══════════════════════════════════ ABOUT ════════ -->
+<section class="section reveal" id="about">
+<div class="container">
+<div class="section-header">
+<span class="section-tag">01 /</span>
+<h2 class="section-title">Sobre Mí</h2>
+</div>
+<div class="about-grid">
+<div class="about-text">
+<p>¡Hola! Soy <strong>Tu Nombre</strong>, un desarrollador y diseñador apasionado con base en [Tu
+                        Ciudad]. Me encanta convertir problemas complejos en soluciones elegantes y fáciles de usar.</p>
+<p>Con experiencia en [Tu Campo], combino precisión técnica con pensamiento creativo para crear
+                        productos que generen impacto. Cuando no estoy programando, me encontrarás [hobby/interés].</p>
+<div class="about-stats">
+<div class="stat">
+<span class="stat-num">3+</span>
+<span class="stat-label">Años Exp.</span>
+</div>
+<div class="stat">
+<span class="stat-num">20+</span>
+<span class="stat-label">Proyectos</span>
+</div>
+<div class="stat">
+<span class="stat-num">10+</span>
+<span class="stat-label">Clientes</span>
+</div>
+</div>
+</div>
+<div class="about-card">
+<div class="info-list">
+<div class="info-item">
+<i class="bx bx-user"></i>
+<span><strong>Nombre:</strong> Tu Nombre</span>
+</div>
+<div class="info-item">
+<i class="bx bx-map"></i>
+<span><strong>Ubicación:</strong> Ciudad, País</span>
+</div>
+<div class="info-item">
+<i class="bx bx-envelope"></i>
+<span><strong>Email:</strong> tu@email.com</span>
+</div>
+<div class="info-item">
+<i class="bx bx-briefcase"></i>
+<span><strong>Disponibilidad:</strong> <span class="available-badge">Disponible</span></span>
+</div>
+</div>
+<a class="btn btn-primary btn-sm" download="" href="#">Descargar CV <i class="bx bx-download"></i></a>
+</div>
+</div>
+</div>
+</section>
+<!-- ═══════════════════════════════════ SKILLS ═══════ -->
+<section class="section reveal" id="skills">
+<div class="container">
+<div class="section-header">
+<span class="section-tag">02 /</span>
+<h2 class="section-title">Habilidades</h2>
+</div>
+<div class="skills-grid">
+<div class="skill-category reveal-child">
+<h3 class="skill-cat-title"><i class="bx bx-code-alt"></i> Desarrollo</h3>
+<div class="skill-tags">
+<span class="tag">HTML5</span>
+<span class="tag">CSS3</span>
+<span class="tag">JavaScript</span>
+<span class="tag">Python</span>
+<span class="tag">React</span>
+<span class="tag">Node.js</span>
+<span class="tag">SQL</span>
+<span class="tag">Git</span>
+</div>
+</div>
+<div class="skill-category reveal-child">
+<h3 class="skill-cat-title"><i class="bx bx-palette"></i> Diseño</h3>
+<div class="skill-tags">
+<span class="tag">Figma</span>
+<span class="tag">UI/UX</span>
+<span class="tag">Photoshop</span>
+<span class="tag">Illustrator</span>
+<span class="tag">Prototipado</span>
+</div>
+</div>
+<div class="skill-category reveal-child">
+<h3 class="skill-cat-title"><i class="bx bx-cog"></i> Herramientas</h3>
+<div class="skill-tags">
+<span class="tag">Docker</span>
+<span class="tag">Linux</span>
+<span class="tag">REST APIs</span>
+<span class="tag">Agile</span>
+<span class="tag">Scrum</span>
+<span class="tag">VS Code</span>
+</div>
+</div>
+</div>
+<!-- Proficiency bars -->
+<div class="skill-bars">
+<div class="skill-bar-item reveal-child">
+<div class="skill-bar-label"><span>Desarrollo Frontend</span><span class="skill-pct">90%</span>
+</div>
+<div class="skill-bar-track">
+<div class="skill-bar-fill" data-width="90"></div>
+</div>
+</div>
+<div class="skill-bar-item reveal-child">
+<div class="skill-bar-label"><span>Desarrollo Backend</span><span class="skill-pct">75%</span></div>
+<div class="skill-bar-track">
+<div class="skill-bar-fill" data-width="75"></div>
+</div>
+</div>
+<div class="skill-bar-item reveal-child">
+<div class="skill-bar-label"><span>Diseño UI/UX</span><span class="skill-pct">80%</span></div>
+<div class="skill-bar-track">
+<div class="skill-bar-fill" data-width="80"></div>
+</div>
+</div>
+<div class="skill-bar-item reveal-child">
+<div class="skill-bar-label"><span>Datos y Analítica</span><span class="skill-pct">65%</span></div>
+<div class="skill-bar-track">
+<div class="skill-bar-fill" data-width="65"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ═══════════════════════════════════ ACADEMIC ═════ -->
+<section class="section reveal" id="academic">
+<div class="container">
+<div class="section-header">
+<span class="section-tag">03 /</span>
+<h2 class="section-title">Académico</h2>
+</div>
+<div class="timeline">
+<div class="timeline-item reveal-child">
+<div class="timeline-dot"></div>
+<div class="timeline-card">
+<span class="timeline-date">2020 – 2024</span>
+<h3 class="timeline-title">Grado en Ciencias de la Computación</h3>
+<p class="timeline-sub">Nombre de la Universidad · Ciudad, País</p>
+<p class="timeline-desc">Enfoque en ingeniería de software, algoritmos y estructuras de datos.
+                            Graduado con honores. Tesis sobre [tema].</p>
+<div class="timeline-tags">
+<span class="tag tag-sm">Promedio 9.5</span>
+<span class="tag tag-sm">Honores</span>
+</div>
+</div>
+</div>
+<div class="timeline-item reveal-child">
+<div class="timeline-dot"></div>
+<div class="timeline-card">
+<span class="timeline-date">2023</span>
+<h3 class="timeline-title">Bootcamp de Desarrollo Web Full Stack</h3>
+<p class="timeline-sub">Nombre del Instituto / Bootcamp</p>
+<p class="timeline-desc">Programa intensivo de 6 meses cubriendo React, Node.js, bases de datos
+                            y despliegue.</p>
+<div class="timeline-tags">
+<span class="tag tag-sm">Certificado</span>
+<span class="tag tag-sm">Full Stack</span>
+</div>
+</div>
+</div>
+<div class="timeline-item reveal-child">
+<div class="timeline-dot"></div>
+<div class="timeline-card">
+<span class="timeline-date">2022</span>
+<h3 class="timeline-title">Fundamentos de Diseño UI/UX</h3>
+<p class="timeline-sub">Plataforma Online (Coursera / Udemy)</p>
+<p class="timeline-desc">Investigación de usuarios, wireframing, prototipado y sistemas de
+                            diseño.</p>
+<div class="timeline-tags">
+<span class="tag tag-sm">Certificado</span>
+<span class="tag tag-sm">Diseño</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ═══════════════════════════════════ PROJECTS ═════ -->
+<section class="section reveal" id="projects">
+<div class="container">
+<div class="section-header">
+<span class="section-tag">04 /</span>
+<h2 class="section-title">Proyectos</h2>
+</div>
+<div class="projects-grid">
+<div class="project-card reveal-child">
+<div class="project-img-wrap">
+<div class="project-img">
+<img alt="Proyecto Alpha" loading="lazy" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80" style="width:100%; height:100%; object-fit:cover;"/>
+</div>
+<div class="project-overlay">
+<a class="btn btn-sm btn-primary" href="#" target="_blank">Ver Demo <i class="bx bx-link-external"></i></a>
+<a class="btn btn-sm btn-outline" href="#" target="_blank">Código <i class="bx bxl-github"></i></a>
+</div>
+</div>
+<div class="project-info">
+<h3 class="project-title">Proyecto Alpha</h3>
+<p class="project-desc">Aplicación web basada en datos para análisis en tiempo real con
+                            dashboards interactivos.</p>
+<div class="project-tags">
+<span class="tag tag-sm">React</span>
+<span class="tag tag-sm">Node.js</span>
+<span class="tag tag-sm">MongoDB</span>
+</div>
+</div>
+</div>
+<div class="project-card reveal-child">
+<div class="project-img-wrap">
+<div class="project-img">
+<img alt="Proyecto Beta" loading="lazy" src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80" style="width:100%; height:100%; object-fit:cover;"/>
+</div>
+<div class="project-overlay">
+<a class="btn btn-sm btn-primary" href="#" target="_blank">Ver Demo <i class="bx bx-link-external"></i></a>
+<a class="btn btn-sm btn-outline" href="#" target="_blank">Código <i class="bx bxl-github"></i></a>
+</div>
+</div>
+<div class="project-info">
+<h3 class="project-title">Proyecto Beta</h3>
+<p class="project-desc">Plataforma social mobile-first que conecta comunidades a través de
+                            intereses compartidos.</p>
+<div class="project-tags">
+<span class="tag tag-sm">Vue.js</span>
+<span class="tag tag-sm">Firebase</span>
+<span class="tag tag-sm">PWA</span>
+</div>
+</div>
+</div>
+<div class="project-card reveal-child">
+<div class="project-img-wrap">
+<div class="project-img">
+<img alt="Proyecto Gamma" loading="lazy" src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80" style="width:100%; height:100%; object-fit:cover;"/>
+</div>
+<div class="project-overlay">
+<a class="btn btn-sm btn-primary" href="#" target="_blank">Ver Demo <i class="bx bx-link-external"></i></a>
+<a class="btn btn-sm btn-outline" href="#" target="_blank">Código <i class="bx bxl-github"></i></a>
+</div>
+</div>
+<div class="project-info">
+<h3 class="project-title">Proyecto Gamma</h3>
+<p class="project-desc">Herramienta de automatización impulsada por IA que optimiza flujos de
+                            trabajo repetitivos en un 80%.</p>
+<div class="project-tags">
+<span class="tag tag-sm">Python</span>
+<span class="tag tag-sm">OpenAI</span>
+<span class="tag tag-sm">FastAPI</span>
+</div>
+</div>
+</div>
+<div class="project-card reveal-child">
+<div class="project-img-wrap">
+<div class="project-img">
+<img alt="Proyecto Delta" loading="lazy" src="https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80" style="width:100%; height:100%; object-fit:cover;"/>
+</div>
+<div class="project-overlay">
+<a class="btn btn-sm btn-primary" href="#" target="_blank">Ver Demo <i class="bx bx-link-external"></i></a>
+<a class="btn btn-sm btn-outline" href="#" target="_blank">Código <i class="bx bxl-github"></i></a>
+</div>
+</div>
+<div class="project-info">
+<h3 class="project-title">Proyecto Delta</h3>
+<p class="project-desc">Plataforma de comercio electrónico con CMS personalizado, pagos y
+                            gestión de inventario.</p>
+<div class="project-tags">
+<span class="tag tag-sm">Next.js</span>
+<span class="tag tag-sm">Stripe</span>
+<span class="tag tag-sm">PostgreSQL</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ═══════════════════════════════════ CONTACT ══════ -->
+<section class="section reveal" id="contact">
+<div class="container">
+<div class="section-header">
+<span class="section-tag">05 /</span>
+<h2 class="section-title">Contacto</h2>
+</div>
+<div class="contact-simple text-center reveal-child">
+<p class="contact-text-simple">Ya sea que tengas un proyecto en mente, quieras colaborar o simplemente
+                    saludar, mi bandeja de entrada siempre está abierta.</p>
+<div class="contact-icons-row">
+<a aria-label="Telegram" class="icon-link telegram" href="https://t.me/yourusername" target="_blank">
+<i class="bx bxl-telegram"></i>
+</a>
+<a aria-label="WhatsApp" class="icon-link whatsapp" href="https://wa.me/1234567890" target="_blank">
+<i class="bx bxl-whatsapp"></i>
+</a>
+<a aria-label="LinkedIn" class="icon-link linkedin" href="https://linkedin.com/in/yourusername" target="_blank">
+<i class="bx bxl-linkedin"></i>
+</a>
+<a aria-label="GitHub" class="icon-link github" href="https://github.com/yourusername" target="_blank">
+<i class="bx bxl-github"></i>
+</a>
+<a aria-label="Instagram" class="icon-link instagram" href="https://instagram.com/yourusername" target="_blank">
+<i class="bx bxl-instagram"></i>
+</a>
+<a aria-label="Email" class="icon-link email" href="mailto:your@email.com">
+<i class="bx bx-envelope"></i>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- ═══════════════════════════════════ FOOTER ═══════ -->
+<footer style="text-align: center; padding: 20px; font-size: 14px;">
+<a href="#" style="text-decoration: none; color: inherit;">© 2026 Trademark</a>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>

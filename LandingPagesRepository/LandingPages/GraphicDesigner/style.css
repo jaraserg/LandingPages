@@ -1,0 +1,533 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #FAF2F0;
+    /* Very light pink/peach background */
+    --accent-pink: #DA9B8A;
+    /* Decorative top-left box */
+    --blob-color: #F8D2A6;
+    /* Right side blob menu background */
+    --text-color: #5C3A21;
+    /* Dark brownish text */
+    --nav-text: #AC6C54;
+    /* Nav link color */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Poppins', sans-serif;
+    --square-size: 55vh;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: var(--font-body);
+    color: var(--text-color);
+    overflow: hidden;
+    /* No inner scroll */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Page Wrapper for Layout Alignment */
+.page-wrapper {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-layout {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 90vw;
+    max-width: 1200px;
+    height: 80vh;
+}
+
+/* Left Section */
+.left-section {
+    position: relative;
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Decorative Pink Box */
+.decoration-box {
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    width: calc(var(--square-size) * 0.8);
+    height: calc(var(--square-size) * 0.8);
+    background-color: var(--accent-pink);
+    z-index: 1;
+}
+
+/* Dot Grid pattern */
+.dot-grid {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 50%;
+    height: 50%;
+    background-image: radial-gradient(white 15%, transparent 16%);
+    background-position: 0 0;
+    background-size: 20px 20px;
+}
+
+/* Big Square */
+.big-square {
+    position: relative;
+    width: var(--square-size);
+    height: var(--square-size);
+    background-color: #fff;
+    z-index: 2;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Soft animation when transitioning content */
+    transition: all 0.5s ease-in-out;
+}
+
+/* Hero Image */
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transform: scale(1.05);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    pointer-events: none;
+}
+
+.hero-image.active {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+}
+
+/* Content Panels inside the Square */
+.content-panel {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.content-panel.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.content-panel h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--nav-text);
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.5s ease 0.1s, transform 0.5s ease 0.1s;
+}
+
+.content-panel.active h2 {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.content-panel p,
+.content-panel ul,
+.content-panel li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+    color: #4a4a4a;
+}
+
+.content-panel p,
+.content-panel ul,
+.skills-list {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.5s ease 0.2s, transform 0.5s ease 0.2s;
+}
+
+.content-panel.active p,
+.content-panel.active ul,
+.content-panel.active .skills-list {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.content-panel ul {
+    padding-left: 20px;
+}
+
+/* Skills specialized layout */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skills-list span {
+    background-color: var(--accent-pink);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+}
+
+.skills-list span:hover {
+    transform: translateY(-3px) scale(1.05);
+    background-color: var(--nav-text);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+
+/* Title Container */
+.title-container {
+    position: relative;
+    z-index: 3;
+    margin-top: -30px;
+    /* Overlaps bottom of the square */
+    margin-left: -20%;
+    animation: gentleFloat 6s ease-in-out infinite alternate;
+}
+
+/* Profile Name */
+.profile-name {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    color: var(--accent-pink);
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.7);
+    letter-spacing: 1px;
+    line-height: 1;
+}
+
+/* Profile Role */
+.profile-role {
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--nav-text);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top: 5px;
+    padding-left: 5px;
+}
+
+@keyframes gentleFloat {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-8px);
+    }
+}
+
+
+/* Right Section & Blob Menu */
+.right-section {
+    position: relative;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+}
+
+.blob-menu {
+    position: absolute;
+    left: -15%;
+    /* Overlap over the big square */
+    width: 450px;
+    height: 550px;
+    background-color: var(--blob-color);
+    /* Irregular border radius for blob shape */
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: blobMorph 8s ease-in-out infinite alternate;
+}
+
+@keyframes blobMorph {
+    0% {
+        border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    }
+
+    100% {
+        border-radius: 60% 40% 30% 70% / 50% 60% 40% 60%;
+    }
+}
+
+.nav-links {
+    position: relative;
+    width: 100%;
+    animation: textFloat 5s ease-in-out infinite alternate;
+}
+
+@keyframes textFloat {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+.nav-links ul {
+    list-style: none;
+    text-align: center;
+    /* Center links inside the blob menu */
+    padding: 0;
+}
+
+.nav-item {
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--nav-text);
+    display: inline-block;
+    margin: 10px 0;
+    position: relative;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Emulate the text piping line visible in the image `|Educación|` */
+.nav-item::before,
+.nav-item::after {
+    content: '|';
+    opacity: 0;
+    color: var(--nav-text);
+    transition: 0.3s ease;
+}
+
+.nav-item::before {
+    margin-right: 10px;
+    transform: translateX(10px);
+}
+
+.nav-item::after {
+    margin-left: 10px;
+    transform: translateX(-10px);
+}
+
+.nav-item:hover,
+.nav-item.active-link {
+    transform: scale(1.05);
+}
+
+.nav-item:hover::before,
+.nav-item:hover::after,
+.nav-item.active-link::before,
+.nav-item.active-link::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+/* Floating Action Button for Contact (Bottom Right) */
+.fab-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 15px;
+}
+
+.fab-main {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--accent-pink);
+    color: white;
+    font-size: 24px;
+    border: none;
+    box-shadow: 0 5px 15px rgba(218, 155, 138, 0.4);
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fab-main:hover {
+    transform: scale(1.1);
+    background-color: var(--nav-text);
+}
+
+.fab-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    opacity: 0;
+    pointer-events: none;
+    /* Make unclickable when closed */
+    transform: translateY(20px);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.fab-links.open {
+    opacity: 1;
+    pointer-events: all !important;
+    /* Force interactivity open */
+    transform: translateY(0);
+}
+
+.fab-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.fab-icon:hover {
+    transform: scale(1.15);
+}
+
+/* Background colors for social icons */
+.bg-fb {
+    background-color: #1877F2;
+}
+
+.bg-ig {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+.bg-wa {
+    background-color: #25D366;
+}
+
+.bg-email {
+    background-color: #D44638;
+}
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .main-layout {
+        width: 100vw;
+    }
+
+    :root {
+        --square-size: 45vh;
+    }
+
+    .blob-menu {
+        width: 350px;
+        height: 450px;
+    }
+
+    .nav-item {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+
+    .main-layout {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+        justify-content: flex-start;
+        padding-top: 50px;
+    }
+
+    .left-section,
+    .right-section {
+        width: 100%;
+        height: auto;
+    }
+
+    :root {
+        --square-size: 300px;
+    }
+
+    .decoration-box {
+        left: 50%;
+        transform: translateX(-60%);
+    }
+
+    .title-container {
+        margin-left: 0;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .profile-name {
+        font-size: 2.5rem;
+    }
+
+    .profile-role {
+        font-size: 1rem;
+        padding-left: 0;
+    }
+
+    .blob-menu {
+        position: relative;
+        left: 0;
+        margin: 40px auto;
+        width: 90%;
+        max-width: 400px;
+        height: auto;
+        padding: 40px 0;
+        border-radius: 20px;
+        animation: none;
+        /* Disable complex blob morph on mobile for better layout */
+    }
+
+    .nav-links ul {
+        text-align: center;
+        padding-right: 0;
+    }
+
+    body {
+        overflow-y: auto;
+        /* allow scroll on small screens */
+    }
+}

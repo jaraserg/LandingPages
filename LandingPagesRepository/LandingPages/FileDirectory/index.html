@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HELIO - Landing Page Options</title>
+<meta content="Browse and manage landing page designs for personal and business projects" name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="styles.css" rel="stylesheet"/>
+</head>
+<body>
+    <a href="../index.html" style="position: fixed; top: 20px; left: 20px; z-index: 9999; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); color: white; padding: 10px 20px; border-radius: 30px; font-family: sans-serif; font-size: 12px; border: 1px solid rgba(255,255,255,0.2); text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onmouseover="this.style.background='rgba(0,255,0,0.2)'; this.style.borderColor='rgba(0,255,0,0.5)'" onmouseout="this.style.background='rgba(0,0,0,0.8)'; this.style.borderColor='rgba(255,255,255,0.2)'"><span>←</span> Back to Showcase</a>
+
+<!-- Grid Background with Neon Animation -->
+<div class="grid-background">
+<canvas id="neonGrid"></canvas>
+</div>
+<!-- App Container -->
+<div class="app-container">
+<!-- ========================================
+         VIEW 1: DESIGN DIRECTORY (Main Landing)
+         ======================================== -->
+<div class="view active" id="directoryView">
+<!-- Header -->
+<header class="header centered-header">
+<div class="header-content">
+<div class="header-text-layer">
+<h2 class="main-title">HELIO</h2>
+<p class="slogan-text">BE THE FIRST</p>
+</div>
+<!-- 3D Periodic Element Cube -->
+<div class="periodic-element-3d">
+<div class="cube-container">
+<div class="cube">
+<div class="cube-face front"></div>
+<div class="cube-face back"></div>
+<div class="cube-face right"></div>
+<div class="cube-face left"></div>
+<div class="cube-face top"></div>
+<div class="cube-face bottom"></div>
+</div>
+</div>
+</div>
+</div>
+</header></div>
+<div class="header-right">
+<button class="btn btn-primary" id="newPageBtn">
+<span>+</span> Nueva Página
+      </button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+
+<!-- Version Indicator -->
+<div class="version">v1.0</div>
+<!-- Hero Section -->
+<section class="hero">
+<h1>Directorio de <span class="accent">Diseños</span></h1>
+<p>Explora y previsualiza opciones de páginas de aterrizaje para tu proyecto. Selecciona una categoría a
+        continuación para filtrar por tipo, luego
+        haz clic en cualquier diseño para ver la vista previa completa.</p>
+</section>
+<!-- Filter Section -->
+<section class="filter-section">
+<span class="filter-label">FILTRAR POR CATEGORÍA</span>
+<div class="filter-grid">
+<!-- All Filter -->
+<div class="filter-card active" data-category="all">
+<div class="filter-icon">◫</div>
+<div class="filter-card-content">
+<div class="filter-card-title">
+              Todos
+              <span class="filter-card-count" id="countAll">0</span>
+</div>
+<div class="filter-card-subtitle">Ver todas las opciones</div>
+</div>
+</div>
+<!-- Personal Filter -->
+<div class="filter-card" data-category="personal">
+<div class="filter-icon">👤</div>
+<div class="filter-card-content">
+<div class="filter-card-title">
+              Personal
+              <span class="filter-card-count" id="countPersonal">0</span>
+</div>
+<div class="filter-card-subtitle">CV</div>
+</div>
+</div>
+<!-- Business Filter -->
+<div class="filter-card" data-category="business">
+<div class="filter-icon">🏢</div>
+<div class="filter-card-content">
+<div class="filter-card-title">
+              Negocios
+              <span class="filter-card-count" id="countBusiness">0</span>
+</div>
+<div class="filter-card-subtitle">Marca Personal Portafolio</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Landing Pages Section -->
+<section class="pages-section">
+<div class="section-header">
+<span class="section-title" id="allDesignsLabel">TODOS LOS DISEÑOS (0)</span>
+</div>
+<div class="pages-grid" id="pagesGrid">
+<!-- Pages will be dynamically inserted here -->
+</div>
+<div class="empty-state" id="emptyState" style="display: none;">
+<p>Aún no hay páginas de aterrizaje. Crea tu primera página arriba.</p>
+</div>
+</section>
+</div>
+<!-- ========================================
+         VIEW 2: ADMIN PANEL / MANAGEMENT
+         ======================================== -->
+<div class="view" id="managementView">
+<!-- Header -->
+<header class="header">
+<div class="header-left">
+<button class="back-btn" id="backToDirectory">
+<span>←</span>
+<span>Volver</span>
+</button>
+<div class="logo">H</div>
+<div class="header-title">
+<h2>Panel de Administración</h2>
+<p>Gestionar Páginas de Aterrizaje</p>
+</div>
+</div>
+<div class="header-right">
+<span class="page-count" id="pageCountManagement">0 páginas</span>
+</div>
+</header>
+<!-- Management Content -->
+<section class="hero">
+<h1>Páginas de Aterrizaje</h1>
+<p>Crea y gestiona tus diseños de páginas de aterrizaje</p>
+</section>
+<section class="pages-section">
+<div class="section-header">
+<span class="section-title">TODAS LAS PÁGINAS</span>
+<button class="btn btn-primary btn-icon" id="newPageBtnManagement">
+<span>+</span>
+<span>Nueva Página</span>
+</button>
+</div>
+<div class="pages-grid" id="pagesGridManagement">
+<!-- Pages will be dynamically inserted here -->
+</div>
+<div class="empty-state" id="emptyStateManagement">
+<p>Aún no hay páginas de aterrizaje. Crea tu primera página arriba.</p>
+</div>
+</section>
+</div>
+<!-- ========================================
+         MODAL: CREATE NEW PAGE FORM
+         ======================================== -->
+<div class="modal-overlay" id="createModal">
+<div class="modal">
+<!-- Modal Header -->
+<div class="modal-header">
+<h2>Agregar Opción de Página de Aterrizaje</h2>
+<p>Sube un diseño de página de aterrizaje para mostrar en el directorio</p>
+</div>
+<!-- Modal Body (Form) -->
+<form class="modal-body" id="createPageForm">
+<!-- Title -->
+<div class="form-group">
+<label class="form-label">NOMBRE DE LA PÁGINA <span class="required">*</span></label>
+<input class="form-input" id="pageTitle" placeholder="ej., Portafolio Minimalista, SaaS Launch Pro" required="" type="text"/>
+</div>
+<!-- URL -->
+<div class="form-group">
+<label class="form-label">URL DE VISTA PREVIA <span class="required">*</span></label>
+<input class="form-input" id="pageUrl" placeholder="https://ejemplo.com/pagina-aterrizaje" required="" type="url"/>
+<p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">Enlace a la página de
+            aterrizaje en vivo que los clientes pueden ver</p>
+</div>
+<!-- Description -->
+<div class="form-group">
+<label class="form-label">DESCRIPCIÓN</label>
+<textarea class="form-textarea" id="pageDescription" placeholder="Describe el estilo, características y caso de uso ideal de la página de aterrizaje"></textarea>
+<label for="pageDescription">Descripción <span style="color:red">*</span></label>
+<textarea class="form-input" id="pageDescription" placeholder="Breve descripción del diseño..." rows="3"></textarea>
+</div>
+<!-- Category -->
+<div class="form-group">
+<label>Categoría</label>
+<div class="toggle-group">
+<button class="toggle-btn active" data-category="business">Negocios</button>
+<button class="toggle-btn" data-category="personal">Personal</button>
+</div>
+</div>
+<!-- Status -->
+<div class="form-group">
+<label>Estado</label>
+<div class="pill-group">
+<button class="pill-btn active" data-status="ready">Listo</button>
+<button class="pill-btn" data-status="draft">Borrador</button>
+<button class="pill-btn" data-status="selected">Destacado</button>
+</div>
+<p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">Las páginas destacadas se
+            resaltan en el directorio</p>
+</div>
+<!-- Tags -->
+<div class="form-group">
+<label for="tagInput">Etiquetas <span style="color:red">*</span></label>
+<div class="tag-input-group">
+<input class="form-input" id="tagInput" placeholder="Ej: minimalista, oscuro..." type="text"/>
+<button class="tag-add-btn" id="addTagBtn">+</button>
+</div>
+<div class="tags-list" id="tagsList"></div>
+</div>
+<!-- Project Files (Optional) -->
+<div class="form-group border-top pt-4">
+<label class="form-label">ARCHIVOS DEL PROYECTO (OPCIONAL)</label>
+<p style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 1rem;">Sube archivos para alojar una
+            vista previa directamente en el sitio (Reemplaza la URL externa)</p>
+<div class="file-upload-grid">
+<div class="file-group">
+<label class="file-label">HTML</label>
+<input accept=".html" class="file-input" id="htmlFile" type="file"/>
+</div>
+<div class="file-group">
+<label class="file-label">CSS</label>
+<input accept=".css" class="file-input" id="cssFile" type="file"/>
+</div>
+<div class="file-group">
+<label class="file-label">JS</label>
+<input accept=".js" class="file-input" id="jsFile" type="file"/>
+</div>
+</div>
+</div>
+<!-- Thumbnail URL -->
+<div class="form-group">
+<label class="form-label">IMAGEN DE VISTA PREVIA <span class="required">*</span></label>
+<input class="form-input" id="thumbnailUrl" placeholder="https://ejemplo.com/imagen-previa.jpg" required="" type="url"/>
+<p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">Captura de pantalla o maqueta
+            de la página de aterrizaje (recomendado: 1200x800px)</p>
+</div>
+</form>
+<!-- Modal Footer -->
+<div class="modal-footer">
+<button class="btn btn-secondary" id="cancelBtn" type="button">Cancelar</button>
+<button class="btn btn-primary" id="createBtn" type="button">Agregar a la Vitrina</button>
+</div>
+</div>
+</div>
+<!-- ========================================
+         MODAL: PREVIEW PROJECT
+         ======================================== -->
+<div class="modal-overlay" id="previewModal">
+<div class="preview-modal-content">
+<button class="close-preview-btn" id="closePreviewBtn">×</button>
+<div class="preview-frame-container">
+<iframe id="projectFrame" sandbox="allow-scripts" title="Project Preview"></iframe>
+</div>
+</div>
+</div>
+
+<!-- JavaScript -->
+<script src="app.js"></script>
+<footer style="text-align: center; padding: 20px; font-size: 14px;">
+<a href="#" style="text-decoration: none; color: inherit;">© 2026 Trademark</a>
+</footer></body>
+</html>

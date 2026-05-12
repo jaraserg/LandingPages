@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mike Johnson - English Teacher</title>
+<link href="styles.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+</head>
+<body>
+    <a href="../index.html" style="position: fixed; top: 20px; left: 20px; z-index: 9999; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); color: white; padding: 10px 20px; border-radius: 30px; font-family: sans-serif; font-size: 12px; border: 1px solid rgba(255,255,255,0.2); text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onmouseover="this.style.background='rgba(0,255,0,0.2)'; this.style.borderColor='rgba(0,255,0,0.5)'" onmouseout="this.style.background='rgba(0,0,0,0.8)'; this.style.borderColor='rgba(255,255,255,0.2)'"><span>←</span> Back to Showcase</a>
+
+<!-- Floating Background -->
+<div class="floating-shapes" id="floating-shapes"></div>
+<!-- Navigation -->
+<nav class="navbar" id="navbar">
+<div class="nav-container">
+<a class="nav-logo" href="#">
+<i class="fas fa-graduation-cap logo-icon"></i>
+<span class="logo-text">Mike</span>
+</a>
+<div class="nav-menu" id="nav-menu">
+<a class="nav-link" href="#about"><i class="fas fa-user"></i> About</a>
+<a class="nav-link" href="#pain-points"><i class="fas fa-exclamation-triangle"></i> Problems</a>
+<a class="nav-link" href="#services"><i class="fas fa-magic"></i> Solutions</a>
+<a class="nav-link" href="#kids"><i class="fas fa-child"></i> Kids</a>
+<a class="nav-link" href="#spanish"><i class="fas fa-globe"></i> Español</a>
+<a class="nav-link" href="#game"><i class="fas fa-gamepad"></i> Play</a>
+<a class="nav-link btn-nav" href="#contact"><i class="fas fa-calendar-check"></i> Book</a>
+</div>
+<div class="nav-actions">
+<button aria-label="Toggle theme" class="theme-toggle" id="theme-toggle">
+<i class="fas fa-moon"></i>
+</button>
+<button aria-label="Toggle menu" class="mobile-menu-toggle" id="mobile-menu-toggle">
+<span class="hamburger-line"></span>
+<span class="hamburger-line"></span>
+<span class="hamburger-line"></span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="hero" id="home">
+<div class="container">
+<div class="hero-content">
+<div class="hero-badge">
+<i class="fas fa-fire badge-icon"></i>
+<span>1,000+ Students Transformed</span>
+</div>
+<h1 class="hero-title">
+<span class="title-line">Stop Being</span>
+<span class="title-line awkward">Awkward</span>
+<span class="title-emoji">😅</span>
+</h1>
+<p class="hero-subtitle">Learn English without the cringe. From "umm..." to "absolutely!"</p>
+<div class="hero-cta">
+<a class="btn btn-primary btn-glow" href="#contact">
+<i class="fas fa-rocket"></i>
+<span>Start Learning</span>
+</a>
+<a class="btn btn-secondary" href="#game">
+<i class="fas fa-play"></i>
+<span>Try Game First</span>
+</a>
+</div>
+<div class="hero-stats">
+<div class="stat-item">
+<i class="fas fa-trophy stat-icon"></i>
+<span class="stat-number" data-target="98">0</span>
+<span class="stat-label">% Success Rate</span>
+</div>
+<div class="stat-item">
+<i class="fas fa-users stat-icon"></i>
+<span class="stat-number" data-target="1000">0</span>
+<span class="stat-suffix">+</span>
+<span class="stat-label">Happy Students</span>
+</div>
+<div class="stat-item">
+<i class="fas fa-star stat-icon"></i>
+<span class="stat-number" data-target="12">0</span>
+<span class="stat-label">Years Experience</span>
+</div>
+</div>
+</div>
+<div class="hero-image">
+<div class="image-wrapper">
+<img alt="Mike Johnson - English Teacher" class="teacher-photo" loading="lazy" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&amp;h=500&amp;fit=crop&amp;crop=face"/>
+<div class="floating-card card-1">
+<i class="fas fa-check-circle"></i>
+<span>Native Speaker</span>
+</div>
+<div class="floating-card card-2">
+<i class="fas fa-certificate"></i>
+<span>CELTA Certified</span>
+</div>
+<div class="floating-card card-3">
+<i class="fas fa-globe-americas"></i>
+<span>30+ Countries</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="about section" id="about">
+<div class="container">
+<div class="section-header">
+<span class="section-tag"><i class="fas fa-user-circle"></i> About Me</span>
+<h2 class="section-title">Your English Journey Starts Here</h2>
+</div>
+<div class="about-content">
+<div class="about-image-side">
+<div class="about-photo-wrapper">
+<img alt="Teaching English" class="about-img" loading="lazy" src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=400&amp;h=500&amp;fit=crop"/>
+<div class="experience-badge">
+<span class="exp-number">12</span>
+<span class="exp-text">Years<br/>Teaching</span>
+</div>
+</div>
+</div>
+<div class="about-text-content">
+<h3 class="about-title">Hi, I'm Mike! 👋</h3>
+<div class="about-statements">
+<p class="statement"><i class="fas fa-check"></i> Making English fun, effective &amp; accessible for everyone</p>
+<p class="statement"><i class="fas fa-check"></i> MA TESOL • CELTA Certified • Native Speaker</p>
+<p class="statement"><i class="fas fa-check"></i> Teaching students from 30+ countries worldwide</p>
+</div>
+<div class="about-features">
+<div class="feature-item">
+<div class="feature-icon-box">
+<i class="fas fa-lightbulb"></i>
+</div>
+<span>Proven Methods</span>
+</div>
+<div class="feature-item">
+<div class="feature-icon-box">
+<i class="fas fa-user-cog"></i>
+</div>
+<span>Personalized Plans</span>
+</div>
+<div class="feature-item">
+<div class="feature-icon-box">
+<i class="fas fa-laptop-house"></i>
+</div>
+<span>Online &amp; In-Person</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pain Points Section -->
+<section class="pain-points section" id="pain-points">
+<div class="container">
+<div class="section-header">
+<span class="section-tag"><i class="fas fa-exclamation-circle"></i> Sound Familiar?</span>
+<h2 class="section-title">Your Daily Struggles</h2>
+</div>
+<div class="pain-grid">
+<div class="pain-card" data-pain="freeze">
+<div class="pain-icon-wrapper">
+<i class="fas fa-snowflake"></i>
+</div>
+<h3>Brain Freeze</h3>
+<p>Someone asks something. Mind goes blank. Panic mode activated.</p>
+<div class="pain-solution">
+<i class="fas fa-arrow-right"></i>
+<span>Conversation drills that build muscle memory</span>
+</div>
+</div>
+<div class="pain-card" data-pain="robot">
+<div class="pain-icon-wrapper">
+<i class="fas fa-robot"></i>
+</div>
+<h3>Robot Voice</h3>
+<p>"I. Am. Speaking. Like. This." Textbook English sounds weird.</p>
+<div class="pain-solution">
+<i class="fas fa-arrow-right"></i>
+<span>Natural flow &amp; pronunciation coaching</span>
+</div>
+</div>
+<div class="pain-card" data-pain="grammar">
+<div class="pain-icon-wrapper">
+<i class="fas fa-puzzle-piece"></i>
+</div>
+<h3>Grammar Nightmare</h3>
+<p>"Past perfect or simple past?!" Overthinking everything.</p>
+<div class="pain-solution">
+<i class="fas fa-arrow-right"></i>
+<span>Pattern recognition, not memorization</span>
+</div>
+</div>
+<div class="pain-card" data-pain="listening">
+<div class="pain-icon-wrapper">
+<i class="fas fa-headphones"></i>
+</div>
+<h3>Fast Talkers</h3>
+<p>Native speakers sound like auctioneers. What did they say?!</p>
+<div class="pain-solution">
+<i class="fas fa-arrow-right"></i>
+<span>Real-speed training with breakdowns</span>
+</div>
+</div>
+<div class="pain-card" data-pain="confidence">
+<div class="pain-icon-wrapper">
+<i class="fas fa-heart-broken"></i>
+</div>
+<h3>Zero Confidence</h3>
+<p>Know the words. Too scared to use them. Sound stupid?</p>
+<div class="pain-solution">
+<i class="fas fa-arrow-right"></i>
+<span>Safe space + positive vibes only</span>
+</div>
+</div>
+<div class="pain-card" data-pain="plateau">
+<div class="pain-icon-wrapper">
+<i class="fas fa-chart-line"></i>
+</div>
+<h3>Stuck Forever</h3>
+<p>Been "intermediate" for 5 years. Going nowhere. Help.</p>
+<div class="pain-solution">
+<i class="fas fa-arrow-right"></i>
+<span>Personalized breakthrough strategies</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="services section" id="services">
+<div class="container">
+<div class="section-header">
+<span class="section-tag"><i class="fas fa-magic"></i> The Solution</span>
+<h2 class="section-title">How We Fix It</h2>
+</div>
+<div class="services-grid">
+<div class="service-card featured">
+<div class="service-icon-wrapper">
+<i class="fas fa-comments"></i>
+</div>
+<h3>Speak Without Thinking</h3>
+<p>Flow state conversations. No more mental translation.</p>
+<ul class="service-perks">
+<li><i class="fas fa-check"></i> Real scenarios (not textbook BS)</li>
+<li><i class="fas fa-check"></i> Slang &amp; expressions natives use</li>
+<li><i class="fas fa-check"></i> Confidence building drills</li>
+</ul>
+<div class="service-tag">Most Popular</div>
+</div>
+<div class="service-card">
+<div class="service-icon-wrapper">
+<i class="fas fa-bullseye"></i>
+</div>
+<h3>Pronunciation Bootcamp</h3>
+<p>Fix those sounds that give you away.</p>
+<ul class="service-perks">
+<li><i class="fas fa-check"></i> TH, R, V sounds mastered</li>
+<li><i class="fas fa-check"></i> Accent reduction</li>
+<li><i class="fas fa-check"></i> Shadowing techniques</li>
+</ul>
+</div>
+<div class="service-card">
+<div class="service-icon-wrapper">
+<i class="fas fa-book-open"></i>
+</div>
+<h3>Grammar That Sticks</h3>
+<p>No more memorizing rules. Learn patterns.</p>
+<ul class="service-perks">
+<li><i class="fas fa-check"></i> Tenses made simple</li>
+<li><i class="fas fa-check"></i> Prepositions finally make sense</li>
+<li><i class="fas fa-check"></i> Article usage (a/an/the)</li>
+</ul>
+</div>
+<div class="service-card">
+<div class="service-icon-wrapper">
+<i class="fas fa-ear-listen"></i>
+</div>
+<h3>Ear Training</h3>
+<p>Understand fast native speakers.</p>
+<ul class="service-perks">
+<li><i class="fas fa-check"></i> Connected speech secrets</li>
+<li><i class="fas fa-check"></i> Different accents exposure</li>
+<li><i class="fas fa-check"></i> Movies without subtitles</li>
+</ul>
+</div>
+<div class="service-card">
+<div class="service-icon-wrapper">
+<i class="fas fa-brain"></i>
+</div>
+<h3>Vocabulary Explosion</h3>
+<p>Words you'll actually use daily.</p>
+<ul class="service-perks">
+<li><i class="fas fa-check"></i> Topic-based learning</li>
+<li><i class="fas fa-check"></i> Memory techniques</li>
+<li><i class="fas fa-check"></i> No more "very good"</li>
+</ul>
+</div>
+<div class="service-card">
+<div class="service-icon-wrapper">
+<i class="fas fa-briefcase"></i>
+</div>
+<h3>English For Work</h3>
+<p>Emails, meetings, presentations.</p>
+<ul class="service-perks">
+<li><i class="fas fa-check"></i> Professional small talk</li>
+<li><i class="fas fa-check"></i> Email templates that work</li>
+<li><i class="fas fa-check"></i> Meeting participation</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Kids Section -->
+<section class="kids section" id="kids">
+<div class="container">
+<div class="section-header">
+<span class="section-tag"><i class="fas fa-child"></i> Fun First</span>
+<h2 class="section-title">Kids &amp; Teens Zone</h2>
+</div>
+<div class="kids-intro">
+<div class="kids-visual">
+<div class="visual-icon"><i class="fas fa-rocket"></i></div>
+<div class="visual-icon"><i class="fas fa-book-reader"></i></div>
+<div class="visual-icon"><i class="fas fa-palette"></i></div>
+</div>
+<p class="kids-tagline">Learning English doesn't have to be boring!</p>
+</div>
+<div class="kids-grid">
+<div class="kids-card age-5-8">
+<div class="age-badge">5-8 Years</div>
+<div class="kids-icon"><i class="fas fa-paint-brush"></i></div>
+<h3>Little Heroes</h3>
+<div class="kids-features">
+<span class="feature-tag"><i class="fas fa-gamepad"></i> Games</span>
+<span class="feature-tag"><i class="fas fa-music"></i> Songs</span>
+<span class="feature-tag"><i class="fas fa-book"></i> Stories</span>
+<span class="feature-tag"><i class="fas fa-tv"></i> Cartoons</span>
+</div>
+<p class="kids-desc">Learning through play. No boring worksheets!</p>
+</div>
+<div class="kids-card age-9-12">
+<div class="age-badge">9-12 Years</div>
+<div class="kids-icon"><i class="fas fa-trophy"></i></div>
+<h3>Gamers Unite</h3>
+<div class="kids-features">
+<span class="feature-tag"><i class="fas fa-dungeon"></i> Quests</span>
+<span class="feature-tag"><i class="fas fa-project-diagram"></i> Projects</span>
+<span class="feature-tag"><i class="fas fa-flag-checkered"></i> Challenges</span>
+<span class="feature-tag"><i class="fas fa-star"></i> XP Points</span>
+</div>
+<p class="kids-desc">Level up your English like a video game!</p>
+</div>
+<div class="kids-card age-13-17">
+<div class="age-badge">13-17 Years</div>
+<div class="kids-icon"><i class="fas fa-guitar"></i></div>
+<h3>Cool Kids Club</h3>
+<div class="kids-features">
+<span class="feature-tag"><i class="fas fa-hashtag"></i> Memes</span>
+<span class="feature-tag"><i class="fas fa-mobile-alt"></i> TikTok</span>
+<span class="feature-tag"><i class="fas fa-music"></i> Music</span>
+<span class="feature-tag"><i class="fas fa-graduation-cap"></i> Exams</span>
+</div>
+<p class="kids-desc">Learn the English teens actually use.</p>
+</div>
+</div>
+<div class="kids-promise">
+<div class="promise-item">
+<i class="fas fa-clock"></i>
+<span>30-min sessions (attention friendly)</span>
+</div>
+<div class="promise-item">
+<i class="fas fa-medal"></i>
+<span>Rewards &amp; achievements</span>
+</div>
+<div class="promise-item">
+<i class="fas fa-chart-bar"></i>
+<span>Parent progress reports</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Spanish Section -->
+<section class="spanish section" id="spanish">
+<div class="container">
+<div class="section-header">
+<span class="section-tag"><i class="fas fa-globe"></i> ¡Hola!</span>
+<h2 class="section-title">Para Hispanohablantes</h2>
+</div>
+<div class="spanish-content">
+<div class="spanish-intro">
+<div class="spanish-headline">¿Cansado de decir "My name is Juan"?</div>
+<p class="spanish-sub">Sé exactamente qué te cuesta. Lo he visto mil veces.</p>
+<div class="spanish-benefits">
+<div class="spanish-benefit">
+<i class="fas fa-crosshairs"></i>
+<span>Enfoque en errores comunes</span>
+</div>
+<div class="spanish-benefit">
+<i class="fas fa-language"></i>
+<span>Explicaciones en español</span>
+</div>
+<div class="spanish-benefit">
+<i class="fas fa-check-double"></i>
+<span>Metodología probada</span>
+</div>
+</div>
+</div>
+<div class="spanish-problems">
+<div class="sp-problem">
+<i class="fas fa-times-circle"></i>
+<span>"I have 25 years" → <strong>"I'm 25"</strong></span>
+</div>
+<div class="sp-problem">
+<i class="fas fa-times-circle"></i>
+<span>"I am agree" → <strong>"I agree"</strong></span>
+</div>
+<div class="sp-problem">
+<i class="fas fa-times-circle"></i>
+<span>"I am exciting" → <strong>"I'm excited"</strong></span>
+</div>
+<div class="sp-problem">
+<i class="fas fa-times-circle"></i>
+<span>"Listen music" → <strong>"Listen TO music"</strong></span>
+</div>
+</div>
+<div class="spanish-focus">
+<h3><i class="fas fa-bullseye"></i> Nuestro Enfoque</h3>
+<div class="focus-grid">
+<div class="focus-item">
+<span class="focus-num">1</span>
+<span>Pronunciación difícil</span>
+</div>
+<div class="focus-item">
+<span class="focus-num">2</span>
+<span>Verbos irregulares</span>
+</div>
+<div class="focus-item">
+<span class="focus-num">3</span>
+<span>Preposiciones</span>
+</div>
+<div class="focus-item">
+<span class="focus-num">4</span>
+<span>Listening real</span>
+</div>
+<div class="focus-item">
+<span class="focus-num">5</span>
+<span>Fluidez natural</span>
+</div>
+<div class="focus-item">
+<span class="focus-num">6</span>
+<span>¡Primera clase GRATIS!</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Game Section -->
+<section class="game-section section" id="game">
+<div class="container">
+<div class="section-header">
+<span class="section-tag"><i class="fas fa-gamepad"></i> Try Me</span>
+<h2 class="section-title">Mini Challenge</h2>
+</div>
+<div class="game-container">
+<div class="game-card">
+<div class="game-header">
+<div class="game-title">
+<i class="fas fa-puzzle-piece"></i>
+<h3>Fix The Sentence</h3>
+</div>
+<div class="game-stats">
+<div class="streak-box">
+<i class="fas fa-fire"></i>
+<span id="streak">0</span>
+</div>
+<div class="progress-box">
+<span id="progress">1</span>/<span id="total">8</span>
+</div>
+</div>
+</div>
+<div class="game-content">
+<div class="hint-box" id="hint-box">
+<i class="fas fa-lightbulb"></i>
+<span id="hint-text">Loading...</span>
+</div>
+<div class="word-bank" id="word-bank"></div>
+<div class="your-answer" id="your-answer">
+<span class="placeholder"><i class="fas fa-hand-pointer"></i> Click words to build sentence</span>
+</div>
+</div>
+<div class="game-controls">
+<button class="btn btn-secondary" id="clear-btn">
+<i class="fas fa-trash"></i> Clear
+                        </button>
+<button class="btn btn-primary" id="check-btn">
+<i class="fas fa-check"></i> Check
+                        </button>
+<button class="btn btn-secondary" id="skip-btn">
+<i class="fas fa-forward"></i> Skip
+                        </button>
+</div>
+<div class="game-feedback" id="game-feedback"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="contact-section section" id="contact">
+<div class="container">
+<div class="section-header">
+<span class="section-tag"><i class="fas fa-rocket"></i> Let's Go</span>
+<h2 class="section-title">Book Your Free Lesson</h2>
+</div>
+<div class="contact-wrapper">
+<div class="contact-info-card">
+<div class="info-header">
+<div class="info-icon-circle">
+<i class="fas fa-gift"></i>
+</div>
+<h3>First Lesson FREE</h3>
+<p>No commitment required</p>
+</div>
+<div class="info-perks">
+<div class="perk"><i class="fas fa-check-circle"></i><span>100% Free trial</span></div>
+<div class="perk"><i class="fas fa-check-circle"></i><span>No credit card needed</span></div>
+<div class="perk"><i class="fas fa-check-circle"></i><span>Money-back guarantee</span></div>
+</div>
+<div class="contact-methods">
+<a class="contact-method" href="mailto:mike@englishteacher.com">
+<i class="fas fa-envelope"></i><span>mike@englishteacher.com</span>
+</a>
+<div class="contact-method">
+<i class="fas fa-globe"></i><span>Online Worldwide</span>
+</div>
+<div class="contact-method">
+<i class="fas fa-clock"></i><span>Reply in 24h</span>
+</div>
+</div>
+</div>
+<div class="booking-form-container">
+<form class="booking-form" id="booking-form">
+<div class="form-step active" data-step="1">
+<div class="step-header">
+<span class="step-number">1</span>
+<h4>Who are you?</h4>
+</div>
+<div class="form-group">
+<i class="fas fa-user input-icon"></i>
+<input id="name" name="name" placeholder="Your name" required="" type="text"/>
+</div>
+<div class="form-group">
+<i class="fas fa-envelope input-icon"></i>
+<input id="email" name="email" placeholder="your@email.com" required="" type="email"/>
+</div>
+<button class="btn btn-primary btn-step" data-next="2" type="button">
+                                Next <i class="fas fa-arrow-right"></i>
+</button>
+</div>
+<div class="form-step" data-step="2">
+<div class="step-header">
+<span class="step-number">2</span>
+<h4>What's your struggle?</h4>
+</div>
+<div class="struggle-options">
+<label class="struggle-option">
+<input name="struggle" required="" type="radio" value="speaking"/>
+<span class="option-content">
+<i class="fas fa-comment-slash"></i>
+<span>Can't speak fluently</span>
+</span>
+</label>
+<label class="struggle-option">
+<input name="struggle" type="radio" value="confidence"/>
+<span class="option-content">
+<i class="fas fa-user-shield"></i>
+<span>Too scared to speak</span>
+</span>
+</label>
+<label class="struggle-option">
+<input name="struggle" type="radio" value="grammar"/>
+<span class="option-content">
+<i class="fas fa-puzzle-piece"></i>
+<span>Grammar confuses me</span>
+</span>
+</label>
+<label class="struggle-option">
+<input name="struggle" type="radio" value="listening"/>
+<span class="option-content">
+<i class="fas fa-deaf"></i>
+<span>Can't understand natives</span>
+</span>
+</label>
+<label class="struggle-option">
+<input name="struggle" type="radio" value="all"/>
+<span class="option-content">
+<i class="fas fa-dizzy"></i>
+<span>All of the above</span>
+</span>
+</label>
+</div>
+<div class="step-buttons">
+<button class="btn btn-secondary btn-step" data-prev="1" type="button">
+<i class="fas fa-arrow-left"></i> Back
+                                </button>
+<button class="btn btn-primary btn-step" data-next="3" type="button">
+                                    Next <i class="fas fa-arrow-right"></i>
+</button>
+</div>
+</div>
+<div class="form-step" data-step="3">
+<div class="step-header">
+<span class="step-number">3</span>
+<h4>Pick your time</h4>
+</div>
+<div class="mini-calendar" id="mini-calendar">
+<div class="mini-cal-header">
+<button class="cal-nav" id="cal-prev" type="button"><i class="fas fa-chevron-left"></i></button>
+<span id="cal-month">Month</span>
+<button class="cal-nav" id="cal-next" type="button"><i class="fas fa-chevron-right"></i></button>
+</div>
+<div class="mini-cal-grid" id="mini-cal-grid"></div>
+</div>
+<div class="time-slots-mini" id="time-slots-mini">
+<p class="slots-hint"><i class="fas fa-calendar"></i> Pick a date first</p>
+</div>
+<div class="step-buttons">
+<button class="btn btn-secondary btn-step" data-prev="2" type="button">
+<i class="fas fa-arrow-left"></i> Back
+                                </button>
+<button class="btn btn-primary btn-step" data-next="4" type="button">
+                                    Next <i class="fas fa-arrow-right"></i>
+</button>
+</div>
+</div>
+<div class="form-step" data-step="4">
+<div class="step-header">
+<span class="step-number">4</span>
+<h4>You're all set!</h4>
+</div>
+<div class="booking-summary" id="booking-summary"></div>
+<div class="form-group">
+<i class="fas fa-pen input-icon"></i>
+<textarea id="message" name="message" placeholder="Anything else I should know?" rows="3"></textarea>
+</div>
+<div class="step-buttons">
+<button class="btn btn-secondary btn-step" data-prev="3" type="button">
+<i class="fas fa-arrow-left"></i> Back
+                                </button>
+<button class="btn btn-primary btn-glow" type="submit">
+<i class="fas fa-paper-plane"></i> Book Free Lesson
+                                </button>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer style="text-align: center; padding: 20px; font-size: 14px;">
+<a href="#" style="text-decoration: none; color: inherit;">© 2026 Trademark</a>
+</footer>
+<!-- Success Modal -->
+<div class="modal" id="success-modal">
+<div class="modal-content">
+<div class="modal-icon"><i class="fas fa-check-circle"></i></div>
+<h3>You're Booked!</h3>
+<p>Check your email for confirmation.</p>
+<p class="modal-sub">First lesson is FREE. No strings attached.</p>
+<button class="btn btn-primary" id="close-modal"><i class="fas fa-thumbs-up"></i> Awesome!</button>
+</div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,687 @@
+/* Solar Bello Architecture - Minimalist Swiss Design */
+
+:root {
+    --color-bg: #fafafa;
+    --color-text: #171717;
+    --color-muted: #737373;
+    --color-border: #e5e5e5;
+    --color-accent: #059669;
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+}
+
+/* Selection */
+::selection {
+    background-color: var(--color-accent);
+    color: white;
+}
+
+/* Hero Section Grey Background */
+.hero-section {
+    position: relative;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(135deg, rgba(245, 245, 245, 0.9) 0%, rgba(229, 229, 229, 0.8) 50%, rgba(212, 212, 212, 0.7) 100%),
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Navigation Links */
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--color-text);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Mobile Menu Button Animation */
+#mobile-menu-btn.active span:first-child {
+    transform: rotate(45deg) translate(2px, -2px);
+}
+
+#mobile-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+#mobile-menu-btn.active span:last-child {
+    transform: rotate(-45deg) translate(2px, 2px);
+}
+
+/* ==========================================
+   SERVICE FLIP CARDS
+   ========================================== */
+
+.service-flip-card {
+    perspective: 1200px;
+    height: 420px;
+    cursor: pointer;
+}
+
+.service-flip-card:focus {
+    outline: none;
+}
+
+.service-flip-card:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 4px;
+}
+
+.service-flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.service-flip-card.flipped .service-flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.service-flip-card-front,
+.service-flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.service-flip-card-front {
+    background: #1a1a1a;
+}
+
+.service-flip-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: filter 0.5s ease, transform 0.5s ease;
+}
+
+.service-flip-card:hover .service-flip-card-front img {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+.service-flip-card-back {
+    background: #ffffff;
+    transform: rotateY(180deg);
+    border: 1px solid #e5e5e5;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Responsive flip cards */
+@media (max-width: 768px) {
+    .service-flip-card {
+        height: 350px;
+    }
+}
+
+/* ==========================================
+   FORM STYLES
+   ========================================== */
+
+.form-group {
+    position: relative;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #525252;
+}
+
+/* Error States */
+.form-group.error input,
+.form-group.error textarea {
+    border-color: #ef4444;
+}
+
+.form-group.error .error-message {
+    display: block;
+}
+
+.error-message {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+}
+
+/* Button Loading State */
+#submit-btn.loading .btn-text {
+    opacity: 0.7;
+}
+
+#submit-btn.loading .btn-spinner {
+    display: inline-block;
+}
+
+/* Success Animation */
+#success-message {
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Project Card Hover Effects */
+article.group:hover h3 {
+    color: var(--color-accent);
+}
+
+
+/* ==========================================
+   WATERCOLOR IMAGE REVEAL EFFECT
+   ========================================== */
+
+.watercolor-reveal {
+    position: relative;
+    overflow: hidden;
+}
+
+.watercolor-reveal::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--color-bg);
+    z-index: 2;
+    transition: transform 6s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.watercolor-reveal.loaded::before {
+    transform: scaleY(0);
+    transform-origin: bottom;
+}
+
+.watercolor-reveal::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(5, 150, 105, 0.15) 0%,
+        rgba(16, 185, 129, 0.1) 25%,
+        rgba(5, 150, 105, 0.08) 50%,
+        rgba(16, 185, 129, 0.12) 75%,
+        rgba(5, 150, 105, 0.1) 100%
+    );
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 8s ease 3s;
+}
+
+.watercolor-reveal.loaded::after {
+    opacity: 1;
+}
+
+.watercolor-reveal img {
+    filter: grayscale(100%);
+    transform: scale(1.1);
+    transition: 
+        filter 8s ease 1s,
+        transform 8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.8s;
+}
+
+.watercolor-reveal.loaded img {
+    filter: grayscale(0%);
+    transform: scale(1);
+}
+
+.watercolor-reveal .color-drops {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 4s ease 2s;
+}
+
+.watercolor-reveal.loaded .color-drops {
+    opacity: 1;
+}
+
+.watercolor-reveal .color-drops::before,
+.watercolor-reveal .color-drops::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(20px);
+}
+
+.watercolor-reveal .color-drops::before {
+    width: 60%;
+    height: 60%;
+    top: -10%;
+    right: -10%;
+    background: radial-gradient(circle, rgba(5, 150, 105, 0.4) 0%, transparent 70%);
+    animation: colorDrop1 8s ease-in-out infinite;
+}
+
+.watercolor-reveal .color-drops::after {
+    width: 50%;
+    height: 50%;
+    bottom: -15%;
+    left: -15%;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.35) 0%, transparent 70%);
+    animation: colorDrop2 9s ease-in-out infinite;
+}
+
+@keyframes colorDrop1 {
+    0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.6; }
+    50% { transform: translate(-10%, 10%) scale(1.1); opacity: 0.8; }
+}
+
+@keyframes colorDrop2 {
+    0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.5; }
+    50% { transform: translate(15%, -5%) scale(1.15); opacity: 0.7; }
+}
+
+.hero-image {
+    filter: grayscale(100%);
+    transition: filter 0s;
+}
+
+.hero-image.revealed {
+    filter: grayscale(0%);
+    transition: filter 10s ease 1s;
+}
+
+/* Project cards watercolor effect */
+article .aspect-\[4\/5\] {
+    position: relative;
+    overflow: hidden;
+}
+
+article .aspect-\[4\/5\]::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #fafafa;
+    z-index: 2;
+    transition: transform 8s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+article .aspect-\[4\/5\].revealed::before {
+    transform: scaleY(0);
+    transform-origin: bottom;
+}
+
+article .aspect-\[4\/5\] img {
+    transition: 
+        filter 8s ease 1s,
+        transform 8s ease 0.8s,
+        opacity 3s ease;
+}
+
+article:hover .aspect-\[4\/5\] img {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+/* Flip card watercolor effect */
+.service-flip-card-front::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #fafafa;
+    z-index: 2;
+    transition: transform 8s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.service-flip-card-front.revealed::before {
+    transform: scaleY(0);
+    transform-origin: bottom;
+}
+
+.service-flip-card-front::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(5, 150, 105, 0.15) 0%, transparent 50%);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 8s ease 3s;
+}
+
+.service-flip-card-front.revealed::after {
+    opacity: 1;
+}
+
+/* About section image */
+#about .aspect-\[4\/5\] {
+    position: relative;
+    overflow: hidden;
+}
+
+#about .aspect-\[4\/5\]::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #fafafa;
+    z-index: 2;
+    transition: transform 8s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+#about .aspect-\[4\/5\].revealed::before {
+    transform: scaleY(0);
+    transform-origin: bottom;
+}
+
+.watercolor-reveal::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--color-bg);
+    z-index: 2;
+    transition: transform 4s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.watercolor-reveal.loaded::before {
+    transform: scaleY(0);
+    transform-origin: bottom;
+}
+
+.watercolor-reveal::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(5, 150, 105, 0.15) 0%,
+        rgba(16, 185, 129, 0.1) 25%,
+        rgba(5, 150, 105, 0.08) 50%,
+        rgba(16, 185, 129, 0.12) 75%,
+        rgba(5, 150, 105, 0.1) 100%
+    );
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 5s ease 2s;
+}
+
+.watercolor-reveal.loaded::after {
+    opacity: 1;
+}
+
+.watercolor-reveal img {
+    filter: grayscale(100%);
+    transform: scale(1.1);
+    transition: 
+        filter 4s ease 1s,
+        transform 4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.8s;
+}
+
+.watercolor-reveal.loaded img {
+    filter: grayscale(0%);
+    transform: scale(1);
+}
+
+.watercolor-reveal .color-drops {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 3s ease 1.5s;
+}
+
+.watercolor-reveal.loaded .color-drops {
+    opacity: 1;
+}
+
+.watercolor-reveal .color-drops::before,
+.watercolor-reveal .color-drops::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(20px);
+}
+
+.watercolor-reveal .color-drops::before {
+    width: 60%;
+    height: 60%;
+    top: -10%;
+    right: -10%;
+    background: radial-gradient(circle, rgba(5, 150, 105, 0.4) 0%, transparent 70%);
+    animation: colorDrop1 6s ease-in-out infinite;
+}
+
+.watercolor-reveal .color-drops::after {
+    width: 50%;
+    height: 50%;
+    bottom: -15%;
+    left: -15%;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.35) 0%, transparent 70%);
+    animation: colorDrop2 6.5s ease-in-out infinite;
+}
+
+@keyframes colorDrop1 {
+    0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.6; }
+    50% { transform: translate(-10%, 10%) scale(1.1); opacity: 0.8; }
+}
+
+@keyframes colorDrop2 {
+    0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.5; }
+    50% { transform: translate(15%, -5%) scale(1.15); opacity: 0.7; }
+}
+
+.hero-image {
+    filter: grayscale(100%);
+    transition: filter 0s;
+}
+
+.hero-image.revealed {
+    filter: grayscale(0%);
+    transition: filter 6s ease 0.5s;
+}
+
+/* Project cards watercolor effect */
+article .aspect-\[4\/5\] {
+    position: relative;
+    overflow: hidden;
+}
+
+article .aspect-\[4\/5\]::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #fafafa;
+    z-index: 2;
+    transition: transform 4s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+article .aspect-\[4\/5\].revealed::before {
+    transform: scaleY(0);
+    transform-origin: bottom;
+}
+
+article .aspect-\[4\/5\] img {
+    transition: 
+        filter 4s ease 1s,
+        transform 4s ease 0.8s,
+        opacity 2s ease;
+}
+
+article:hover .aspect-\[4\/5\] img {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+/* Flip card watercolor effect */
+.service-flip-card-front::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #fafafa;
+    z-index: 2;
+    transition: transform 4s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.service-flip-card-front.revealed::before {
+    transform: scaleY(0);
+    transform-origin: bottom;
+}
+
+.service-flip-card-front::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(5, 150, 105, 0.15) 0%, transparent 50%);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 5s ease 2s;
+}
+
+.service-flip-card-front.revealed::after {
+    opacity: 1;
+}
+
+/* About section image */
+#about .aspect-\[4\/5\] {
+    position: relative;
+    overflow: hidden;
+}
+
+#about .aspect-\[4\/5\]::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #fafafa;
+    z-index: 2;
+    transition: transform 4s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+#about .aspect-\[4\/5\].revealed::before {
+    transform: scaleY(0);
+    transform-origin: bottom;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d4d4d4;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a3a3a3;
+}
+
+/* Focus Visible */
+*:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .service-flip-card-inner {
+        transition: none;
+    }
+}
+
+/* Print Styles */
+@media print {
+
+    header,
+    footer,
+    #contact {
+        display: none;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+
+    .service-flip-card {
+        break-inside: avoid;
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+}

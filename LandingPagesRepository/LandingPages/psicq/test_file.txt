@@ -1,0 +1,6 @@
+Hello World! 你好世界！
+This is a test file with mixed content.
+这里有一些中文 text here.
+123 Numbers 456 and symbols @#$%
+Thank you for using this script. 谢谢！
+Regular English text without Chinese.

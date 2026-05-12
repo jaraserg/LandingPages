@@ -1,0 +1,331 @@
+/* ==========================================
+   CSS Variables & Base Styles
+   ========================================== */
+
+:root {
+    --color-bg: #000000;
+    --color-text: #ffffff;
+    --color-muted: rgba(255, 255, 255, 0.5);
+    --color-border: rgba(255, 255, 255, 0.1);
+    --color-cyan: #22d3ee;
+    --color-blue: #3b82f6;
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-heading);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+::selection {
+    background-color: var(--color-cyan);
+    color: #000;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* ==========================================
+   Navigation
+   ========================================== */
+
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--color-cyan);
+    transition: width 0.3s var(--transition-smooth);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Mobile Menu Button */
+#mobile-menu-btn.active span:first-child {
+    transform: rotate(45deg) translate(2px, -2px);
+}
+
+#mobile-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+#mobile-menu-btn.active span:last-child {
+    transform: rotate(-45deg) translate(2px, 2px);
+}
+
+/* ==========================================
+   Jarvis Canvas
+   ========================================== */
+
+#jarvis-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ==========================================
+   Reveal Animations - Non-Linear Transitions
+   ========================================== */
+
+.reveal-text {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.6s var(--transition-smooth);
+}
+
+.reveal-on-scroll.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered delays */
+.reveal-on-scroll:nth-child(1) {
+    transition-delay: 0s;
+}
+
+.reveal-on-scroll:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.reveal-on-scroll:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+.reveal-on-scroll:nth-child(4) {
+    transition-delay: 0.3s;
+}
+
+.reveal-on-scroll:nth-child(5) {
+    transition-delay: 0.4s;
+}
+
+.reveal-on-scroll:nth-child(6) {
+    transition-delay: 0.5s;
+}
+
+.reveal-text.revealed {
+    animation: textReveal 0.6s var(--transition-smooth) forwards;
+}
+
+@keyframes textReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================
+   Project Cards
+   ========================================== */
+
+.project-card {
+    transition: all 0.3s var(--transition-smooth);
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(34, 211, 238, 0.3);
+}
+
+/* ==========================================
+   Skills Section
+   ========================================== */
+
+.skill-category {
+    transition: all 0.3s var(--transition-smooth);
+}
+
+.skill-category:hover {
+    transform: translateY(-2px);
+    border-color: rgba(34, 211, 238, 0.3);
+}
+
+/* ==========================================
+   Form Styles
+   ========================================== */
+
+.form-group {
+    position: relative;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.form-group.error input,
+.form-group.error textarea {
+    border-color: #ef4444;
+}
+
+.form-group.error .error-message {
+    display: block;
+}
+
+.error-message {
+    display: none;
+}
+
+#submit-btn.loading .btn-text {
+    opacity: 0.7;
+}
+
+#submit-btn.loading .btn-spinner {
+    display: inline-block;
+}
+
+#success-message {
+    animation: fadeInUp 0.4s var(--transition-smooth) forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================
+   Focus & Accessibility
+   ========================================== */
+
+*:focus-visible {
+    outline: 2px solid var(--color-cyan);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ==========================================
+   Responsive
+   ========================================== */
+
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+/* ==========================================
+   Header Scroll
+   ========================================== */
+
+header.scrolled {
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ==========================================
+   Image Loading
+   ========================================== */
+
+img {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+img[loading="lazy"] {
+    opacity: 0;
+}
+
+img.loaded,
+img[loading="eager"] {
+    opacity: 1;
+}
+
+/* ==========================================
+   Print Styles
+   ========================================== */
+
+@media print {
+
+    header,
+    footer,
+    #contact {
+        display: none;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+}

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Industrial Engineer Portfolio | Transformer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Rajdhani:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="../index.html" style="position: fixed; top: 20px; left: 20px; z-index: 9999; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); color: white; padding: 10px 20px; border-radius: 30px; font-family: sans-serif; font-size: 12px; border: 1px solid rgba(255,255,255,0.2); text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onmouseover="this.style.background='rgba(0,255,0,0.2)'; this.style.borderColor='rgba(0,255,0,0.5)'" onmouseout="this.style.background='rgba(0,0,0,0.8)'; this.style.borderColor='rgba(255,255,255,0.2)'"><span>←</span> Back to Showcase</a>
+
+  <!-- Animated Industrial Background -->
+  <div class="industrial-bg">
+    <div class="grid-lines"></div>
+    <div class="floating-gears">
+      <div class="gear gear-1">⚙</div>
+      <div class="gear gear-2">⚙</div>
+      <div class="gear gear-3">⚙</div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav-sidebar">
+    <div class="nav-logo">IE</div>
+    <div class="nav-controls">
+      <button class="nav-btn active" data-face="0"><span class="btn-icon">◈</span><span>Hero</span></button>
+      <button class="nav-btn" data-face="1"><span class="btn-icon">◉</span><span>About</span></button>
+      <button class="nav-btn" data-face="2"><span class="btn-icon">◇</span><span>Education</span></button>
+      <button class="nav-btn" data-face="3"><span class="btn-icon">△</span><span>Experience</span></button>
+      <button class="nav-btn" data-face="4"><span class="btn-icon">□</span><span>Skills</span></button>
+      <button class="nav-btn" data-face="5"><span class="btn-icon">○</span><span>Contact</span></button>
+    </div>
+    <div class="nav-progress">
+      <div class="progress-bar"></div>
+    </div>
+  </nav>
+
+  <!-- 3D Transformer Container -->
+  <main class="transformer-container">
+    <div class="transformer-cube" id="cube">
+      <!-- Face 0: Hero -->
+      <div class="cube-face face-0">
+        <div class="face-bg" style="background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1200&q=80')"></div>
+        <div class="face-content hero-face">
+          <i class="fas fa-gear hero-icon"></i>
+          <div class="hero-badge">INDUSTRIAL ENGINEER</div>
+          <h1 class="hero-name">ALEX<br>MORGAN</h1>
+          <p class="hero-desc">Transforming complex systems into streamlined solutions</p>
+          <div class="hero-stats">
+            <div class="h-stat"><span class="h-stat-num">5+</span><span class="h-stat-label">Years</span></div>
+            <div class="h-stat"><span class="h-stat-num">30%</span><span class="h-stat-label">Efficiency</span></div>
+            <div class="h-stat"><span class="h-stat-num">$2M</span><span class="h-stat-label">Saved</span></div>
+          </div>
+          <div class="scroll-hint">↓ Select a section</div>
+        </div>
+      </div>
+
+      <!-- Face 1: About -->
+      <div class="cube-face face-1">
+        <div class="face-bg" style="background-image: url('https://images.unsplash.com/photo-1504328345606-3fdbceb98b37?w=1200&q=80')"></div>
+        <div class="face-content">
+          <div class="section-header">
+            <span class="section-tag">01</span>
+            <h2>About Me</h2>
+            <i class="fas fa-user section-icon"></i>
+          </div>
+          <div class="about-grid">
+            <div class="about-text">
+              <p>Results-driven Industrial Engineer with 5+ years of experience in process optimization, supply chain management, and lean manufacturing.</p>
+              <p>Proven track record of reducing operational costs by 20% and improving production efficiency by 30% through strategic implementation of Six Sigma methodologies and automation.</p>
+            </div>
+            <div class="about-visual">
+              <div class="hex-stat">
+                <svg viewBox="0 0 100 100"><polygon points="50,3 93,25 93,75 50,97 7,75 7,25" fill="none" stroke="var(--accent)" stroke-width="2"/><text x="50" y="55" text-anchor="middle" fill="var(--accent)" font-size="14">IE</text></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Face 2: Education -->
+      <div class="cube-face face-2">
+        <div class="face-bg" style="background-image: url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=1200&q=80')"></div>
+        <div class="face-content">
+          <div class="section-header">
+            <span class="section-tag">02</span>
+            <h2>Education</h2>
+            <i class="fas fa-graduation-cap section-icon"></i>
+          </div>
+          <div class="edu-timeline">
+            <div class="edu-card">
+              <div class="edu-year">2019-2021</div>
+              <h3>MSc Industrial Engineering</h3>
+              <p>Stanford University</p>
+              <p class="edu-gpa">GPA: 4.0/4.0</p>
+            </div>
+            <div class="edu-card">
+              <div class="edu-year">2015-2019</div>
+              <h3>BSc Industrial Engineering</h3>
+              <p>MIT</p>
+              <p class="edu-gpa">GPA: 3.9/4.0</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Face 3: Experience -->
+      <div class="cube-face face-3">
+        <div class="face-bg" style="background-image: url('https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=1200&q=80')"></div>
+        <div class="face-content">
+          <div class="section-header">
+            <span class="section-tag">03</span>
+            <h2>Experience</h2>
+            <i class="fas fa-briefcase section-icon"></i>
+          </div>
+          <div class="exp-grid">
+            <div class="exp-card">
+              <div class="exp-header">
+                <span class="exp-role">Senior IE</span>
+                <span class="exp-date">2021-Present</span>
+              </div>
+              <h3>Tesla Inc.</h3>
+              <ul>
+                <li>Reduced cycle time by 22%</li>
+                <li>IoT predictive maintenance (-35% downtime)</li>
+                <li>Led 15-engineer team</li>
+              </ul>
+            </div>
+            <div class="exp-card">
+              <div class="exp-header">
+                <span class="exp-role">Industrial Engineer</span>
+                <span class="exp-date">2019-2021</span>
+              </div>
+              <h3>Amazon</h3>
+              <ul>
+                <li>Warehouse optimization (+28% throughput)</li>
+                <li>Demand forecasting (-18% inventory costs)</li>
+                <li>$1.2M annual savings via Kaizen</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Face 4: Skills -->
+      <div class="cube-face face-4">
+        <div class="face-bg" style="background-image: url('https://images.unsplash.com/photo-1581092160607-ee67a8bfec4b?w=1200&q=80')"></div>
+        <div class="face-content">
+          <div class="section-header">
+            <span class="section-tag">04</span>
+            <h2>Skills</h2>
+            <i class="fas fa-tools section-icon"></i>
+          </div>
+          <div class="skills-visual">
+            <div class="skill-hex-grid">
+              <div class="skill-hex" data-level="95"><div class="hex-inner"><span>Lean</span><div class="hex-fill" style="--fill:95%"></div></div></div>
+              <div class="skill-hex" data-level="90"><div class="hex-inner"><span>Six Sigma</span><div class="hex-fill" style="--fill:90%"></div></div></div>
+              <div class="skill-hex" data-level="92"><div class="hex-inner"><span>Process Opt.</span><div class="hex-fill" style="--fill:92%"></div></div></div>
+              <div class="skill-hex" data-level="88"><div class="hex-inner"><span>Siemens</span><div class="hex-fill" style="--fill:88%"></div></div></div>
+              <div class="skill-hex" data-level="85"><div class="hex-inner"><span>Python</span><div class="hex-fill" style="--fill:85%"></div></div></div>
+              <div class="skill-hex" data-level="82"><div class="hex-inner"><span>SQL/Tableau</span><div class="hex-fill" style="--fill:82%"></div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Face 5: Contact -->
+      <div class="cube-face face-5">
+        <div class="face-bg" style="background-image: url('https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=1200&q=80')"></div>
+        <div class="face-content">
+          <div class="section-header">
+            <span class="section-tag">05</span>
+            <h2>Contact</h2>
+            <i class="fas fa-envelope section-icon"></i>
+          </div>
+          <div class="contact-layout">
+            <div class="contact-info-panel">
+              <div class="contact-item"><span class="ci-label">Email</span><span>alex@ie-engineer.com</span></div>
+              <div class="contact-item"><span class="ci-label">Phone</span><span>+1 (234) 567-890</span></div>
+              <div class="contact-item"><span class="ci-label">Location</span><span>San Francisco, CA</span></div>
+            </div>
+            <form class="contact-form-ie">
+              <input type="text" placeholder="Name" required>
+              <input type="email" placeholder="Email" required>
+              <textarea placeholder="Message" rows="4" required></textarea>
+              <button type="submit" class="submit-btn">SEND MESSAGE</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

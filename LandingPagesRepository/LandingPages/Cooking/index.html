@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Greenleaf Kitchen | Servicios de Chef Personal</title>
+<link href="styles.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Poppins:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+</head>
+<body>
+    <a href="../index.html" style="position: fixed; top: 20px; left: 20px; z-index: 9999; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); color: white; padding: 10px 20px; border-radius: 30px; font-family: sans-serif; font-size: 12px; border: 1px solid rgba(255,255,255,0.2); text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onmouseover="this.style.background='rgba(0,255,0,0.2)'; this.style.borderColor='rgba(0,255,0,0.5)'" onmouseout="this.style.background='rgba(0,0,0,0.8)'; this.style.borderColor='rgba(255,255,255,0.2)'"><span>←</span> Back to Showcase</a>
+
+<header class="header">
+<nav class="nav">
+<a class="logo" href="#">
+<span class="logo-icon">🌿</span>
+                Greenleaf Kitchen
+            </a>
+<ul class="nav-links" id="navLinks">
+<span class="nav-pill" id="navPill"></span>
+<li><a href="#about">Nosotros<span class="nav-tip">🌱</span></a></li>
+<li><a href="#services">Servicios<span class="nav-tip">🍃</span></a></li>
+<li><a href="#menu">Menú<span class="nav-tip">🌿</span></a></li>
+<li><a href="#testimonials">Testimonios<span class="nav-tip">🌳</span></a></li>
+<li><a href="#recipe-game">Crea Tu Receta<span class="nav-tip">🍎</span></a></li>
+</ul>
+<button aria-label="Toggle menu" class="mobile-menu-btn">
+<span></span>
+<span></span>
+<span></span>
+</button>
+</nav>
+</header>
+<section class="hero">
+<div class="hero-content">
+<div class="hero-badge">
+<span class="badge-icon">✓</span>
+                100% Orgánico
+            </div>
+<h1 class="hero-title">Nutre Tu Cuerpo,<br/>Delicia Tu Paladar</h1>
+<p class="hero-subtitle">Experimenta el arte de comer saludable con servicios de chef personalizados con
+                cocina orgánica de la granja a tu mesa.</p>
+<div class="hero-buttons">
+<a class="btn-primary" href="#services">Nuestros Servicios</a>
+<a class="btn-secondary" href="#menu">Ver Menú</a>
+</div>
+</div>
+<div class="hero-image">
+<img alt="Healthy organic salad bowl" loading="lazy" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&amp;q=80"/>
+</div>
+</section>
+<section class="features">
+<div class="container">
+<div class="features-grid">
+<div class="feature-card">
+<div class="feature-icon">🥗</div>
+<h3>Nutrición Personalizada</h3>
+<p>Planes de comida diseñados alrededor de tus preferencias dietéticas y objetivos de salud.</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">🌱</div>
+<h3>De la Granja a la Mesa</h3>
+<p>Ingredientes orgánicos más frescos de granjas locales y productores sostenibles.</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">👨‍🍳</div>
+<h3>Arte Culinario Experto</h3>
+<p>Chef profesional llevando comidas de calidad restaurant a tu hogar.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="about" id="about">
+<div class="container">
+<div class="about-content">
+<div class="about-image">
+<div class="about-image-wrapper">
+<img alt="Chef preparando comida saludable" loading="lazy" src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&amp;q=80"/>
+</div>
+</div>
+<div class="about-text">
+<span class="section-label">Sobre Mí</span>
+<h2>Traciendo Bienestar a Tu Mesa</h2>
+<p>Como chef personal certificado con más de 10 años de experiencia en cocina enfocada al bienestar,
+                        creo que comer bien no significa sacrificar sabor. Cada plato es una celebración de ingredientes
+                        frescos transformados en comidas nutritivas.</p>
+<div class="about-stats">
+<div class="stat">
+<span class="stat-number">500+</span>
+<span class="stat-label">Clientes Felices</span>
+</div>
+<div class="stat">
+<span class="stat-number">10+</span>
+<span class="stat-label">Años de Experiencia</span>
+</div>
+<div class="stat">
+<span class="stat-number">100%</span>
+<span class="stat-label">Ingredientes Orgánicos</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="services" id="services">
+<div class="container">
+<span class="section-label centered">Servicios</span>
+<h2 class="section-title centered">Experiencias Gastronómicas Personalizadas</h2>
+<p class="section-subtitle">Elige el servicio que se adapte a tu estilo de vida y necesidades nutricionales.
+            </p>
+<div class="services-grid">
+<div class="service-card">
+<div class="service-header">
+<div class="service-icon">🍽️</div>
+<h3>Chef Privado</h3>
+</div>
+<p>Servicios de chef personal tiempo completo o medio tiempo en tu hogar.</p>
+<ul class="service-features">
+<li>Planificación de menú semanal</li>
+<li>Desayuno, almuerzo y cena</li>
+<li>Ocasiones especiales</li>
+<li>Organización de cocina</li>
+</ul>
+</div>
+<div class="service-card featured">
+<div class="service-badge">Más Popular</div>
+<div class="service-header">
+<div class="service-icon">📦</div>
+<h3>Preparación de Comidas</h3>
+</div>
+<p>Comidas saludables porcionadas para toda la semana.</p>
+<ul class="service-features">
+<li>Compras semanales incluidas</li>
+<li>Comidas listas para calentar</li>
+<li>Personalizadas a tu dieta</li>
+<li>Entrega flexible</li>
+</ul>
+</div>
+<div class="service-card">
+<div class="service-header">
+<div class="service-icon">🎉</div>
+<h3>Catering para Eventos</h3>
+</div>
+<p>Transforma tus eventos en experiencias culinarias únicas.</p>
+<ul class="service-features">
+<li>Menú personalizado</li>
+<li>Preparación en el lugar</li>
+<li>Adaptaciones dietéticas</li>
+<li>Servicio completo</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section class="menu" id="menu">
+<div class="container">
+<span class="section-label centered">Menú de Ejemplo</span>
+<h2 class="section-title centered">Una Semana de Comidas Saludables</h2>
+<p class="section-subtitle">Así es como se ve una semana típica con Greenleaf Kitchen.</p>
+<div class="menu-grid">
+<div class="menu-day">
+<div class="menu-image">
+<img alt="Desayuno" loading="lazy" src="https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?w=200&amp;q=80"/>
+</div>
+<h4>Lunes</h4>
+<div class="meal">
+<span class="meal-type">Desayuno</span>
+<span class="meal-name">Tostada de aguacate con huevos pochados</span>
+</div>
+<div class="meal">
+<span class="meal-type">Almuerzo</span>
+<span class="meal-name">Bowl de quinoa mediterráneo</span>
+</div>
+<div class="meal">
+<span class="meal-type">Cena</span>
+<span class="meal-name">Salmón con espárragos</span>
+</div>
+</div>
+<div class="menu-day">
+<div class="menu-image">
+<img alt="Almuerzo" loading="lazy" src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=200&amp;q=80"/>
+</div>
+<h4>Martes</h4>
+<div class="meal">
+<span class="meal-type">Desayuno</span>
+<span class="meal-name">Parfait de yogurt griego</span>
+</div>
+<div class="meal">
+<span class="meal-type">Almuerzo</span>
+<span class="meal-name">Bowl budista con tahini</span>
+</div>
+<div class="meal">
+<span class="meal-type">Cena</span>
+<span class="meal-name">Curry de coco tailandés</span>
+</div>
+</div>
+<div class="menu-day">
+<div class="menu-image">
+<img alt="Ensalada" loading="lazy" src="https://images.unsplash.com/photo-1525351484163-7529414344d8?w=200&amp;q=80"/>
+</div>
+<h4>Miércoles</h4>
+<div class="meal">
+<span class="meal-type">Desayuno</span>
+<span class="meal-name">Omelette de espinacas</span>
+</div>
+<div class="meal">
+<span class="meal-type">Almuerzo</span>
+<span class="meal-name">Ensalada de pollo a la parrilla</span>
+</div>
+<div class="meal">
+<span class="meal-type">Cena</span>
+<span class="meal-name">Pimientos rellenos</span>
+</div>
+</div>
+<div class="menu-day">
+<div class="menu-image">
+<img alt="Smoothie" loading="lazy" src="https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?w=200&amp;q=80"/>
+</div>
+<h4>Jueves</h4>
+<div class="meal">
+<span class="meal-type">Desayuno</span>
+<span class="meal-name">Bowl de smoothie verde</span>
+</div>
+<div class="meal">
+<span class="meal-type">Almuerzo</span>
+<span class="meal-name">Sopa de lentejas</span>
+</div>
+<div class="meal">
+<span class="meal-type">Cena</span>
+<span class="meal-name">Tacos de pescado</span>
+</div>
+</div>
+<div class="menu-day">
+<div class="menu-image">
+<img alt="Vegetales" loading="lazy" src="https://images.unsplash.com/photo-1493770348161-369560ae357d?w=200&amp;q=80"/>
+</div>
+<h4>Viernes</h4>
+<div class="meal">
+<span class="meal-type">Desayuno</span>
+<span class="meal-name">Avena nocturna</span>
+</div>
+<div class="meal">
+<span class="meal-type">Almuerzo</span>
+<span class="meal-name">Wrap mediterráneo</span>
+</div>
+<div class="meal">
+<span class="meal-type">Cena</span>
+<span class="meal-name">Salteado de verduras</span>
+</div>
+</div>
+<div class="menu-day">
+<div class="menu-image">
+<img alt="Brunch" loading="lazy" src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=200&amp;q=80"/>
+</div>
+<h4>Fin de Semana</h4>
+<div class="meal">
+<span class="meal-type">Brunch</span>
+<span class="meal-name">Brunch de la granja</span>
+</div>
+<div class="meal">
+<span class="meal-type">Cena</span>
+<span class="meal-name">Especialidades del chef</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="testimonials" id="testimonials">
+<div class="container">
+<span class="section-label centered">Testimonios</span>
+<h2 class="section-title centered">Lo Que Dicen los Clientes</h2>
+<div class="testimonials-grid">
+<div class="testimonial-card">
+<div class="testimonial-rating">★★★★★</div>
+<p class="testimonial-text">"Trabajar con Greenleaf Kitchen ha transformado cómo como. He perdido 9
+                        kilos sin sentirme privado."</p>
+<div class="testimonial-author">
+<div class="author-avatar">SM</div>
+<div class="author-info">
+<span class="author-name">Sarah Mitchell</span>
+<span class="author-title">Ejecutiva</span>
+</div>
+</div>
+</div>
+<div class="testimonial-card">
+<div class="testimonial-rating">★★★★★</div>
+<p class="testimonial-text">"La atención al detalle y el cuidado en cada comida ha sido increíble.
+                        Finalmente me siento entendida."</p>
+<div class="testimonial-author">
+<div class="author-avatar">JK</div>
+<div class="author-info">
+<span class="author-name">James Kelly</span>
+<span class="author-title">Entrenador Fitness</span>
+</div>
+</div>
+</div>
+<div class="testimonial-card">
+<div class="testimonial-rating">★★★★★</div>
+<p class="testimonial-text">"El servicio de preparación de comidas ha sido revolucionario. Es como
+                        tener un chef privado."</p>
+<div class="testimonial-author">
+<div class="author-avatar">EP</div>
+<div class="author-info">
+<span class="author-name">Elena Petrov</span>
+<span class="author-title">Madre Trabajadora</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="recipe-game" id="recipe-game">
+<div class="container">
+<span class="section-label centered">Crea Tu Receta</span>
+<h2 class="section-title centered">El Chef Saludable</h2>
+<p class="section-subtitle">Selecciona los ingredientes para crear tu comida perfecta basada en opciones
+                saludables.</p>
+<div class="game-wrapper">
+<div class="game-card">
+<div class="game-header">
+<h3>Selecciona el Momento del Día</h3>
+</div>
+<div class="meal-selector">
+<button class="meal-btn active" data-meal="desayuno">
+<span class="meal-icon">🌅</span>
+<span>Desayuno</span>
+</button>
+<button class="meal-btn" data-meal="almuerzo">
+<span class="meal-icon">☀️</span>
+<span>Almuerzo</span>
+</button>
+<button class="meal-btn" data-meal="cena">
+<span class="meal-icon">🌙</span>
+<span>Cena</span>
+</button>
+</div>
+</div>
+<div class="game-card">
+<div class="game-header">
+<h3>Elige tu Proteína</h3>
+</div>
+<div class="ingredients-grid" id="proteins">
+<button class="ingredient-btn" data-ing="huevo">
+<span class="ing-icon">🥚</span>
+<span>Huevo</span>
+</button>
+<button class="ingredient-btn" data-ing="pollo">
+<span class="ing-icon">🍗</span>
+<span>Pollo</span>
+</button>
+<button class="ingredient-btn" data-ing="salmon">
+<span class="ing-icon">🐟</span>
+<span>Salmón</span>
+</button>
+<button class="ingredient-btn" data-ing="tofu">
+<span class="ing-icon">🧈</span>
+<span>Tofu</span>
+</button>
+<button class="ingredient-btn" data-ing="lentejas">
+<span class="ing-icon">🌿</span>
+<span>Lentejas</span>
+</button>
+<button class="ingredient-btn" data-ing="pavo">
+<span class="ing-icon">🦃</span>
+<span>Pavo</span>
+</button>
+</div>
+</div>
+<div class="game-card">
+<div class="game-header">
+<h3>Elige tus Vegetales</h3>
+</div>
+<div class="ingredients-grid" id="vegetables">
+<button class="ingredient-btn" data-ing="espinacas">
+<span class="ing-icon">🥬</span>
+<span>Espinacas</span>
+</button>
+<button class="ingredient-btn" data-ing="brócoli">
+<span class="ing-icon">🥦</span>
+<span>Brócoli</span>
+</button>
+<button class="ingredient-btn" data-ing="aguacate">
+<span class="ing-icon">🥑</span>
+<span>Aguacate</span>
+</button>
+<button class="ingredient-btn" data-ing="zucchini">
+<span class="ing-icon">🥒</span>
+<span>Zucchini</span>
+</button>
+<button class="ingredient-btn" data-ing="pimientos">
+<span class="ing-icon">🌶️</span>
+<span>Pimientos</span>
+</button>
+<button class="ingredient-btn" data-ing="tomates">
+<span class="ing-icon">🍅</span>
+<span>Tomates</span>
+</button>
+</div>
+</div>
+<div class="game-card">
+<div class="game-header">
+<h3>Elige tu Carbohidratos</h3>
+</div>
+<div class="ingredients-grid" id="carbs">
+<button class="ingredient-btn" data-ing="quinoa">
+<span class="ing-icon">🌾</span>
+<span>Quinoa</span>
+</button>
+<button class="ingredient-btn" data-ing="arroz">
+<span class="ing-icon">🍚</span>
+<span>Arroz Integral</span>
+</button>
+<button class="ingredient-btn" data-ing="avena">
+<span class="ing-icon">🥣</span>
+<span>Avena</span>
+</button>
+<button class="ingredient-btn" data-ing="batata">
+<span class="ing-icon">🍠</span>
+<span>Batata</span>
+</button>
+<button class="ingredient-btn" data-ing="pan">
+<span class="ing-icon">🍞</span>
+<span>Pan Integral</span>
+</button>
+<button class="ingredient-btn" data-ing="pasta">
+<span class="ing-icon">🍝</span>
+<span>Pasta Integral</span>
+</button>
+</div>
+</div>
+<div class="game-result">
+<div class="result-card">
+<h3>Tu Creación</h3>
+<div class="result-dish" id="resultDish">
+<span class="dish-emoji">🍽️</span>
+<p>Selecciona tus ingredientes para ver tu receta</p>
+</div>
+<div class="selected-ingredients" id="selectedIngredients">
+</div>
+<button class="btn-primary" id="generateRecipe">Generar Receta</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Floating Action Button for Social Media -->
+<div class="fab-container" id="fabContainer">
+<a aria-label="WhatsApp" class="fab-item fab-whatsapp" href="https://wa.me/1234567890" target="_blank">
+<svg fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+</svg>
+<span class="fab-label">WhatsApp</span>
+</a>
+<a aria-label="Telegram" class="fab-item fab-telegram" href="https://t.me/yourusername" target="_blank">
+<svg fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"></path>
+</svg>
+<span class="fab-label">Telegram</span>
+</a>
+<a aria-label="Instagram" class="fab-item fab-instagram" href="https://instagram.com" target="_blank">
+<svg fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path>
+</svg>
+<span class="fab-label">Instagram</span>
+</a>
+<a aria-label="Facebook" class="fab-item fab-facebook" href="https://facebook.com" target="_blank">
+<svg fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path>
+</svg>
+<span class="fab-label">Facebook</span>
+</a>
+<button aria-expanded="false" aria-label="Contacto en redes sociales" class="fab-main" id="fabMain">
+<!-- Message / Chat icon -->
+<svg class="fab-icon-open" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"></path>
+</svg>
+<!-- Close icon -->
+<svg class="fab-icon-close" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+</svg>
+</button>
+</div>
+<style>
+        /* ===== FAB Social Media Button ===== */
+        .fab-container {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            gap: 0.75rem;
+            z-index: 1000;
+        }
+
+        .fab-main {
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2d6a4f, #40916c);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(45, 106, 79, 0.45);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .fab-main:hover {
+            transform: scale(1.12);
+            box-shadow: 0 6px 28px rgba(45, 106, 79, 0.6);
+        }
+
+        .fab-main svg {
+            width: 26px;
+            height: 26px;
+            fill: #fff;
+            position: absolute;
+            transition: opacity 0.25s ease, transform 0.25s ease;
+        }
+
+        .fab-icon-close {
+            opacity: 0;
+            transform: rotate(-90deg) scale(0.7);
+        }
+
+        .fab-container.open .fab-icon-open {
+            opacity: 0;
+            transform: rotate(90deg) scale(0.7);
+        }
+
+        .fab-container.open .fab-icon-close {
+            opacity: 1;
+            transform: rotate(0deg) scale(1);
+        }
+
+        .fab-item {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-decoration: none;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
+            opacity: 0;
+            transform: translateY(20px) scale(0.6);
+            pointer-events: none;
+            transition: opacity 0.25s ease, transform 0.25s ease, box-shadow 0.2s ease;
+            position: relative;
+        }
+
+        .fab-item svg {
+            width: 22px;
+            height: 22px;
+            fill: #fff;
+            flex-shrink: 0;
+        }
+
+        .fab-item .fab-label {
+            position: absolute;
+            right: 58px;
+            background: rgba(30, 30, 30, 0.88);
+            color: #fff;
+            font-size: 0.78rem;
+            font-family: 'Poppins', sans-serif;
+            padding: 4px 10px;
+            border-radius: 20px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease;
+            backdrop-filter: blur(4px);
+        }
+
+        .fab-item:hover .fab-label {
+            opacity: 1;
+        }
+
+        .fab-item:hover {
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.35);
+            transform: scale(1.1) !important;
+        }
+
+        .fab-container.open .fab-item {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: all;
+        }
+
+        .fab-container.open .fab-item:nth-child(1) {
+            transition-delay: 0.08s;
+        }
+
+        .fab-container.open .fab-item:nth-child(2) {
+            transition-delay: 0.05s;
+        }
+
+        .fab-container.open .fab-item:nth-child(3) {
+            transition-delay: 0.02s;
+        }
+
+        .fab-container.open .fab-item:nth-child(4) {
+            transition-delay: 0s;
+        }
+
+        .fab-whatsapp {
+            background: #25D366;
+        }
+
+        .fab-telegram {
+            background: #229ED9;
+        }
+
+        .fab-instagram {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+        }
+
+        .fab-facebook {
+            background: #1877F2;
+        }
+    </style>
+<script>
+        (function () {
+            var fab = document.getElementById('fabContainer');
+            var btn = document.getElementById('fabMain');
+            btn.addEventListener('click', function () {
+                var isOpen = fab.classList.toggle('open');
+                btn.setAttribute('aria-expanded', isOpen);
+            });
+            document.addEventListener('click', function (e) {
+                if (!fab.contains(e.target)) {
+                    fab.classList.remove('open');
+                    btn.setAttribute('aria-expanded', 'false');
+                }
+            });
+        })();
+    </script>
+<footer style="text-align: center; padding: 20px; font-size: 14px;">
+<a href="#" style="text-decoration: none; color: inherit;">© 2026 Trademark</a>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

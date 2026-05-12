@@ -1,0 +1,2233 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HELIO — Landing Page Selector</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&amp;family=Outfit:wght@300;500;800&amp;family=Space+Grotesk:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #0A0A0A;
+            --surface: #141414;
+            --surface-elevated: #1A1A1A;
+            --border: #2A2A2A;
+            --text-primary: #FAFAFA;
+            --text-secondary: #888888;
+            --accent: #FFFFFF;
+            --font-heading: 'Outfit', sans-serif;
+            --font-display: 'Space Grotesk', sans-serif;
+            --font-body: 'DM Sans', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 72px;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 28px;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+        }
+
+        .logo span {
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        nav {
+            display: flex;
+            gap: 32px;
+        }
+
+        nav a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--text-primary);
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 24px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.01) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+
+
+
+
+
+        .modern-title {
+            font-family: var(--font-display);
+            font-size: clamp(48px, 8vw, 96px);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.04em;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #fff 0%, #aaa 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .highlight {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-style: normal;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(0, 255, 100, 0.8);
+            background: none;
+            position: relative;
+            display: inline-block;
+            text-transform: lowercase;
+            padding: 0 10px;
+        }
+
+        .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 15px;
+            background: rgba(0, 255, 100, 0.2);
+            z-index: -1;
+            transform: skew(-15deg);
+        }
+
+        .hero-paragraphs {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 30px;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .hero-paragraphs p:first-child {
+            font-family: var(--font-heading);
+            font-size: 24px;
+            font-weight: 400;
+            color: var(--text-primary);
+            max-width: 700px;
+            margin-bottom: 0px;
+            line-height: 1.5;
+        }
+
+        .hero-paragraphs p:last-child {
+            font-family: var(--font-body);
+            font-size: 18px;
+            font-weight: 300;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-bottom: 0px;
+            line-height: 1.6;
+        }
+
+        .highlight-text {
+            color: #00ff00;
+            font-weight: 600;
+        }
+
+        .marquee-banner {
+            width: 100vw;
+            max-width: 100%;
+            overflow: hidden;
+            background: rgba(0, 255, 100, 0.03);
+            border-top: 1px solid rgba(0, 255, 100, 0.1);
+            border-bottom: 1px solid rgba(0, 255, 100, 0.1);
+            padding: 14px 0;
+            margin-bottom: 60px;
+            position: relative;
+            transform: rotate(-1deg) scale(1.02);
+            backdrop-filter: blur(2px);
+            z-index: 10;
+        }
+
+        .marquee-content {
+            display: flex;
+            width: max-content;
+            animation: marquee 60s linear infinite;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .marquee-content span {
+            font-family: var(--font-display);
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            white-space: nowrap;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .hero p {
+            font-family: var(--font-body);
+            font-size: 20px;
+            font-weight: 300;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-bottom: 48px;
+            line-height: 1.7;
+        }
+
+        .old-hero-p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 500px;
+            margin-bottom: 48px;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-secondary);
+            font-size: 12px;
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+
+            40% {
+                transform: translateX(-50%) translateY(-8px);
+            }
+
+            60% {
+                transform: translateX(-50%) translateY(-4px);
+            }
+        }
+
+
+        /* Main Layout */
+        .main-layout-wrapper {
+            display: flex;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 24px 120px;
+            gap: 40px;
+            position: relative;
+            z-index: 50;
+        }
+
+        /* Filter Sidebar */
+        .filter-sidebar {
+            width: 280px;
+            flex-shrink: 0;
+            position: sticky;
+            top: 100px;
+            max-height: calc(100vh - 120px);
+            overflow-y: auto;
+            background: transparent;
+            backdrop-filter: none;
+            padding: 0 20px 0 0;
+            border: none;
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            z-index: 10;
+        }
+
+        .filter-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .filter-header h2 {
+            font-family: var(--font-heading);
+            font-size: 28px;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            color: var(--text-primary);
+        }
+
+        .clear-filters {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            padding: 0;
+        }
+
+        .clear-filters:hover {
+            color: #ff6a00;
+        }
+
+        .filter-groups {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .filter-label {
+            font-family: var(--font-body);
+            font-size: 14px;
+            color: var(--text-primary);
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+
+        .filter-options {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .filter-pill {
+            text-align: left;
+            padding: 10px 16px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 400;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .filter-pill:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+            border-color: rgba(255, 255, 255, 0.1);
+            transform: translateX(4px);
+        }
+
+        .filter-pill.active {
+            background: rgba(0, 255, 0, 0.1);
+            color: #00ff00;
+            border-color: #00ff00;
+            font-weight: 500;
+        }
+
+        .filter-pill.active::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background: #00ff00;
+        }
+
+        @media (max-width: 900px) {
+            .main-layout-wrapper {
+                flex-direction: column;
+            }
+
+            .filter-sidebar {
+                width: 100%;
+                position: static;
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+                padding: 0 0 24px 0;
+            }
+
+            .filter-groups {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 24px;
+            }
+
+            .filter-options {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .filter-pill {
+                text-align: center;
+            }
+
+            .filter-pill:hover {
+                transform: translateY(-2px);
+            }
+        }
+
+        /* Gallery Content */
+        .gallery-content {
+            flex-grow: 1;
+            min-width: 0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+        }
+
+
+
+        .template-card {
+            background-color: transparent;
+            border-radius: 12px;
+            perspective: 1000px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 1;
+            transform: translateY(0);
+            height: 380px;
+            /*! Reduced height for cleaner look */
+        }
+
+        .template-card.hidden {
+            display: none;
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+        }
+
+        .template-card:hover .card-inner {
+            transform: rotateY(180deg);
+            border-color: #3A3A3A;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .card-front,
+        .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-front {
+            background-color: var(--surface);
+            color: var(--text-primary);
+        }
+
+        .card-back {
+            background-color: var(--surface-elevated);
+            color: var(--text-primary);
+            transform: rotateY(180deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .card-back h4 {
+            font-family: var(--font-heading);
+            font-size: 28px;
+            margin-bottom: 8px;
+            color: #ff6a00;
+        }
+
+        .card-back p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+
+        .card-back .cost {
+            font-family: var(--font-heading);
+            font-size: 32px;
+            color: #00ff00;
+            margin-bottom: 16px;
+        }
+
+        .card-back .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            background: var(--text-primary);
+            color: var(--bg);
+            border-radius: 20px;
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .card-back .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .template-preview {
+            aspect-ratio: 16 / 10;
+            background: var(--surface-elevated);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .template-preview::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(20, 20, 20, 0) 50%, rgba(20, 20, 20, 1) 100%);
+        }
+
+        .template-info {
+            padding: 16px;
+            /* Reduced padding */
+            text-align: left;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .template-name {
+            font-family: var(--font-heading);
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .template-tags {
+            display: flex;
+            gap: 6px;
+            /* Reduced gap */
+            flex-wrap: wrap;
+        }
+
+        .template-tag {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 8px;
+            /* Reduced padding */
+            border-radius: 4px;
+            background: var(--surface-elevated);
+            color: var(--text-secondary);
+        }
+
+        /* No Results */
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 80px 24px;
+            display: none;
+        }
+
+        .no-results.visible {
+            display: block;
+        }
+
+        .no-results h3 {
+            font-family: var(--font-heading);
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+        .no-results p {
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        footer {
+            height: 80px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+        }
+
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-brand {
+            font-family: var(--font-heading);
+            font-size: 18px;
+            font-style: italic;
+        }
+
+        .footer-copy {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .template-card {
+            animation: fadeInUp 0.5s ease forwards;
+        }
+
+        .template-card:nth-child(1) {
+            animation-delay: 0.05s;
+        }
+
+        .template-card:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .template-card:nth-child(3) {
+            animation-delay: 0.15s;
+        }
+
+        .template-card:nth-child(4) {
+            animation-delay: 0.2s;
+        }
+
+        .template-card:nth-child(5) {
+            animation-delay: 0.25s;
+        }
+
+        .template-card:nth-child(6) {
+            animation-delay: 0.3s;
+        }
+
+        .template-card:nth-child(7) {
+            animation-delay: 0.35s;
+        }
+
+        .template-card:nth-child(8) {
+            animation-delay: 0.4s;
+        }
+
+        .template-card:nth-child(9) {
+            animation-delay: 0.45s;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 100px 24px 60px;
+            }
+
+            .modern-title {
+                font-size: clamp(36px, 10vw, 64px);
+                margin-bottom: 16px;
+            }
+
+            .hero-paragraphs {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                margin-bottom: 30px;
+                align-items: center;
+                z-index: 10;
+            }
+
+            .hero-paragraphs p:first-child {
+                font-family: var(--font-heading);
+                font-size: 24px;
+                font-weight: 400;
+                color: var(--text-primary);
+                max-width: 700px;
+                margin-bottom: 0px;
+                line-height: 1.5;
+            }
+
+            .hero-paragraphs p:last-child {
+                font-family: var(--font-body);
+                font-size: 18px;
+                font-weight: 300;
+                color: var(--text-secondary);
+                max-width: 600px;
+                margin-bottom: 0px;
+                line-height: 1.6;
+            }
+
+            .highlight-text {
+                color: #00ff00;
+                font-weight: 600;
+            }
+
+            .marquee-banner {
+                width: 100vw;
+                max-width: 100%;
+                overflow: hidden;
+                background: rgba(0, 255, 100, 0.03);
+                border-top: 1px solid rgba(0, 255, 100, 0.1);
+                border-bottom: 1px solid rgba(0, 255, 100, 0.1);
+                padding: 14px 0;
+                margin-bottom: 60px;
+                position: relative;
+                transform: rotate(-1deg) scale(1.02);
+                backdrop-filter: blur(4px);
+                z-index: 10;
+            }
+
+            .marquee-content {
+                display: flex;
+                width: max-content;
+                animation: marquee 35s linear infinite;
+                gap: 30px;
+                align-items: center;
+            }
+
+            .marquee-content span {
+                font-family: var(--font-display);
+                font-size: 13px;
+                font-weight: 600;
+                color: var(--text-primary);
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                white-space: nowrap;
+            }
+
+            @keyframes marquee {
+                0% {
+                    transform: translateX(0);
+                }
+
+                100% {
+                    transform: translateX(-50%);
+                }
+            }
+
+            .hero p {
+                font-size: 16px;
+                margin-bottom: 32px;
+                padding: 0 10px;
+            }
+
+            .old-hero-p {
+                font-size: 16px;
+            }
+
+            .filter-section {
+                padding: 24px 0;
+            }
+
+            .gallery-section {
+                padding: 60px 0 80px;
+            }
+
+            nav {
+                gap: 12px;
+            }
+
+            .filter-label {
+                min-width: auto;
+            }
+
+            .neon-container {
+                font-size: 14px;
+                gap: 5px;
+                display: flex;
+            }
+
+            .template-card {
+                cursor: pointer;
+            }
+
+            .template-card:hover .card-inner {
+                transform: none;
+                box-shadow: none;
+                border: 1px solid var(--border);
+            }
+
+            .template-card.flipped .card-inner {
+                transform: rotateY(180deg);
+                border-color: #3A3A3A;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            .search-container.active .search-input {
+                width: 100px;
+            }
+        }
+
+        .neon-container {
+            font-family: var(--font-heading);
+            font-size: 38px;
+            font-style: italic;
+            display: flex;
+            gap: 10px;
+        }
+
+        .neon-word {
+            color: transparent;
+            position: relative;
+        }
+
+        .neon-word::after {
+            content: '|';
+            position: absolute;
+            right: -12px;
+            color: #fff;
+            animation: blink 0.7s infinite;
+            -webkit-text-stroke: 0;
+            text-shadow: none;
+        }
+
+        .neon-constant {
+            color: transparent;
+            -webkit-text-stroke: 1.5px #ff6a00;
+            text-shadow: 0 0 5px #ff6a00, 0 0 10px #ff6a00, 0 0 20px #ff6a00;
+            animation: pulse-neon 2s infinite alternate;
+        }
+
+        @keyframes pulse-neon {
+            0% {
+                text-shadow: 0 0 5px #ff6a00, 0 0 10px #ff6a00;
+                opacity: 0.8;
+            }
+
+            100% {
+                text-shadow: 0 0 10px #ff6a00, 0 0 20px #ff6a00, 0 0 30px #ff6a00;
+                opacity: 1;
+            }
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            position: relative;
+            border: 1px solid transparent;
+            border-radius: 20px;
+            transition: border-color 0.3s ease, background 0.3s ease;
+        }
+
+        .search-container.active {
+            border-color: #00ff00;
+            background: var(--surface);
+        }
+
+        .search-input {
+            width: 0;
+            opacity: 0;
+            border: none;
+            background: transparent;
+            color: #00ff00;
+            font-family: var(--font-body);
+            font-size: 14px;
+            padding: 0;
+            transition: width 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+            outline: none;
+        }
+
+        .search-input::placeholder {
+            color: rgba(0, 255, 0, 0.5);
+        }
+
+        .search-container.active .search-input {
+            width: 150px;
+            opacity: 1;
+            padding: 8px 12px;
+        }
+
+        .search-icon {
+            color: #00ff00;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            padding: 8px;
+            transition: transform 0.3s ease, text-shadow 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .search-icon:hover {
+            transform: scale(1.1);
+            text-shadow: 0 0 10px #00ff00;
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(8px);
+            z-index: 200;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .contact-modal {
+            background: var(--surface-elevated);
+            border: 1px solid var(--border);
+            padding: 40px;
+            border-radius: 16px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-overlay.active .contact-modal {
+            transform: translateY(0);
+        }
+
+        .contact-modal h3 {
+            font-family: var(--font-heading);
+            font-size: 32px;
+            margin-bottom: 24px;
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 12px;
+            border-radius: 8px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .social-link:hover {
+            background: var(--text-primary);
+            color: var(--bg);
+        }
+
+        .modal-close {
+            margin-top: 24px;
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 14px;
+            text-decoration: underline;
+        }
+
+        .modal-close:hover {
+            color: var(--text-primary);
+        }
+
+        .admin-panel {
+            background: var(--surface-elevated);
+            border-top: 1px solid var(--border);
+            padding: 40px 24px;
+            display: none;
+        }
+
+        .admin-panel.active {
+            display: block;
+        }
+
+        .admin-panel h3 {
+            font-family: var(--font-heading);
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        .admin-panel p {
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+<canvas id="bg-canvas"></canvas>
+<header>
+<div class="container">
+<a class="logo" href="#">HELIO<span>.</span></a>
+<div class="neon-container">
+<span class="neon-word" id="typewriter-text"></span>
+<span class="neon-constant">Yourself</span>
+</div>
+<nav>
+<div class="search-container" id="searchContainer">
+<input class="search-input" id="searchInput" placeholder="Search..." type="text"/>
+<div class="search-icon" id="searchBtn">
+<svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</div>
+<a href="#" id="contactBtn" style="display: flex; align-items: center; color: var(--text-secondary);" title="Contact">
+<svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+<path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</a>
+</nav>
+</div>
+</header>
+<section class="hero">
+<h1 class="modern-title">La primera página de <br/>tu <span class="highlight">historia</span></h1>
+<div class="hero-paragraphs">
+<p>Landing pages <span class="highlight-text">seleccionadas y adaptadas</span> a ti.
+            </p>
+<p>Encuentra la <span class="highlight-text">opción perfecta</span> para tu próxima posición o proyecto.</p>
+</div>
+<div class="marquee-banner">
+<div class="marquee-content">
+<span>🚀 Destaca con una presencia digital dinámica</span>
+<span>•</span>
+<span>📈 Optimización SEO integrada</span>
+<span>•</span>
+<span>📄 CV dinámico</span>
+<span>•</span>
+<span>💼 Potencia tu marca personal o negocio</span>
+<span>•</span>
+<span>⚡ Carga ultrarrápida y responsive</span>
+<span>•</span>
+<span>🎯 Convierte más visitas en oportunidades</span>
+<span>•</span>
+<span>🚀 Destaca con una presencia digital dinámica</span>
+<span>•</span>
+<span>📈 Optimización SEO integrada</span>
+<span>•</span>
+<span>📄 CV dinámico</span>
+<span>•</span>
+<span>💼 Potencia tu marca personal o negocio</span>
+<span>•</span>
+<span>⚡ Carga ultrarrápida y responsive</span>
+<span>•</span>
+<span>🎯 Convierte más visitas en oportunidades</span>
+</div>
+</div>
+<div class="scroll-indicator">
+<span>Explorar</span>
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M19 14l-7 7m0 0l-7-7m7 7V3" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</section>
+<div class="main-layout-wrapper">
+<aside class="filter-sidebar">
+<div class="container">
+<div class="filter-header">
+<h2>Prints</h2>
+<button class="clear-filters hidden" id="clearFilters">Borrar filtros</button>
+</div>
+<div class="filter-groups">
+<div class="filter-group">
+<span class="filter-label">Perfil</span>
+<div class="filter-options" data-category="profile">
+<button class="filter-pill" data-value="cv">Sitio CV Personal</button>
+<button class="filter-pill" data-value="business">Negocio Personal</button>
+</div>
+</div>
+
+</div>
+</div>
+</aside>
+<section class="gallery-content">
+<div class="container">
+<div class="gallery-grid" id="galleryGrid">
+<div class="template-card" data-profile="cv" data-role="creator">
+<div class="card-inner">
+<div class="card-front">
+<div class="template-preview" style="background-image: url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=600&h=400');">
+</div>
+<div class="template-info">
+<h3 class="template-name">Active Life | Bienestar Natural</h3>
+<div class="template-tags">
+<span class="template-tag">Sitio CV Personal</span>
+</div>
+</div>
+</div>
+<div class="card-back">
+<h4>Active Life | Bienestar Natural</h4>
+<p style="padding: 0 15px;">Sitio perfecto para creadores de contenido wellness. Atrae clientes promoviendo tus programas de vida saludable.</p>
+<div class="cost">$25 <span style="font-size: 16px; color: var(--text-secondary);">(100k)</span></div>
+<a class="btn" href="../activelife/index.html" style="text-decoration: none;" target="_blank">Ver Demo</a>
+</div>
+</div>
+</div>
+<div class="template-card" data-profile="business" data-role="designer">
+<div class="card-inner">
+<div class="card-front">
+<div class="template-preview" style="background-image: url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&q=80&w=600&h=400');">
+</div>
+<div class="template-info">
+<h3 class="template-name">El Solar Bello Architecture | Sustainable Homes in Antioquia</h3>
+<div class="template-tags">
+<span class="template-tag">Negocio Personal</span>
+</div>
+</div>
+</div>
+<div class="card-back">
+<h4>El Solar Bello Architecture | Sustainable Homes in Antioquia</h4>
+<p style="padding: 0 15px;">Muestra tu portafolio arquitectónico de manera premium y profesional. Ideal para firmas y diseñadores independientes.</p>
+<div class="cost">$25 <span style="font-size: 16px; color: var(--text-secondary);">(100k)</span></div>
+<a class="btn" href="../Architect/index.html" style="text-decoration: none;" target="_blank">Ver Demo</a>
+</div>
+</div>
+</div>
+<div class="template-card" data-profile="cv" data-role="artist">
+<div class="card-inner">
+<div class="card-front">
+<div class="template-preview" style="background-image: url('https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&q=80&w=600&h=400');">
+</div>
+<div class="template-info">
+<h3 class="template-name">Alex Morgan - Digital Artist &amp; Creator</h3>
+<div class="template-tags">
+<span class="template-tag">Sitio CV Personal</span>
+</div>
+</div>
+</div>
+<div class="card-back">
+<h4>Alex Morgan - Digital Artist &amp; Creator</h4>
+<p style="padding: 0 15px;">Galería inmersiva para artistas visuales. Perfecta para exhibir cuadros, arte digital y comisiones.</p>
+<div class="cost">$25 <span style="font-size: 16px; color: var(--text-secondary);">(100k)</span></div>
+<a class="btn" href="../Art/index.html" style="text-decoration: none;" target="_blank">Ver Demo</a>
+</div>
+</div>
+</div>
+<div class="template-card" data-profile="business" data-role="freelancer">
+<div class="card-inner">
+<div class="card-front">
+<div class="template-preview" style="background-image: url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80&w=600&h=400');">
+</div>
+<div class="template-info">
+<h3 class="template-name">Blade &amp; Co. | Barbería Premium</h3>
+<div class="template-tags">
+<span class="template-tag">Negocio Personal</span>
+</div>
+</div>
+</div>
+<div class="card-back">
+<h4>Blade &amp; Co. | Barbería Premium</h4>
+<p style="padding: 0 15px;">Agenda citas y destaca el estilo único de tu barbería o salón. Convierte visitas en clientes recurrentes.</p>
+<div class="cost">$25 <span style="font-size: 16px; color: var(--text-secondary);">(100k)</span></div>
+<a class="btn" href="../Barber/index.html" style="text-decoration: none;" target="_blank">Ver Demo</a>
+</div>
+</div>
+</div>
+<div class="template-card" data-profile="business" data-role="creator">
+<div class="card-inner">
+<div class="card-front">
+<div class="template-preview" style="background-image: url('https://images.unsplash.com/photo-1556910103-1c02745a872f?auto=format&fit=crop&q=80&w=600&h=400');">
+</div>
+<div class="template-info">
+<h3 class="template-name">Greenleaf Kitchen | Servicios de Chef Personal</h3>
+<div class="template-tags">
+<span class="template-tag">Negocio Personal</span>
+</div>
+</div>
+</div>
+<div class="card-back">
+<h4>Greenleaf Kitchen | Servicios de Chef Personal</h4>
+<p style="padding: 0 15px;">Portafolio para profesionales culinarios. Destaca tus menús, servicios de chef privado y cursos de cocina.</p>
+<div class="cost">$25 <span style="font-size: 16px; color: var(--text-secondary);">(100k)</span></div>
+<a class="btn" href="../Cooking/index.html" style="text-decoration: none;" target="_blank">Ver Demo</a>
+</div>
+</div>
+</div>
+<div class="template-card" data-profile="cv" data-role="developer">
+<div class="card-inner">
+<div class="card-front">
+<div class="template-preview" style="background-image: url('https://images.unsplash.com/photo-1592861956120-e524fc739696?auto=format&fit=crop&q=80&w=600&h=400');">
+</div>
+<div class="template-info">
+<h3 class="template-name">El Solar Bello — Creative Technologist / Artist</h3>
+<div class="template-tags">
+<span class="template-tag">Sitio CV Personal</span>
+</div>
+</div>
+</div>
+<div class="card-back">
+<h4>El Solar Bello — Creative Technologist / Artist</h4>
+<p style="padding: 0 15px;">CV digital interactivo para desarrolladores. Muestra tus proyectos, repositorios y habilidades técnicas.</p>
+<div class="cost">$25 <span style="font-size: 16px; color: var(--text-secondary);">(100k)</span></div>
+<a class="btn" href="../elsolarbello/index.html" style="text-decoration: none;" target="_blank">Ver Demo</a>
+</div>
+</div>
+</div>
+<div class="template-card" data-profile="cv" data-role="creator">
+<div class="card-inner">
+<div class="card-front">
+<div class="template-preview" style="background-image: url('https://images.unsplash.com/photo-1511988617509-a5708af4e15c?auto=format&fit=crop&q=80&w=600&h=400');">
+</div>
+<div class="template-info">
+<h3 class="template-name">Vibrant Life - Lifestyle Community</h3>
+<div class="template-tags">
+<span class="template-tag">Sitio CV Personal</span>
+</div>
+</div>
+</div>
+<div class="card-back">
+<h4>Vibrant Life - Lifestyle Community</h4>
+<p style="padding: 0 15px;">Landing page de estilo de vida para influencers y creadores. Centraliza todas tus redes y colaboraciones.</p>
+<div class="cost">$25 <span style="font-size: 16px; color: var(--text-secondary);">(100k)</span></div>
+<a class="btn" href="../LifeStyle/index.html" style="text-decoration: none;" target="_blank">Ver Demo</a>
+</div>
+</div>
+</div>
+<div class="template-card" data-profile="business" data-role="freelancer">
+<div class="card-inner">
+<div class="card-front">
+<div class="template-preview" style="background-image: url('https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&q=80&w=600&h=400');">
+</div>
+<div class="template-info">
+<h3 class="template-name">Carmen Ruiz — Asistente Ejecutiva</h3>
+<div class="template-tags">
+<span class="template-tag">Negocio Personal</span>
+</div>
+</div>
+</div>
+<div class="card-back">
+<h4>Carmen Ruiz — Asistente Ejecutiva</h4>
+<p style="padding: 0 15px;">CV ejecutivo y dinámico para asistentes de alto nivel. Destaca tus habilidades de gestión, comunicación y organización corporativa.</p>
+<div class="cost">$25 <span style="font-size: 16px; color: var(--text-secondary);">(100k)</span></div>
+<a class="btn" href="../Medical/index.html" style="text-decoration: none;" target="_blank">Ver Demo</a>
+</div>
+</div>
+</div>
+<div class="template-card" data-profile="business" data-role="freelancer">
+<div class="card-inner">
+<div class="card-front">
+<div class="template-preview" style="background-image: url('https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&q=80&w=600&h=400');">
+</div>
+<div class="template-info">
+<h3 class="template-name">Vision Pro | Consultoría Visual Profesional - Tu Visión, Nuestra Prioridad</h3>
+<div class="template-tags">
+<span class="template-tag">Negocio Personal</span>
+</div>
+</div>
+</div>
+<div class="card-back">
+<h4>Vision Pro | Consultoría Visual Profesional - Tu Visión, Nuestra Prioridad</h4>
+<p style="padding: 0 15px;">Ideal para consultorios de óptica. Ofrece un diseño limpio para detallar servicios visuales y agendamiento.</p>
+<div class="cost">$25 <span style="font-size: 16px; color: var(--text-secondary);">(100k)</span></div>
+<a class="btn" href="../OpticalConsultant/index.html" style="text-decoration: none;" target="_blank">Ver Demo</a>
+</div>
+</div>
+</div>
+<div class="template-card" data-profile="cv" data-role="artist">
+<div class="card-inner">
+<div class="card-front">
+<div class="template-preview" style="background-image: url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=600&h=400');">
+</div>
+<div class="template-info">
+<h3 class="template-name">Studio Noir | Photography</h3>
+<div class="template-tags">
+<span class="template-tag">Sitio CV Personal</span>
+</div>
+</div>
+</div>
+<div class="card-back">
+<h4>Studio Noir | Photography</h4>
+<p style="padding: 0 15px;">Captura la atención con este portafolio visual masivo. Perfecto para fotógrafos de bodas, productos o retrato.</p>
+<div class="cost">$25 <span style="font-size: 16px; color: var(--text-secondary);">(100k)</span></div>
+<a class="btn" href="../photograph/index.html" style="text-decoration: none;" target="_blank">Ver Demo</a>
+</div>
+</div>
+</div>
+<div class="template-card" data-profile="cv" data-role="designer">
+<div class="card-inner">
+<div class="card-front">
+<div class="template-preview" style="background-image: url('https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=600&h=400');">
+</div>
+<div class="template-info">
+<h3 class="template-name">Tu Nombre | Portafolio</h3>
+<div class="template-tags">
+<span class="template-tag">Sitio CV Personal</span>
+</div>
+</div>
+</div>
+<div class="card-back">
+<h4>Tu Nombre | Portafolio</h4>
+<p style="padding: 0 15px;">CV minimalista para diseñadores. Deja que tu trabajo creativo y experiencia hablen por ti.</p>
+<div class="cost">$25 <span style="font-size: 16px; color: var(--text-secondary);">(100k)</span></div>
+<a class="btn" href="../POrtafolio/index.html" style="text-decoration: none;" target="_blank">Ver Demo</a>
+</div>
+</div>
+</div>
+<div class="template-card" data-profile="business" data-role="freelancer">
+<div class="card-inner">
+<div class="card-front">
+<div class="template-preview" style="background-image: url('https://images.unsplash.com/photo-1573497620053-ea5300f94f21?auto=format&fit=crop&q=80&w=600&h=400');">
+</div>
+<div class="template-info">
+<h3 class="template-name">John Doe - Senior Digital Designer &amp; Frontend Architect</h3>
+<div class="template-tags">
+<span class="template-tag">Negocio Personal</span>
+</div>
+</div>
+</div>
+<div class="card-back">
+<h4>John Doe - Senior Digital Designer &amp; Frontend Architect</h4>
+<p style="padding: 0 15px;">Portafolio digital premium para diseñadores y desarrolladores senior. Muestra tu stack, proyectos y experiencia de forma impactante.</p>
+<div class="cost">$25 <span style="font-size: 16px; color: var(--text-secondary);">(100k)</span></div>
+<a class="btn" href="../psicq/index.html" style="text-decoration: none;" target="_blank">Ver Demo</a>
+</div>
+</div>
+</div>
+<div class="template-card" data-profile="cv" data-role="developer">
+<div class="card-inner">
+<div class="card-front">
+<div class="template-preview" style="background-image: url('https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&q=80&w=600&h=400');">
+</div>
+<div class="template-info">
+<h3 class="template-name">City Explorer - RPG Social Map Adventure</h3>
+<div class="template-tags">
+<span class="template-tag">Sitio CV Personal</span>
+</div>
+</div>
+</div>
+<div class="card-back">
+<h4>City Explorer - RPG Social Map Adventure</h4>
+<p style="padding: 0 15px;">Portafolio gamificado y divertido para desarrolladores de videojuegos o perfiles lúdicos.</p>
+<div class="cost">$25 <span style="font-size: 16px; color: var(--text-secondary);">(100k)</span></div>
+<a class="btn" href="../RPG/index.html" style="text-decoration: none;" target="_blank">Ver Demo</a>
+</div>
+</div>
+</div>
+<div class="template-card" data-profile="cv" data-role="freelancer">
+<div class="card-inner">
+<div class="card-front">
+<div class="template-preview" style="background-image: url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=600&h=400');">
+</div>
+<div class="template-info">
+<h3 class="template-name">Edwin - Asistente Profesional</h3>
+<div class="template-tags">
+<span class="template-tag">Sitio CV Personal</span>
+</div>
+</div>
+</div>
+<div class="card-back">
+<h4>Edwin - Asistente Profesional</h4>
+<p style="padding: 0 15px;">Organiza tus servicios como asistente virtual o secretaría. Profesionalismo y eficiencia en formato digital.</p>
+<div class="cost">$25 <span style="font-size: 16px; color: var(--text-secondary);">(100k)</span></div>
+<a class="btn" href="../Secretary/index.html" style="text-decoration: none;" target="_blank">Ver Demo</a>
+</div>
+</div>
+</div>
+<div class="template-card" data-profile="business" data-role="ceo">
+<div class="card-inner">
+<div class="card-front">
+<div class="template-preview" style="background-image: url('https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80&w=600&h=400');">
+</div>
+<div class="template-info">
+<h3 class="template-name">Senior Renewable Energy Engineer - Interactive Profile</h3>
+<div class="template-tags">
+<span class="template-tag">Negocio Personal</span>
+</div>
+</div>
+</div>
+<div class="card-back">
+<h4>Senior Renewable Energy Engineer - Interactive Profile</h4>
+<p style="padding: 0 15px;">Landing page orientada a la venta y cotización de servicios de energía solar o productos sustentables.</p>
+<div class="cost">$25 <span style="font-size: 16px; color: var(--text-secondary);">(100k)</span></div>
+<a class="btn" href="../SolarPanel/index.html" style="text-decoration: none;" target="_blank">Ver Demo</a>
+</div>
+</div>
+</div>
+<div class="template-card" data-profile="business" data-role="ceo">
+<div class="card-inner">
+<div class="card-front">
+<div class="template-preview" style="background-image: url('https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&q=80&w=600&h=400');">
+</div>
+<div class="template-info">
+<h3 class="template-name">Civil Engineer | Digital Identity</h3>
+<div class="template-tags">
+<span class="template-tag">Negocio Personal</span>
+</div>
+</div>
+</div>
+<div class="card-back">
+<h4>Civil Engineer | Digital Identity</h4>
+<p style="padding: 0 15px;">Catálogo online rápido y optimizado para presentar y vender tus productos físicos o digitales.</p>
+<div class="cost">$25 <span style="font-size: 16px; color: var(--text-secondary);">(100k)</span></div>
+<a class="btn" href="../Store/index.html" style="text-decoration: none;" target="_blank">Ver Demo</a>
+</div>
+</div>
+</div>
+<div class="template-card" data-profile="cv" data-role="developer">
+<div class="card-inner">
+<div class="card-front">
+<div class="template-preview" style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=600&h=400');">
+</div>
+<div class="template-info">
+<h3 class="template-name">Portafolio Ingeniero de Sistemas</h3>
+<div class="template-tags">
+<span class="template-tag">Sitio CV Personal</span>
+</div>
+</div>
+</div>
+<div class="card-back">
+<h4>Portafolio Ingeniero de Sistemas</h4>
+<p style="padding: 0 15px;">CV robusto para ingenieros en sistemas. Detalla tu stack tecnológico y experiencia corporativa.</p>
+<div class="cost">$25 <span style="font-size: 16px; color: var(--text-secondary);">(100k)</span></div>
+<a class="btn" href="../SystemEng/index.html" style="text-decoration: none;" target="_blank">Ver Demo</a>
+</div>
+</div>
+</div>
+<div class="template-card" data-profile="cv" data-role="freelancer">
+<div class="card-inner">
+<div class="card-front">
+<div class="template-preview" style="background-image: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=600&h=400');">
+</div>
+<div class="template-info">
+<h3 class="template-name">Mike Johnson - English Teacher</h3>
+<div class="template-tags">
+<span class="template-tag">Sitio CV Personal</span>
+</div>
+</div>
+</div>
+<div class="card-back">
+<h4>Mike Johnson - English Teacher</h4>
+<p style="padding: 0 15px;">Ideal para tutores y profesores independientes. Promueve tus clases online y material didáctico.</p>
+<div class="cost">$25 <span style="font-size: 16px; color: var(--text-secondary);">(100k)</span></div>
+<a class="btn" href="../Teach/index.html" style="text-decoration: none;" target="_blank">Ver Demo</a>
+</div>
+</div>
+</div>
+<div class="template-card" data-profile="business" data-role="freelancer">
+<div class="card-inner">
+<div class="card-front">
+<div class="template-preview" style="background-image: url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=600&h=400');">
+</div>
+<div class="template-info">
+<h3 class="template-name">Serenity Yoga - Find Your Inner Peace</h3>
+<div class="template-tags">
+<span class="template-tag">Negocio Personal</span>
+</div>
+</div>
+</div>
+<div class="card-back">
+<h4>Serenity Yoga - Find Your Inner Peace</h4>
+<p style="padding: 0 15px;">Página calmada y fluida para instructores de yoga. Comparte tus horarios, retiros y filosofía.</p>
+<div class="cost">$25 <span style="font-size: 16px; color: var(--text-secondary);">(100k)</span></div>
+<a class="btn" href="../Yoga/index.html" style="text-decoration: none;" target="_blank">Ver Demo</a>
+</div>
+</div>
+</div>
+<div class="template-card" data-profile="business" data-role="freelancer">
+<div class="card-inner">
+<div class="card-front">
+<div class="template-preview" style="background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=600&h=400');">
+</div>
+<div class="template-info">
+<h3 class="template-name">Presenta</h3>
+<div class="template-tags">
+<span class="template-tag">Negocio Personal</span>
+</div>
+</div>
+</div>
+<div class="card-back">
+<h4>Presenta</h4>
+<p style="padding: 0 15px;">Landing page corporativa genérica. Totalmente adaptable para cualquier servicio freelance o startup.</p>
+<div class="cost">$25 <span style="font-size: 16px; color: var(--text-secondary);">(100k)</span></div>
+<a class="btn" href="../Presenta/" style="text-decoration: none;" target="_blank">Ver Demo</a>
+</div>
+</div>
+</div>
+<div class="template-card" data-profile="cv" data-role="freelancer">
+<div class="card-inner">
+<div class="card-front">
+<div class="template-preview" style="background-image: url('../ExecutiveAssistant/example.png');">
+</div>
+<div class="template-info">
+<h3 class="template-name">María López - Asistente Ejecutiva Senior</h3>
+<div class="template-tags">
+<span class="template-tag">Sitio CV Personal</span>
+</div>
+</div>
+</div>
+<div class="card-back">
+<h4>María López - Asistente Ejecutiva Senior</h4>
+<p style="padding: 0 15px;">CV corporativo de alto nivel para Asistentes Ejecutivos. Destaca tu organización y capacidades directivas.</p>
+<div class="cost">$25 <span style="font-size: 16px; color: var(--text-secondary);">(100k)</span></div>
+<a class="btn" href="../ExecutiveAssistant/index.html" style="text-decoration: none;" target="_blank">Ver Demo</a>
+</div>
+</div>
+</div>
+<div class="template-card" data-profile="business" data-role="designer">
+<div class="card-inner">
+<div class="card-front">
+<div class="template-preview" style="background-image: url('../SeniorArchitect/example.png');">
+</div>
+<div class="template-info">
+<h3 class="template-name">Julio Jaramillo - Senior Architect</h3>
+<div class="template-tags">
+<span class="template-tag">Negocio Personal</span>
+</div>
+</div>
+</div>
+<div class="card-back">
+<h4>Julio Jaramillo - Senior Architect</h4>
+<p style="padding: 0 15px;">Perfil web de prestigio para Arquitectos Senior. Presenta proyectos a gran escala y trayectoria sólida.</p>
+<div class="cost">$25 <span style="font-size: 16px; color: var(--text-secondary);">(100k)</span></div>
+<a class="btn" href="../SeniorArchitect/index.html" style="text-decoration: none;" target="_blank">Ver Demo</a>
+</div>
+</div>
+</div>
+<div class="template-card" data-profile="cv" data-role="designer">
+<div class="card-inner">
+<div class="card-front">
+<div class="template-preview" style="background-image: url('../GraphicDesigner/example.png');">
+</div>
+<div class="template-info">
+<h3 class="template-name">Daniela Strauss - Graphic Designer</h3>
+<div class="template-tags">
+<span class="template-tag">Sitio CV Personal</span>
+</div>
+</div>
+</div>
+<div class="card-back">
+<h4>Daniela Strauss - Graphic Designer</h4>
+<p style="padding: 0 15px;">Portafolio vibrante para Diseñadores Gráficos. La estructura ideal para mostrar branding e identidad visual.</p>
+<div class="cost">$25 <span style="font-size: 16px; color: var(--text-secondary);">(100k)</span></div>
+<a class="btn" href="../GraphicDesigner/index.html" style="text-decoration: none;" target="_blank">Ver Demo</a>
+</div>
+</div>
+</div>
+<div class="template-card" data-profile="cv" data-role="freelancer">
+<div class="card-inner">
+<div class="card-front">
+<div class="template-preview" style="background-image: url('../Nurse/example.png');">
+</div>
+<div class="template-info">
+<h3 class="template-name">Silvia Morris – Enfermera Registrada</h3>
+<div class="template-tags">
+<span class="template-tag">Sitio CV Personal</span>
+</div>
+</div>
+</div>
+<div class="card-back">
+<h4>Silvia Morris – Enfermera Registrada</h4>
+<p style="padding: 0 15px;">Página compasiva e informativa para personal de enfermería. Resalta tus credenciales y años de experiencia.</p>
+<div class="cost">$25 <span style="font-size: 16px; color: var(--text-secondary);">(100k)</span></div>
+<a class="btn" href="../Nurse/index.html" style="text-decoration: none;" target="_blank">Ver Demo</a>
+</div>
+</div>
+</div>
+<div class="template-card" data-profile="cv" data-role="designer">
+<div class="card-inner">
+<div class="card-front">
+<div class="template-preview" style="background-image: url('../FashionDesigner/example.png');">
+</div>
+<div class="template-info">
+<h3 class="template-name">Isabelle Laurent – Fashion Designer</h3>
+<div class="template-tags">
+<span class="template-tag">Sitio CV Personal</span>
+</div>
+</div>
+</div>
+<div class="card-back">
+<h4>Isabelle Laurent – Fashion Designer</h4>
+<p style="padding: 0 15px;">Catálogo de moda vanguardista. Exhibe tus colecciones, lookbooks y trayectoria en diseño de modas.</p>
+<div class="cost">$25 <span style="font-size: 16px; color: var(--text-secondary);">(100k)</span></div>
+<a class="btn" href="../FashionDesigner/index.html" style="text-decoration: none;" target="_blank">Ver Demo</a>
+        </div>
+        <div class="template-card" data-profile="business" data-role="creator">
+            <div class="card-inner">
+                <div class="card-front">
+                    <div class="template-preview" style="background-image: url('../SergioJaramillo/images/pj1.png');">
+                    </div>
+                    <div class="template-info">
+                        <h3 class="template-name">Sergio Jaramillo | Interactive Art & IA</h3>
+                        <div class="template-tags">
+                            <span class="template-tag">Negocio Personal</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-back">
+                    <h4>Sergio Jaramillo | Interactive Art & IA</h4>
+                    <p style="padding: 0 15px;">Portafolio artístico de vanguardia. Fusiona instalaciones de arte digital con IA y una gestión operativa de alto nivel.</p>
+                    <div class="cost">$25 <span style="font-size: 16px; color: var(--text-secondary);">(100k)</span></div>
+                    <a class="btn" href="../SergioJaramillo/index.html" style="text-decoration: none;" target="_blank">Ver Demo</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="no-results" id="noResults">
+<h3>Ninguna plantilla coincide con tu búsqueda</h3>
+<p>Intenta ajustar tus filtros o bórralos para ver todas las plantillas.</p>
+</div>
+</div>
+</div></section>
+</div>
+<div class="modal-overlay" id="contactModal">
+<div class="contact-modal">
+<h3>Get in Touch</h3>
+<div class="social-links">
+<a class="social-link" href="https://wa.me/" target="_blank">WhatsApp</a>
+<a class="social-link" href="https://t.me/" target="_blank">Telegram</a>
+<a class="social-link" href="https://x.com/" target="_blank">X (Twitter)</a>
+<a class="social-link" href="https://instagram.com/" target="_blank">Instagram</a>
+<a class="social-link" href="https://tiktok.com/" target="_blank">TikTok</a>
+</div>
+<button class="modal-close" id="closeContact">Close</button>
+</div>
+</div>
+<footer style="text-align: center; padding: 20px; font-size: 14px;">
+<a href="#" style="text-decoration: none; color: inherit;">© 2026 Trademark</a>
+</footer>
+<script>
+        const filterPills = document.querySelectorAll('.filter-pill');
+        const templateCards = document.querySelectorAll('.template-card');
+        const clearFiltersBtn = document.getElementById('clearFilters');
+        const noResults = document.getElementById('noResults');
+
+        // Touch to flip cards on mobile
+        templateCards.forEach(card => {
+            card.addEventListener('click', function (e) {
+                if (window.innerWidth <= 768) {
+                    if (e.target.tagName === 'A' || e.target.closest('a')) return;
+                    this.classList.toggle('flipped');
+                }
+            });
+        });
+
+        const activeFilters = {
+            profile: [],
+            role: []
+        };
+
+        function updateClearButton() {
+            const hasActiveFilters = Object.values(activeFilters).some(arr => arr.length > 0);
+            clearFiltersBtn.classList.toggle('hidden', !hasActiveFilters);
+        }
+
+
+        const heroTitle = document.querySelector('.hero h1');
+        const heroDesc = document.querySelector('.hero p');
+
+        function updateHeroText() {
+            let p = activeFilters.profile[0];
+            let r = activeFilters.role[0];
+            if (p || r) {
+                let text = "La mejor opción para tu ";
+                if (p === 'cv') text += "sitio CV ";
+                else if (p === 'business') text += "negocio ";
+                else text += "proyecto ";
+
+                if (r) {
+                    text += "como ";
+                    const roleMap = {
+                        'ceo': 'CEO',
+                        'developer': 'Desarrollador',
+                        'designer': 'Diseñador',
+                        'freelancer': 'Freelancer',
+                        'artist': 'Artista',
+                        'creator': 'Creador'
+                    };
+                    text += roleMap[r] || r.charAt(0).toUpperCase() + r.slice(1);
+                }
+
+                heroTitle.innerHTML = text;
+            } else {
+                heroTitle.innerHTML = 'La primera página de <br>tu <span class="highlight">historia</span>';
+            }
+        }
+
+        function filterPlantillas() {
+            let visibleCount = 0;
+
+            templateCards.forEach(card => {
+                const cardPerfil = card.dataset.profile.split(',');
+                const cardRol = card.dataset.role.split(',');
+
+
+                const matchesPerfil = activeFilters.profile.length === 0 ||
+                    activeFilters.profile.some(f => cardPerfil.includes(f));
+                const matchesRol = activeFilters.role.length === 0 ||
+                    activeFilters.role.some(f => cardRol.includes(f));
+                const isVisible = matchesPerfil && matchesRol;
+
+                card.classList.toggle('hidden', !isVisible);
+                if (isVisible) visibleCount++;
+            });
+
+            noResults.classList.toggle('visible', visibleCount === 0);
+            updateHeroText();
+        }
+
+        filterPills.forEach(pill => {
+            pill.addEventListener('click', () => {
+                const value = pill.dataset.value;
+                const category = pill.parentElement.dataset.category;
+
+                if (activeFilters[category].includes(value)) {
+                    activeFilters[category] = activeFilters[category].filter(f => f !== value);
+                    pill.classList.remove('active');
+                } else {
+                    activeFilters[category].push(value);
+                    pill.classList.add('active');
+                }
+
+                updateClearButton();
+                filterPlantillas();
+            });
+        });
+
+        clearFiltersBtn.addEventListener('click', () => {
+            Object.keys(activeFilters).forEach(key => {
+                activeFilters[key] = [];
+            });
+
+            filterPills.forEach(pill => pill.classList.remove('active'));
+            updateClearButton();
+            filterPlantillas();
+        });
+
+
+
+
+
+
+        // Contact Modal Logic
+        const contactBtn = document.getElementById('contactBtn');
+        const contactModal = document.getElementById('contactModal');
+        const closeContact = document.getElementById('closeContact');
+
+        contactBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            contactModal.classList.add('active');
+        });
+
+        closeContact.addEventListener('click', () => {
+            contactModal.classList.remove('active');
+        });
+
+        contactModal.addEventListener('click', (e) => {
+            if (e.target === contactModal) {
+                contactModal.classList.remove('active');
+            }
+        });
+
+        // Search Toggle Logic
+        const searchContainer = document.getElementById('searchContainer');
+        const searchBtn = document.getElementById('searchBtn');
+        const searchInput = document.getElementById('searchInput');
+
+        searchBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            searchContainer.classList.toggle('active');
+            if (searchContainer.classList.contains('active')) {
+                searchInput.focus();
+            }
+        });
+
+        document.addEventListener('mousedown', (e) => {
+            if (!searchContainer.contains(e.target) && searchContainer.classList.contains('active') && !e.target.closest('#searchBtn')) {
+                searchContainer.classList.remove('active');
+            }
+        });
+
+        // Filter by Search
+        searchInput.addEventListener('input', (e) => {
+            const val = e.target.value.toLowerCase();
+            templateCards.forEach(card => {
+                const title = card.querySelector('.template-name').textContent.toLowerCase();
+                if (title.includes(val)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+
+        // Electric Grid Canvas & Chemical Mixes
+        const canvas = document.getElementById('bg-canvas');
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+            let width, height;
+            let particles = [];
+            let mouse = { x: null, y: null, clicked: false };
+
+            const chemElements = [
+                { s: 'H', c: '#ffffff' }, { s: 'He', c: '#ffccff' }, { s: 'Li', c: '#ffa500' }, { s: 'Be', c: '#ffff00' },
+                { s: 'B', c: '#00ff00' }, { s: 'C', c: '#888888' }, { s: 'N', c: '#ffb3e6' }, { s: 'O', c: '#ff3333' },
+                { s: 'F', c: '#ebd63d' }, { s: 'Ne', c: '#ff4d4d' }, { s: 'Na', c: '#ab5cf2' }, { s: 'Mg', c: '#8aff00' },
+                { s: 'Al', c: '#bfa6a6' }, { s: 'Si', c: '#f0c8a0' }, { s: 'P', c: '#ff8000' }, { s: 'S', c: '#ffff33' },
+                { s: 'Cl', c: '#1ff01f' }, { s: 'Ar', c: '#ccccff' }, { s: 'K', c: '#8f40d4' }, { s: 'Ca', c: '#3dff00' },
+                { s: 'Fe', c: '#a0a0a0' }, { s: 'Cu', c: '#c87a55' }, { s: 'Zn', c: '#7a7a9c' }, { s: 'Ag', c: '#c0c0c0' },
+                { s: 'Au', c: '#ffd700' }, { s: 'Hg', c: '#b8b8d0' }, { s: 'Pb', c: '#575961' }, { s: 'U', c: '#00ff00' }
+            ];
+
+            const compoundsList = [
+                { formula: { 'H': 2, 'O': 1 }, name: 'H₂O', color: '#00aaff' },
+                { formula: { 'C': 1, 'O': 2 }, name: 'CO₂', color: '#aaaaaa' },
+                { formula: { 'N': 1, 'H': 3 }, name: 'NH₃', color: '#00ffff' },
+                { formula: { 'C': 1, 'H': 4 }, name: 'CH₄', color: '#44ff44' },
+                { formula: { 'Na': 1, 'Cl': 1 }, name: 'NaCl', color: '#ffffff' },
+                { formula: { 'Fe': 2, 'O': 3 }, name: 'Fe₂O₃', color: '#ff4400' },
+                { formula: { 'H': 2, 'S': 1, 'O': 4 }, name: 'H₂SO₄', color: '#ffcc00' },
+                { formula: { 'C': 6, 'H': 12, 'O': 6 }, name: 'Glucose', color: '#ff88ff' },
+                { formula: { 'C': 2, 'H': 5, 'O': 1, 'H': 1 }, name: 'Ethanol', color: '#ff9999' },
+                { formula: { 'Si': 1, 'O': 2 }, name: 'SiO₂', color: '#d2b48c' }
+            ];
+
+            function getComposition(parts) {
+                let comp = {};
+                for (let p of parts) comp[p] = (comp[p] || 0) + 1;
+                return comp;
+            }
+
+            function isSubset(sub, full) {
+                for (let k in sub) {
+                    if (!full[k] || sub[k] > full[k]) return false;
+                }
+                return true;
+            }
+
+            function canCombine(partsA, partsB) {
+                let combined = [...partsA, ...partsB];
+                let comp = getComposition(combined);
+                for (let c of compoundsList) {
+                    if (isSubset(comp, c.formula)) return true;
+                }
+                return false;
+            }
+
+            function checkCompoundComplete(parts) {
+                let comp = getComposition(parts);
+                for (let c of compoundsList) {
+                    let match = true;
+                    for (let k in c.formula) {
+                        if (comp[k] !== c.formula[k]) match = false;
+                    }
+                    if (match && Object.keys(comp).length === Object.keys(c.formula).length) return c;
+                }
+                return null;
+            }
+
+            function formatInter(parts) {
+                let comp = getComposition(parts);
+                let str = "";
+                let sub = ['₀', '₁', '₂', '₃', '₄', '₅', '₆', '₇', '₈', '₉'];
+                for (let k in comp) {
+                    str += k + (comp[k] > 1 ? String(comp[k]).split('').map(d => sub[d]).join('') : "");
+                }
+                return str;
+            }
+
+            const recipeElements = ['H', 'O', 'C', 'N', 'Na', 'Cl', 'Fe', 'S'];
+            function getRandomElement() {
+                if (Math.random() < 0.7) {
+                    let s = recipeElements[Math.floor(Math.random() * recipeElements.length)];
+                    return chemElements.find(e => e.s === s) || chemElements[0];
+                }
+                return chemElements[Math.floor(Math.random() * chemElements.length)];
+            }
+
+            function mixColor(c1, c2) {
+                let r1 = parseInt(c1.slice(1, 3), 16), g1 = parseInt(c1.slice(3, 5), 16), b1 = parseInt(c1.slice(5, 7), 16);
+                let r2 = parseInt(c2.slice(1, 3), 16), g2 = parseInt(c2.slice(3, 5), 16), b2 = parseInt(c2.slice(5, 7), 16);
+                return `#${Math.floor((r1 + r2) / 2).toString(16).padStart(2, '0')}${Math.floor((g1 + g2) / 2).toString(16).padStart(2, '0')}${Math.floor((b1 + b2) / 2).toString(16).padStart(2, '0')}`;
+            }
+
+            function resize() {
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
+            }
+            window.addEventListener('resize', resize);
+            resize();
+
+            window.addEventListener('mousemove', (e) => {
+                mouse.x = e.clientX;
+                mouse.y = e.clientY;
+            });
+
+            window.addEventListener('mousedown', (e) => {
+                if (e.target.tagName !== 'BUTTON' && e.target.tagName !== 'A' && e.target.tagName !== 'INPUT' && !e.target.closest('.search-container') && !e.target.closest('.filter-sidebar')) {
+                    mouse.clicked = true;
+                    for (let i = 0; i < 8; i++) {
+                        let chem = getRandomElement();
+                        particles.push({
+                            x: e.clientX, y: e.clientY,
+                            z: Math.random() * 2 + 0.1,
+                            vx: (Math.random() - 0.5) * 5,
+                            vy: (Math.random() - 0.5) * 5,
+                            size: 1.5,
+                            life: 150, maxLife: 150, isBurst: true,
+                            sym: chem.s, color: chem.c,
+                            parts: [chem.s], complete: false
+                        });
+                    }
+                }
+            });
+            window.addEventListener('mouseup', () => mouse.clicked = false);
+            window.addEventListener('mouseleave', () => { mouse.x = null; mouse.y = null; });
+
+            for (let i = 0; i < 80; i++) {
+                let chem = getRandomElement();
+                particles.push({
+                    x: Math.random() * window.innerWidth,
+                    y: Math.random() * window.innerHeight,
+                    z: Math.random() * 2 + 0.1,
+                    vx: (Math.random() - 0.5) * 0.5,
+                    vy: (Math.random() - 0.5) * 0.5,
+                    size: 2,
+                    life: Infinity, maxLife: Infinity, isBurst: false,
+                    sym: chem.s, color: chem.c,
+                    parts: [chem.s], complete: false
+                });
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+
+                // Draw slight grid background
+                ctx.strokeStyle = 'rgba(0, 195, 255, 0.03)';
+                ctx.lineWidth = 1;
+                let time = Date.now() * 0.0005;
+                ctx.beginPath();
+                let gridSize = 80;
+                for (let x = 0; x < width; x += gridSize) {
+                    let offset = Math.sin(time + x * 0.01) * 15;
+                    ctx.moveTo(x + offset, 0);
+                    ctx.lineTo(x - offset, height);
+                }
+                for (let y = 0; y < height; y += gridSize) {
+                    let offset = Math.cos(time + y * 0.01) * 15;
+                    ctx.moveTo(0, y + offset);
+                    ctx.lineTo(width, y - offset);
+                }
+                ctx.stroke();
+
+                // Process particles
+                for (let i = particles.length - 1; i >= 0; i--) {
+                    let e = particles[i];
+                    if (!e) continue;
+
+                    if (mouse.x != null && mouse.y != null) {
+                        let dx = mouse.x - e.x;
+                        let dy = mouse.y - e.y;
+                        let dist = Math.sqrt(dx * dx + dy * dy);
+                        if (dist < 250) {
+                            let force = (250 - dist) / 250;
+                            e.vx += (dx / dist) * force * 0.2 * (mouse.clicked ? -2 : 1);
+                            e.vy += (dy / dist) * force * 0.2 * (mouse.clicked ? -2 : 1);
+                        }
+                    }
+
+                    e.vx *= 0.96;
+                    e.vy *= 0.96;
+
+                    let speedFloat = e.isBurst ? 0 : 0.5;
+                    e.x += e.vx + (Math.sin(Date.now() * 0.001 * e.z) * speedFloat);
+                    e.y += e.vy + (Math.cos(Date.now() * 0.001 * e.z) * speedFloat);
+
+                    if (e.x < 0 || e.x > width) { e.vx *= -1; e.x = Math.max(0, Math.min(width, e.x)); }
+                    if (e.y < 0 || e.y > height) { e.vy *= -1; e.y = Math.max(0, Math.min(height, e.y)); }
+
+                    if (e.life !== Infinity) e.life--;
+
+                    let alpha = e.life === Infinity ? 1 : Math.max(0, e.life / e.maxLife);
+
+                    let nodeSize = (e.complete ? e.size * 1.5 : e.size) / e.z;
+
+                    // Just a tiny sharp dot
+                    ctx.beginPath();
+                    ctx.arc(e.x, e.y, nodeSize * 0.3, 0, Math.PI * 2);
+                    ctx.fillStyle = e.color;
+                    ctx.globalAlpha = alpha * 0.8;
+                    ctx.fill();
+
+                    ctx.shadowBlur = 0;
+                    ctx.globalAlpha = 1;
+
+                    // Draw electrical strings
+                    for (let j = i - 1; j >= 0; j--) {
+                        let other = particles[j];
+                        if (!other || (e.complete && other.complete)) continue;
+
+                        let dx = e.x - other.x;
+                        let dy = e.y - other.y;
+                        let dist = Math.sqrt(dx * dx + dy * dy);
+
+                        // General electrical string visible to all nearby
+                        if (dist < 200) {
+                            ctx.beginPath();
+                            ctx.strokeStyle = `rgba(0, 255, 255, ${(200 - dist) / 200 * 0.15 * alpha})`; // Clear visibility
+                            ctx.lineWidth = 1;
+                            ctx.moveTo(e.x, e.y);
+                            ctx.lineTo(other.x, other.y);
+                            ctx.stroke();
+
+                            // Chemical attraction string (thicker/colored if they can merge)
+                            if (!e.complete && !other.complete && canCombine(e.parts, other.parts)) {
+                                let force = (200 - dist) / 200 * 0.08;
+                                e.vx -= (dx / dist) * force;
+                                e.vy -= (dy / dist) * force;
+                                other.vx += (dx / dist) * force;
+                                other.vy += (dy / dist) * force;
+
+                                // Merge
+                                if (dist < 20) {
+                                    let newParts = [...e.parts, ...other.parts];
+                                    let compound = checkCompoundComplete(newParts);
+
+                                    e.parts = newParts;
+                                    e.size += 0.2;
+                                    e.color = mixColor(e.color, other.color);
+
+                                    if (compound) {
+                                        e.sym = compound.name;
+                                        e.color = compound.color;
+                                        e.complete = true;
+                                        e.size += 0.5;
+                                    } else {
+                                        e.sym = formatInter(newParts);
+                                    }
+
+                                    particles.splice(j, 1);
+                                    i--;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    if (e.life <= 0) particles.splice(i, 1);
+                }
+                requestAnimationFrame(animate);
+            }
+            animate();
+        }
+
+        // Typewriter Effect
+        const words = [
+            { text: 'Create', color: '#00ffff' },   // Cyan
+            { text: 'Share', color: '#ff00ff' },   // Pink
+            { text: 'Update', color: '#00ff00' },  // Green
+            { text: 'Change', color: '#ffea00' }   // Yellow
+        ];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typewriterElement = document.getElementById('typewriter-text');
+
+        function type() {
+            if (!typewriterElement) return;
+            const currentWord = words[wordIndex];
+
+            // Set color
+            if (charIndex === 0 && !isDeleting) {
+                typewriterElement.style.webkitTextStroke = `1.5px ${currentWord.color}`;
+                typewriterElement.style.textShadow = `0 0 5px ${currentWord.color}, 0 0 10px ${currentWord.color}, 0 0 20px ${currentWord.color}`;
+            }
+
+            if (isDeleting) {
+                typewriterElement.textContent = currentWord.text.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typewriterElement.textContent = currentWord.text.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typingSpeed = isDeleting ? 50 : 150;
+
+            if (!isDeleting && charIndex === currentWord.text.length) {
+                typingSpeed = 2000; // Pause at end of word
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                typingSpeed = 500; // Pause before next word
+            }
+
+            setTimeout(type, typingSpeed);
+        }
+
+        if (typewriterElement) {
+            type();
+        }
+
+    </script>
+</body>
+</html>
