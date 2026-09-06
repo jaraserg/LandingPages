@@ -1,0 +1,52 @@
+{
+  "name": "Alex Example",
+  "role": "Product Designer",
+  "summary": "Diseñador de producto enfocado en experiencias digitales usables y resultados de negocio.",
+  "email": "alex@example.com",
+  "phone": "+56 9 0000 0000",
+  "location": "Santiago, Chile",
+  "skills": ["Figma", "User Research", "Prototyping", "Design Systems", "Analytics"],
+  "experience": [
+    {
+      "title": "Product Designer",
+      "company": "Startup Example",
+      "period": "2023 - Presente",
+      "description": "Lideré rediseños que mejoraron conversión y retención en mobile y web."
+    },
+    {
+      "title": "UX Designer",
+      "company": "Agencia Creativa",
+      "period": "2021 - 2023",
+      "description": "Diseñé flujos y prototipos para clientes de retail y fintech."
+    }
+  ],
+  "education": [
+    {
+      "degree": "Magíster en Diseño",
+      "school": "Universidad Example",
+      "period": "2019 - 2021"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Rediseño checkout",
+      "description": "Mejora de +18% en tasa de completado.",
+      "url": "https://example.com",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800"
+    },
+    {
+      "name": "Design system",
+      "description": "Sistema reutilizable para productos web y mobile.",
+      "url": "https://example.com",
+      "image": "https://images.unsplash.com/photo-1558655146-d09347e0b7a8?q=80&w=800"
+    }
+  ],
+  "links": {
+    "linkedin": "https://linkedin.com/",
+    "github": "https://github.com/",
+    "website": "https://example.com"
+  },
+  "accent": "#0f766e",
+  "avatar": "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1200",
+  "resume_pdf_url": "https://example.com/resume.pdf"
+}

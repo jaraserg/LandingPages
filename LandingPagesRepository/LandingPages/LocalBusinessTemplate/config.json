@@ -1,0 +1,28 @@
+{
+  "business_name": "Mi Negocio",
+  "tagline": "Calidad y sabor en cada visita",
+  "description": "Ofrecemos lo mejor con atención personalizada y productos frescos.",
+  "phone": "+56 9 1234 5678",
+  "email": "hola@minegocio.cl",
+  "address": "Calle Ejemplo 123, Santiago",
+  "hours": "Lun-Vie 10:00 - 20:00 | Sáb 11:00 - 15:00",
+  "primary_color": "#0f766e",
+  "hero_image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1200",
+  "gallery": [
+    { "url": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=800", "caption": "Ambiente" },
+    { "url": "https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=800", "caption": "Platos" },
+    { "url": "https://images.unsplash.com/photo-1550966871-3ed3c47e2ce2?q=80&w=800", "caption": "Local" }
+  ],
+  "menu": [
+    { "name": "Especialidad 1", "price": "$4.500", "desc": "Descripción corta y atractiva." },
+    { "name": "Especialidad 2", "price": "$6.200", "desc": "Ingredientes frescos y locales." },
+    { "name": "Especialidad 3", "price": "$3.800", "desc": "Para compartir." }
+  ],
+  "google_maps_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3325.2!2d-70.65!3d-33.45!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDI0JzA4LjgiUyA3MMKwMzYnMDguOCJX!5e0!3m2!1sen!2scl!4v1700000000000",
+  "socials": {
+    "instagram": "https://instagram.com/",
+    "facebook": "https://facebook.com/",
+    "whatsapp": "https://wa.me/56912345678"
+  },
+  "form_endpoint": ""
+}

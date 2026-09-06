@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title id="page-title">Mi Negocio</title>
+  <meta id="page-desc" name="description" content="Landing page profesional para negocio local."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@300;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="container nav">
+      <div class="logo" id="logo-text">MI<span>NEGOCIO</span></div>
+      <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#menu">Menú</a></li>
+        <li><a href="#contacto" class="btn-nav">Contacto</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Abrir menú" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-section" id="inicio">
+      <div class="hero-bg" id="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1200');"></div>
+      <div class="container">
+        <div class="hero-content">
+          <h1 id="hero-title">Calidad y <span>sabor</span> en cada visita</h1>
+          <p id="hero-desc">Ofrecemos lo mejor con atención personalizada y productos frescos.</p>
+          <div class="hero-actions">
+            <a class="btn-primary" href="#menu">Ver menú</a>
+            <a class="btn-secondary" href="#contacto">Reservar / Pedir</a>
+          </div>
+          <div class="hero-meta" id="hero-meta">
+            <div class="meta-item"><span class="meta-label">Dirección</span><span class="meta-value" id="address">Calle Ejemplo 123, Santiago</span></div>
+            <div class="meta-item"><span class="meta-label">Horario</span><span class="meta-value" id="hours">Lun-Vie 10:00 - 20:00</span></div>
+            <div class="meta-item"><span class="meta-label">Teléfono</span><a class="meta-value" id="phone-link" href="tel:+56912345678">+56 9 1234 5678</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="galeria">
+      <div class="container">
+        <h2 class="section-title">Galería</h2>
+        <div class="gallery-grid" id="gallery-grid">
+          <div class="gallery-item">
+            <img alt="Ambiente" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=800" loading="lazy"/>
+            <span class="gallery-caption">Ambiente</span>
+          </div>
+          <div class="gallery-item">
+            <img alt="Platos" src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=800" loading="lazy"/>
+            <span class="gallery-caption">Platos</span>
+          </div>
+          <div class="gallery-item">
+            <img alt="Local" src="https://images.unsplash.com/photo-1550966871-3ed3c47e2ce2?q=80&w=800" loading="lazy"/>
+            <span class="gallery-caption">Local</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="menu">
+      <div class="container">
+        <h2 class="section-title">Menú</h2>
+        <div class="menu-list" id="menu-list">
+          <div class="menu-card">
+            <div class="menu-header"><h3>Especialidad 1</h3><span class="price">$4.500</span></div>
+            <p>Descripción corta y atractiva.</p>
+          </div>
+          <div class="menu-card">
+            <div class="menu-header"><h3>Especialidad 2</h3><span class="price">$6.200</span></div>
+            <p>Ingredientes frescos y locales.</p>
+          </div>
+          <div class="menu-card">
+            <div class="menu-header"><h3>Especialidad 3</h3><span class="price">$3.800</span></div>
+            <p>Para compartir.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contacto">
+      <div class="container">
+        <h2 class="section-title">Contacto</h2>
+        <div class="contact-grid">
+          <div class="contact-info" id="contact-info">
+            <p class="contact-lead">Escribinos y te respondemos a la brevedad.</p>
+            <ul class="contact-list">
+              <li><a id="contact-phone" href="tel:+56912345678">+56 9 1234 5678</a></li>
+              <li><a id="contact-email" href="mailto:hola@minegocio.cl">hola@minegocio.cl</a></li>
+              <li><span id="contact-address">Calle Ejemplo 123, Santiago</span></li>
+            </ul>
+            <div class="social-links" id="social-links">
+              <a class="social-btn whatsapp" href="https://wa.me/56912345678" target="_blank" rel="noopener">WhatsApp</a>
+              <a class="social-btn instagram" href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
+              <a class="social-btn facebook" href="https://facebook.com/" target="_blank" rel="noopener">Facebook</a>
+            </div>
+            <div class="map-wrap" id="map-wrap">
+              <iframe title="Mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3325.2!2d-70.65!3d-33.45!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDI0JzA4LjgiUyA3MMKwMzYnMDguOCJX!5e0!3m2!1sen!2scl!4v1700000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+          <div class="contact-form-wrap">
+            <form id="contact-form" class="contact-form" novalidate>
+              <div class="form-row">
+                <div class="form-group"><input id="name" placeholder="Nombre" required type="text"/></div>
+                <div class="form-group"><input id="phone" placeholder="Teléfono" required type="tel"/></div>
+              </div>
+              <div class="form-group"><input id="email" placeholder="Email" required type="email"/></div>
+              <div class="form-group"><textarea id="message" placeholder="¿En qué podemos ayudarte?" required></textarea></div>
+              <button class="btn-primary full-width" type="submit">Enviar mensaje</button>
+              <p class="form-note" id="form-note"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <a id="footer-link" href="#" class="footer-brand">© <span id="year"></span> Mi Negocio</a>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <a href="../index.html" style="position:fixed;bottom:20px;left:20px;z-index:999999;background:rgba(0,0,0,0.8);backdrop-filter:blur(10px);color:white;padding:8px 16px;border-radius:20px;font-family:sans-serif;font-size:12px;font-weight:500;border:1px solid rgba(255,255,255,0.2);text-decoration:none;display:flex;align-items:center;gap:6px;">← Showcase</a>
+</body>
+</html>

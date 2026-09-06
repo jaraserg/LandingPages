@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title id="page-title">Alex Example — Product Designer</title>
+  <meta id="page-desc" name="description" content="Portfolio profesional."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@300;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="container nav">
+      <div class="logo" id="logo-text">ALEX<span>EXAMPLE</span></div>
+      <ul class="nav-links">
+        <li><a href="#perfil">Perfil</a></li>
+        <li><a href="#experiencia">Experiencia</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#contacto" class="btn-nav">Contacto</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Abrir menú" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-section" id="perfil">
+      <div class="hero-bg" id="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1200');"></div>
+      <div class="container">
+        <div class="hero-content">
+          <h1 id="hero-title"><span id="name-text">Alex Example</span><br/><span class="accent" id="role-text">Product Designer</span></h1>
+          <p class="lead" id="summary-text">Brief professional summary focused on outcomes.</p>
+          <div class="hero-actions">
+            <a class="btn-primary" href="#proyectos">Ver proyectos</a>
+            <a class="btn-secondary" id="resume-btn" href="#" target="_blank" rel="noopener">Descargar CV</a>
+          </div>
+          <div class="hero-meta" id="hero-meta">
+            <div class="meta-item"><span class="meta-label">Ubicación</span><span class="meta-value" id="location">Santiago, Chile</span></div>
+            <div class="meta-item"><span class="meta-label">Email</span><a class="meta-value" id="email-link" href="mailto:alex@example.com">alex@example.com</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="container">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-grid" id="skills-grid">
+          <span class="skill">Figma</span>
+          <span class="skill">Research</span>
+          <span class="skill">Prototyping</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="experiencia">
+      <div class="container">
+        <h2 class="section-title">Experiencia</h2>
+        <div class="timeline" id="timeline"></div>
+      </div>
+    </section>
+
+    <section class="section" id="proyectos">
+      <div class="container">
+        <h2 class="section-title">Proyectos</h2>
+        <div class="projects-grid" id="projects-grid"></div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="contacto">
+      <div class="container">
+        <h2 class="section-title">Contacto</h2>
+        <div class="contact-grid">
+          <div class="contact-info" id="contact-info">
+            <p class="contact-lead">Escribime para conversar sobre trabajo o proyectos.</p>
+            <ul class="contact-list">
+              <li><a id="contact-email" href="mailto:alex@example.com">alex@example.com</a></li>
+              <li><a id="contact-phone" href="tel:+56900000000">+56 9 0000 0000</a></li>
+              <li><a id="contact-linkedin" href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+              <li><a id="contact-github" href="#" target="_blank" rel="noopener">GitHub</a></li>
+            </ul>
+          </div>
+          <div class="contact-form-wrap">
+            <form id="contact-form" class="contact-form" novalidate>
+              <div class="form-row">
+                <div class="form-group"><input id="name" placeholder="Nombre" required type="text"/></div>
+                <div class="form-group"><input id="email" placeholder="Email" required type="email"/></div>
+              </div>
+              <div class="form-group"><textarea id="message" placeholder="Mensaje" required></textarea></div>
+              <button class="btn-primary full-width" type="submit">Enviar mensaje</button>
+              <p class="form-note" id="form-note"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <a id="footer-link" href="#" class="footer-brand">© <span id="year"></span> Alex Example</a>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <a href="../index.html" style="position:fixed;bottom:20px;left:20px;z-index:999999;background:rgba(0,0,0,0.8);backdrop-filter:blur(10px);color:white;padding:8px 16px;border-radius:20px;font-family:sans-serif;font-size:12px;font-weight:500;border:1px solid rgba(255,255,255,0.2);text-decoration:none;display:flex;align-items:center;gap:6px;">← Showcase</a>
+</body>
+</html>
